@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="&amp;nbsp; 好气啊，在手机上都写地差不多了，到了电脑上被同步成了未完成的状态，又得重写近些天原来十分稳定又快速的shadowsocks开始不在状态了，严重的时候什么都打不开，几分钟就要重启一下。 想去官网提交个工单反馈一下都没办法。（百度是搜不到官网的） 四处搜索的时候就不小心学会了另一个科学上网的方法：修改hosts文件。 hosts hosts文件是一个用于储存计算机网络中各节点信息的计算机">
+<meta property="og:type" content="article">
+<meta property="og:title" content="修改hosts实现科学上网">
+<meta property="og:url" content="http://45.76.66.159/2017/03/10/e4-bf-ae-e6-94-b9hosts-e5-ae-9e-e7-8e-b0-e7-a7-91-e5-ad-a6-e4-b8-8a-e7-bd-91/index.html">
+<meta property="og:site_name" content="REMEMBER">
+<meta property="og:description" content="&amp;nbsp; 好气啊，在手机上都写地差不多了，到了电脑上被同步成了未完成的状态，又得重写近些天原来十分稳定又快速的shadowsocks开始不在状态了，严重的时候什么都打不开，几分钟就要重启一下。 想去官网提交个工单反馈一下都没办法。（百度是搜不到官网的） 四处搜索的时候就不小心学会了另一个科学上网的方法：修改hosts文件。 hosts hosts文件是一个用于储存计算机网络中各节点信息的计算机">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-07-24T17:32:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="修改hosts实现科学上网">
+<meta name="twitter:description" content="&amp;nbsp; 好气啊，在手机上都写地差不多了，到了电脑上被同步成了未完成的状态，又得重写近些天原来十分稳定又快速的shadowsocks开始不在状态了，严重的时候什么都打不开，几分钟就要重启一下。 想去官网提交个工单反馈一下都没办法。（百度是搜不到官网的） 四处搜索的时候就不小心学会了另一个科学上网的方法：修改hosts文件。 hosts hosts文件是一个用于储存计算机网络中各节点信息的计算机">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://45.76.66.159/2017/03/10/e4-bf-ae-e6-94-b9hosts-e5-ae-9e-e7-8e-b0-e7-a7-91-e5-ad-a6-e4-b8-8a-e7-bd-91/"/>
+
+
+
+
+
+  <title>修改hosts实现科学上网 | REMEMBER</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">REMEMBER</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/03/10/e4-bf-ae-e6-94-b9hosts-e5-ae-9e-e7-8e-b0-e7-a7-91-e5-ad-a6-e4-b8-8a-e7-bd-91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eel">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="REMEMBER">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">修改hosts实现科学上网</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-10T00:28:31+08:00">
+                2017-03-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ACM/" itemprop="url" rel="index">
+                    <span itemprop="name">ACM</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&nbsp;</p>
+<h4 id="好气啊，在手机上都写地差不多了，到了电脑上被同步成了未完成的状态，又得重写"><a href="#好气啊，在手机上都写地差不多了，到了电脑上被同步成了未完成的状态，又得重写" class="headerlink" title="好气啊，在手机上都写地差不多了，到了电脑上被同步成了未完成的状态，又得重写"></a>好气啊，在手机上都写地差不多了，到了电脑上被同步成了未完成的状态，又得重写</h4><p>近些天原来十分稳定又快速的shadowsocks开始不在状态了，严重的时候什么都打不开，几分钟就要重启一下。</p>
+<p>想去官网提交个工单反馈一下都没办法。（百度是搜不到官网的）</p>
+<p>四处搜索的时候就不小心学会了另一个科学上网的方法：修改hosts文件。</p>
+<h2 id="hosts"><a href="#hosts" class="headerlink" title="hosts"></a>hosts</h2><blockquote>
+<p>hosts文件是一个用于储存计算机网络中各节点信息的计算机文件。这个文件负责将主机名称映射到相应的IP地址。hosts文件通常用于补充或替换网络中DNS的功能。和DNS不同的是，计算机的用户可以直接对hosts文件进行控制。</p>
+</blockquote>
+<p>简单的说<code>hosts</code>文件就是一个和<code>dns服务器</code>一样<code>解析域名</code>的。</p>
+<p>区别在于，hosts是存在本地计算机中的，不同的操作系统位置有所不同。</p>
+<table><br><thead><br><tr><br>  <th>操作系统</th><br>  <th>路径</th><br></tr><br></thead><br><tbody><br><tr><br>  <td>Unix、类Unix系统（例如Linux等）</td><br>  <td>/etc/hosts</td><br></tr><br><tr><br>  <td>Microsoft Windows</td><br>  <td>%SystemRoot%\System32\drivers\etc\hosts</td><br></tr><br><tr><br>  <td>Android</td><br>  <td>/etc/hosts（指向/system/etc/hosts的符号链接)</td><br></tr><br><tr><br>  <td>iOS</td><br>  <td>/etc/hosts（指向/private/etc/hosts的符号链接)</td><br></tr><br><tr><br>  <td>Mac OS X 10.2和更新版本</td><br>  <td>/etc/hosts（指向/private/etc/hosts的符号链接）</td><br></tr><br></tbody><br></table>
+
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>在GFW屏蔽国外网站的方法中，有一种最简单的就是dns污染，将请求的目标域名指向一个无用的IP，从而实现阻止访问。</p>
+<p>而修改hosts后，本机就会直接访问对应的IP，而绕过上游DNS服务器。</p>
+<h2 id="修改方法"><a href="#修改方法" class="headerlink" title="修改方法"></a>修改方法</h2><p>访问网站的IP是会变化的，我们需要每隔一到几个月就更新一次hosts文件。</p>
+<p>在万能的github上已经有大神整理并定时更新的hosts文件，我们去下载后替换即可。</p>
+<p><a href="https://github.com/racaljk/hosts" target="_blank" rel="external">最新可用的 hosts文件</a></p>
+<p>&nbsp;</p>
+<p>这里还有更加方便的方法，即一件更新并替换的工具。</p>
+<p><a href="https://coding.net/u/scaffrey/p/hosts/git/tree/master/tools" target="_blank" rel="external">Hosts Tool Pool</a></p>
+<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ul>
+<li>不经过 <code>vpn</code> 或者<code>代理商</code>的服务器，直接访问，所以速度快，较为稳定。<p></p></li>
+<li>免费</li>
+</ul>
+<h2 id="使用限制"><a href="#使用限制" class="headerlink" title="使用限制"></a>使用限制</h2><ul>
+<li>只能对固定ip的网站访问，并需要https的连接。因此youtube上的视频是加载不了的。（YouTube网页本身能打开）</li>
+<li>目标网站IP变动后就需要更新hosts，不能一劳永逸。</li>
+</ul>
+<h2 id="hosts的其他用法"><a href="#hosts的其他用法" class="headerlink" title="hosts的其他用法"></a>hosts的其他用法</h2><h4 id="屏蔽某些网页"><a href="#屏蔽某些网页" class="headerlink" title="屏蔽某些网页"></a>屏蔽某些网页</h4><p></p><p>将需要屏蔽的 <code>域名</code> 和 <code>ip</code>按相同格式写入hosts即可，其中ip改为<code>127.0.0.1</code>。<br>再次访问改域名时会重定向至空白页。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/08/if-name-main/" rel="next" title="if __name__ == '__main__'">
+                <i class="fa fa-chevron-left"></i> if __name__ == '__main__'
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/10/xiu-gaihosts-shi-xian-ke-xue-shang-wang-2-trashed-2/" rel="prev" title="修改hosts实现科学上网">
+                修改hosts实现科学上网 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Eel" />
+          <p class="site-author-name" itemprop="name">Eel</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#好气啊，在手机上都写地差不多了，到了电脑上被同步成了未完成的状态，又得重写"><span class="nav-number">1.</span> <span class="nav-text">好气啊，在手机上都写地差不多了，到了电脑上被同步成了未完成的状态，又得重写</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hosts"><span class="nav-number"></span> <span class="nav-text">hosts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number"></span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改方法"><span class="nav-number"></span> <span class="nav-text">修改方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优点"><span class="nav-number"></span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用限制"><span class="nav-number"></span> <span class="nav-text">使用限制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hosts的其他用法"><span class="nav-number"></span> <span class="nav-text">hosts的其他用法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#屏蔽某些网页"><span class="nav-number">1.</span> <span class="nav-text">屏蔽某些网页</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eel</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
