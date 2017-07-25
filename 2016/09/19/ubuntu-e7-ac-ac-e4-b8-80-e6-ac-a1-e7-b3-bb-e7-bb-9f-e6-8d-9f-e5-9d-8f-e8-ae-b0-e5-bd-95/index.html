@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="en">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -99,7 +99,7 @@
 <meta property="og:url" content="http://45.76.66.159/2016/09/19/ubuntu-e7-ac-ac-e4-b8-80-e6-ac-a1-e7-b3-bb-e7-bb-9f-e6-8d-9f-e5-9d-8f-e8-ae-b0-e5-bd-95/index.html">
 <meta property="og:site_name" content="REMEMBER">
 <meta property="og:description" content="不知名原因某一次重启后（很久没重启了），忽然无法进入系统了。查看系统启动日志有很多failed的加载项，然而并看不懂，关键字也无法搜索到。海量搜索可能原因后总结目前情况：1.grub正常，可以选择正常启动或进入救援模式等。2. resume模式带中文，但全是乱码，看不懂无法使用。3.可以进入救援模式，以root身份修改文件。（找到出问题的配置文件应该就能解决了）4.然而并不知道是什么原因，所以不知">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2017-07-25T11:33:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ubuntu第一次系统损坏记录">
@@ -117,7 +117,7 @@
     motion: true,
     duoshuo: {
       userId: '0',
-      author: '博主'
+      author: 'Author'
     },
     algolia: {
       applicationID: '',
@@ -155,7 +155,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
   
   
@@ -203,7 +203,17 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            首页
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
           </a>
         </li>
       
@@ -213,7 +223,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            关于
+            About
           </a>
         </li>
       
@@ -223,7 +233,17 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            归档
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
           </a>
         </li>
       
@@ -283,9 +303,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-19T18:47:10+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-19T18:47:10+08:00">
                 2016-09-19
               </time>
             
@@ -304,7 +324,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -457,7 +477,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
                 <span class="site-state-item-count">35</span>
-                <span class="site-state-item-name">日志</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -467,8 +487,8 @@
             
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">13</span>
-                <span class="site-state-item-name">分类</span>
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">categories</span>
               
             </div>
           
@@ -479,7 +499,7 @@
             <div class="site-state-item site-state-tags">
               
                 <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">标签</span>
+                <span class="site-state-item-name">tags</span>
               
             </div>
           
@@ -489,6 +509,26 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/jiangeel" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/5705842691?refer_flag=1001030001_&nick=pppppoke&is_hot=1#_loginLayer_1500990415114" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
           
         </div>
 
@@ -529,11 +569,11 @@
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主题 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
