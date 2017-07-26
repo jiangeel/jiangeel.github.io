@@ -274,6 +274,164 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/07/26/2017-07-26/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eel">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="REMEMBER">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/26/2017-07-26/" itemprop="url">Safari Bookmarklet 实现切换 Google 搜索结果的语言</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-26T19:58:00+08:00">
+                2017-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mac/" itemprop="url" rel="index">
+                    <span itemprop="name">Mac</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Safari-Bookmarklet-实现切换-Google-搜索结果的语言"><a href="#Safari-Bookmarklet-实现切换-Google-搜索结果的语言" class="headerlink" title="Safari Bookmarklet 实现切换 Google 搜索结果的语言"></a>Safari Bookmarklet 实现切换 Google 搜索结果的语言</h1><p>##背景</p>
+<p>Google 搜索的时候,常常遇到下面这样的情景:<br>输入的关键词是若干个英文,如:<br> <code>safari stylish</code></p>
+<p>由于输入的两个关键词都是英文单词, 且没有恰当的中文翻译, Google 默认给出的结果是英文结果优先, 而英文结果过多以至于掩盖中文结果。</p>
+<p>产生以上困扰的原因是我的英语水平处于勉强能看懂英文但较为吃力的水平，因此一般只有在没有满意的中文结果时才去翻看英文结果。</p>
+<p>当然可以通过点击<code>工具</code>-&gt;<code>不限语言</code>-&gt;<code>中文网页</code>的方式切换成中文,需要英文时再点<code>清除</code>恢复默认搜索语言<br><img src="http://otn2ksn9w.bkt.clouddn.com/17-7-26/42107748.jpg" alt=""><br>但是要左点一下右点一下太麻烦了。</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="JavaScript-代码"><a href="#JavaScript-代码" class="headerlink" title="JavaScript 代码:"></a>JavaScript 代码:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">javascript:void(function()&#123;if(location.hostname.indexOf(&quot;google&quot;))&#123;var%20keyword%20=%20document.getElementsByName(&quot;q&quot;)[0].value;if(location.href.indexOf(&quot;zh-CN&quot;)&lt;0)&#123;location.href%20=%20&quot;https://www.google.com/?&amp;q=#q=&quot;%20+%20keyword%20+%20&quot;&amp;lr=lang_zh-CN%7Clang_zh-TW&quot;;&#125;else&#123;location.href%20=%20&quot;https://www.google.com/?&amp;q=#q=&quot;%20+%20keyword&#125;&#125;&#125;)()</div></pre></td></tr></table></figure>
+<h3 id="添加书签"><a href="#添加书签" class="headerlink" title="添加书签"></a>添加书签</h3><p>在 safari 中添加一个书签,名字和位置都随意,然后将书签地址改为以上代码<br><img src="media/15010719626064.jpg" alt=""></p>
+<p>此时在谷歌搜索界面点击该书签就能在<code>中文网页</code>和<code>不限语言</code>之间来回切换了</p>
+<h3 id="设置快捷键"><a href="#设置快捷键" class="headerlink" title="设置快捷键"></a>设置快捷键</h3><p><strong>如果只能用鼠标点的话当然是不可接受的</strong></p>
+<p>在<code>系统偏好设置</code>-&gt;<code>键盘</code>-&gt;<code>快捷键</code>中找到如下图位置<br>在<code>应用快捷键</code>中点击中下方的<code>+</code>号,并在弹出窗口中</p>
+<ul>
+<li>选择 应用为<code>Safari.app</code>, </li>
+<li>标题为之前添加的书签名(必须一模一样),</li>
+<li>设置相应的快捷键<br><img src="http://otn2ksn9w.bkt.clouddn.com/17-7-26/16891697.jpg" alt=""></li>
+</ul>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>至此在使用 Google 搜索时就能通过快捷键切换搜索语言了</p>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ol>
+<li>js 代码只匹配了 主机名关键词<code>google</code>,在用谷歌搜索图片、视频、新闻等时会跳转到普通搜索结果，不过这几个我倒是从来搜，搜了也不用换语言，所以暂时没有影响。</li>
+<li>快捷键并不是全局的, 且优先级不高，我设置的 <code>option + s</code>,光标聚焦在搜索框或地址栏的时候会打出<code>ß</code>符号.</li>
+</ol>
+<h2 id="另外"><a href="#另外" class="headerlink" title="另外"></a>另外</h2><p>原本想按照 Search Engine Switcher 那样做一个扩展的,但是找了半天都没学会怎么下载开发者证书,生成 <code>.safariextension</code>的扩展文件,如果谁会的话请联系我…</p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="http://zythum.github.io/mama2/" target="_blank" rel="external">妈妈再也不用担心我的 MacBook 发热了计划2</a></p>
+<p><a href="https://sspai.com/post/39169?utm_source=weibo&amp;utm_medium=sspai&amp;utm_campaign=weibo&amp;utm_content=shortcut&amp;utm_term=tips" target="_blank" rel="external">不是你熟悉的 macOS 快捷键</a></p>
+<p><a href="http://www.ruanyifeng.com/blog/2011/06/a_guide_for_writing_bookmarklet.html" target="_blank" rel="external">Bookmarklet编写指南</a></p>
+<p><a href="https://github.com/RayPS/Search-Engine-Switcher" target="_blank" rel="external">https://github.com/RayPS/Search-Engine-Switcher</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/07/25/2017-07-25/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1809,146 +1967,6 @@ for num in range(1,31):
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/03/05/markdown-yu-fa-he-mweb-xie-zuo-shi-yong-shuo-ming/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Eel">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="REMEMBER">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/05/markdown-yu-fa-he-mweb-xie-zuo-shi-yong-shuo-ming/" itemprop="url">Markdown 语法和 MWeb 写作使用说明</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-05T01:27:17+08:00">
-                2017-03-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/未分类/" itemprop="url" rel="index">
-                    <span itemprop="name">未分类</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="Markdown-的设计哲学"><a href="#Markdown-的设计哲学" class="headerlink" title="Markdown 的设计哲学"></a>Markdown 的设计哲学</h2><blockquote>
-<p>Markdown 的目標是實現「易讀易寫」。<br>  不過最需要強調的便是它的可讀性。一份使用 Markdown 格式撰寫的文件應該可以直接以純文字發佈，並且看起來不會像是由許多標籤或是格式指令所構成。<br>  Markdown 的語法有個主要的目的：用來作為一種網路內容的<em>寫作</em>用語言。</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/05/markdown-yu-fa-he-mweb-xie-zuo-shi-yong-shuo-ming/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1999,7 +2017,7 @@ for num in range(1,31):
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">36</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -2010,7 +2028,7 @@ for num in range(1,31):
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -2021,7 +2039,7 @@ for num in range(1,31):
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
