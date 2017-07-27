@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[Safari Bookmarklet 实现切换 Google 搜索结果的语言]]></title>
-    <url>%2F2017%2F07%2F26%2Fcj5m15sjo0002wufutgba4y3w%2F</url>
+    <url>%2F2017%2F07%2F26%2Fcj5m1nmm3000764fuojei87yi%2F</url>
     <content type="text"><![CDATA[背景Google 搜索的时候,常常遇到下面这样的情景:输入的关键词是若干个英文,如: safari stylish 由于输入的两个关键词都是英文单词, 且没有恰当的中文翻译, Google 默认给出的结果是英文结果优先, 而英文结果过多以至于掩盖中文结果。 产生以上困扰的原因是我的英语水平处于勉强能看懂英文但较为吃力的水平，因此一般只有在没有满意的中文结果时才去翻看英文结果。 当然可以通过点击工具-&gt;不限语言-&gt;中文网页的方式切换成中文,需要英文时再点清除恢复默认搜索语言但是要左点一下右点一下太麻烦了。 步骤JavaScript 代码:1javascript:void(function()&#123;if(location.hostname.indexOf(&quot;google&quot;))&#123;var keyword = document.getElementsByName(&quot;q&quot;)[0].value;if(location.href.indexOf(&quot;zh-CN&quot;)&lt;0)&#123;location.href = &quot;https://www.google.com/?&amp;q=#q=&quot; + keyword + &quot;&amp;lr=lang_zh-CN%7Clang_zh-TW&quot;;&#125;else&#123;location.href = &quot;https://www.google.com/?&amp;q=#q=&quot; + keyword&#125;&#125;&#125;)() 添加书签在 safari 中添加一个书签,名字和位置都随意,然后将书签地址改为以上代码 此时在谷歌搜索界面点击该书签就能在中文网页和不限语言之间来回切换了 设置快捷键如果只能用鼠标点的话当然是不可接受的 在系统偏好设置-&gt;键盘-&gt;快捷键中找到如下图位置在应用快捷键中点击中下方的+号,并在弹出窗口中 选择 应用为Safari.app, 标题为之前添加的书签名(必须一模一样), 设置相应的快捷键 使用至此在使用 Google 搜索时就能通过快捷键切换搜索语言了 缺点 js 代码只匹配了 主机名关键词google,在用谷歌搜索图片、视频、新闻等时会跳转到普通搜索结果，不过这几个我倒是从来搜，搜了也不用换语言，所以暂时没有影响。 快捷键并不是全局的, 且优先级不高，我设置的 option + s,光标聚焦在搜索框或地址栏的时候会打出ß符号. 另外原本想按照 Search Engine Switcher 那样做一个扩展的,但是找了半天都没学会怎么下载开发者证书,生成 .safariextension的扩展文件,如果谁会的话请联系我… 参考链接妈妈再也不用担心我的 MacBook 发热了计划2不是你熟悉的 macOS 快捷键Bookmarklet编写指南https://github.com/RayPS/Search-Engine-Switcher END]]></content>
       <categories>
         <category>Mac</category>
@@ -17,24 +17,23 @@
   </entry>
   <entry>
     <title><![CDATA[暑假第一记]]></title>
-    <url>%2F2017%2F07%2F25%2Fcj5m15slr002wwufuq659hm01%2F</url>
+    <url>%2F2017%2F07%2F25%2Fcj5m1nmnp002t64fu39jfdwp3%2F</url>
     <content type="text"><![CDATA[VPS前几天折腾好了国外 vultr 的vps, 打算渐渐远离国内的阿里云了.昨晚随便找了个国外域名和 dns 管理的服务商my.freenom.com注册了 eeljiang.cf, .cf的域名好像是免费一年的,也不知道后面会怎样。 更新后来发现freenom 注册的域名居然屏蔽了大陆的 IP, 也就是不翻墙的话是访问不了的? (还有这种操作) 想了想还是忍痛买了正规的. com吧, 说是忍痛一百块一年其实也不贵。 dns 解析要用国内的服务商才好，国外的解析服务的话，国内访问的时候可能会出现无法解析的情况。看知乎上推荐的最多的 是dnspod。 跑去搜索一看, 原来已经被腾讯收购了……整一个账号也成了腾讯云了，注册完就变成腾讯云用户了，这样一来又感觉和之前阿里云的没啥区别了。 所以截至目前, eeljiang.cn, eeljiang.cf, eeljiang.com, 都是可以访问的了, 其中除了.com,其他两个都将在几个月后过期并不再续费。.cn需要实名备案实在有点难受,最近形势又有点紧 BLOG今晚终于把原来阿里云上的搭建的 wordpress 上的几篇文章转移过来了。博客框架改用了比 wp 更轻量的 hexo。因为轻, 所以很多操作都在命令行上进行了,我还是很喜欢的. 到目前为止 hexo 给我的印象是非常好的.从插件的安装到主题的选择,还有本地和服务端的部署都很顺利.明天准备尝试同时部署到 github 上. 搞笑的是一开始不知道 hexo 是要装在自己电脑端的, 我直接装在了远端 vps 上,虽然也装好了,然而日志提示输入localhost:4000进行访问的时候还没发觉不对劲,强行输入了 eeljiang.cf:4000 才刷出来.后来仔细看了文档才搞明白. 更新在 github 上创建和自己同名的仓库+github.io, 就能生成个人静态博客页面,每个账户有且只有一个这样的静态页面,容量大概是500M.如我 github 的用户名是 jiangeel,那么就创建 名为jiangeel.github.io的仓库.如下图,报错是因为我已经创建过了. 然后你就拥有了一个和普通项目 差不多的页面。 图中的文件是 hexo 生成的作为博客的静态文件，我们可以直接访问项目的名字作为的地址,也就是 http://jiangeel.github.io 来访问由这些静态文件形成的博客界面。 最终效果在全部配置完毕后,最后可以通过以下操作来管理博客界面 在本地用 markdown 编辑器将文章编辑完毕 $ hexo g -d 来一键生成静态文件并部署到远端 (g=generate,d=deploy) 具体配置参考https://hexo.io/zh-cn/docs/index.html]]></content>
+      <tags>
+        <tag>VPS</tag>
+        <tag>Blog</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[三月份的几个Python练手小项目]]></title>
     <url>%2F2017%2F03%2F17%2F236%2F</url>
-    <content type="text"><![CDATA[基本都是单文件的小练习，在一行一行地敲的过程中又再接触、再理解了下面的语法或者使用技巧。 但是我相信以后再遇到还是有一些会忘记，还是要去查去记的。 ‘2048’的小游戏￼ 2.ord3. char = keyboard.getch()4. lambda匿名函数5. 函数定义中的变量可以在定义部分之后，函数调用时所有变量必须在这之前6. defaultdict（）7. line = (1,2,3,4,5)[1:] 等于去掉元祖的第一个元素8. ‘’.join9. ‘’.format(num) html2pdf enumerate() docstring urlparse .format wkhtmltopdf/image re with open() as f: python送爱心￼ yield worldcloud]]></content>
+    <content type="text"><![CDATA[基本都是单文件的小练习，在一行一行地敲的过程中又再接触、再理解了下面的语法或者使用技巧。 但是我相信以后再遇到还是有一些会忘记，还是要去查去记的。 ‘2048’的小游戏 2.ord3. char = keyboard.getch()4. lambda匿名函数5. 函数定义中的变量可以在定义部分之后，函数调用时所有变量必须在这之前6. defaultdict（）7. line = (1,2,3,4,5)[1:] 等于去掉元祖的第一个元素8. ‘’.join9. ‘’.format(num) html2pdf enumerate() docstring urlparse .format wkhtmltopdf/image re with open() as f: python送爱心 yield worldcloud]]></content>
       <categories>
         <category>未分类</category>
       </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[修改Hosts实现科学上网]]></title>
-    <url>%2F2017%2F03%2F10%2F230%2F</url>
-    <content type="text"><![CDATA[好气啊，在手机上都写地差不多了，到了电脑上被同步成了未完成的状态，又得重写近些天原来十分稳定又快速的shadowsocks开始不在状态了，严重的时候什么都打不开，几分钟就要重启一下。 想去官网提交个工单反馈一下都没办法。（百度是搜不到官网的） 四处搜索的时候就不小心学会了另一个科学上网的方法：修改hosts文件。 hosts hosts文件是一个用于储存计算机网络中各节点信息的计算机文件。这个文件负责将主机名称映射到相应的IP地址。hosts文件通常用于补充或替换网络中DNS的功能。和DNS不同的是，计算机的用户可以直接对hosts文件进行控制。 简单的说hosts文件就是一个和dns服务器一样解析域名的。 区别在于，hosts是存在本地计算机中的，不同的操作系统位置有所不同。 操作系统 路径 Unix、类Unix系统（例如Linux等） /etc/hosts Microsoft Windows %SystemRoot%\System32\drivers\etc\hosts Android /etc/hosts（指向/system/etc/hosts的符号链接) iOS /etc/hosts（指向/private/etc/hosts的符号链接) Mac OS X 10.2和更新版本 /etc/hosts（指向/private/etc/hosts的符号链接） 原理在GFW屏蔽国外网站的方法中，有一种最简单的就是dns污染，将请求的目标域名指向一个无用的IP，从而实现阻止访问。 而修改hosts后，本机就会直接访问对应的IP，而绕过上游DNS服务器。 修改方法访问网站的IP是会变化的，我们需要每隔一到几个月就更新一次hosts文件。 在万能的github上已经有大神整理并定时更新的hosts文件，我们去下载后替换即可。 最新可用的 hosts文件 这里还有更加方便的方法，即一件更新并替换的工具。 Hosts Tool Pool 优点 不经过 vpn 或者代理商的服务器，直接访问，所以速度快，较为稳定。 免费 使用限制 只能对固定ip的网站访问，并需要https的连接。因此youtube上的视频是加载不了的。（YouTube网页本身能打开） 目标网站IP变动后就需要更新hosts，不能一劳永逸。 hosts的其他用法屏蔽某些网页将需要屏蔽的 域名 和 ip按相同格式写入hosts即可，其中ip改为127.0.0.1。再次访问改域名时会重定向至空白页。]]></content>
-      <categories>
-        <category>未分类</category>
-      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[修改Hosts实现科学上网]]></title>
@@ -48,10 +47,13 @@
   <entry>
     <title><![CDATA[If __Name__ == '__Main__']]></title>
     <url>%2F2017%2F03%2F08%2F209%2F</url>
-    <content type="text"><![CDATA[以前看到许多python的小项目，最代码后都会有一句 if __name__ == &apos;__main__&apos;: main() `&lt;/pre&gt; 今天终于查了一下了解了它的作用。 我们知道 python 可以通过将代码封装成一个模块，并在其他代码中`import`。而用`if __name__ == &apos;__main__&apos;`可以判断是否是在cmd直接运行该.py文件。 在`main()`函数前加入了一个判断语句，以此来让脚本判断自己是被当做**模块调用**，还是被**直接运行**的。 * * * 模块是对象，并且所有的模块都有一个内置属性 `__name__`。一个模块的 `__name__` 的值取决于你如何应用模块。 如果 import 一个模块，那么模块name 的值通常为模块文件名，不带路径或者文件扩展名。 但如果像一个标准的程序样直接运行模块，在这种情况下, __name__的值将是一个特别缺省__main__。 总之 运行方式 ‘name‘的值 在cmd中直接运行.py文件 ‘main‘ import入一个.py 文件名不带扩展 从而用if name == ‘main‘来判断是否是在直接运行该.py文件。 当被 import 作为模块调用的时候，if以下的代码就不会被执行，也就是说main()函数不会被执行。 如:##Test.py `class Test: def __init(self):pass def f(self):print &apos;Hello, World!&apos; if name == ‘main‘: Test().f() ￼ 图中可以看出: __name__ == &#39;__main__&#39; 而如果：￼ 可以看到 __name__为我的文件test.py的不带扩展的文件名。]]></content>
+    <content type="text"><![CDATA[以前看到许多python的小项目，最代码后都会有一句 if __name__ == &apos;__main__&apos;: main() `&lt;/pre&gt; 今天终于查了一下了解了它的作用。 我们知道 python 可以通过将代码封装成一个模块，并在其他代码中`import`。而用`if __name__ == &apos;__main__&apos;`可以判断是否是在cmd直接运行该.py文件。 在`main()`函数前加入了一个判断语句，以此来让脚本判断自己是被当做**模块调用**，还是被**直接运行**的。 * * * 模块是对象，并且所有的模块都有一个内置属性 `__name__`。一个模块的 `__name__` 的值取决于你如何应用模块。 如果 import 一个模块，那么模块name 的值通常为模块文件名，不带路径或者文件扩展名。 但如果像一个标准的程序样直接运行模块，在这种情况下, __name__的值将是一个特别缺省__main__。 总之 运行方式 ‘name‘的值 在cmd中直接运行.py文件 ‘main‘ import入一个.py 文件名不带扩展 从而用if name == ‘main‘来判断是否是在直接运行该.py文件。 当被 import 作为模块调用的时候，if以下的代码就不会被执行，也就是说main()函数不会被执行。 如:##Test.py `class Test: def __init(self):pass def f(self):print &apos;Hello, World!&apos; if name == ‘main‘: Test().f() 图中可以看出: __name__ == &#39;__main__&#39; 而如果： 可以看到 __name__为我的文件test.py的不带扩展的文件名。]]></content>
       <categories>
         <category>未分类</category>
       </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[PyQT5的初体验]]></title>
@@ -60,6 +62,10 @@
       <categories>
         <category>未分类</category>
       </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>PyQt</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[PIP更换源]]></title>
@@ -68,16 +74,21 @@
       <categories>
         <category>未分类</category>
       </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>PIP</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[爬虫闯关]]></title>
     <url>%2F2017%2F03%2F06%2F167%2F</url>
-    <content type="text"><![CDATA[闯关地址 第一关￼简单的说，就是需要你不停地按照页面中的五位数字，在游览器地址栏中最后输入，并进入下一个界面。 前两关用到的都是urllib模块。在爬虫中算是最常见了的吧。 import urllib import re tmp_re=urllib.urlopen(&apos;http://www.heibanke.com/lesson/crawler_ex00/&apos;) html=tmp_re.read() index=re.findall(r&apos;输入数字([0-9]{5})&apos;,html) while index: url=&apos;http://www.heibanke.com/lesson/crawler_ex00/%s/&apos; % index[0] print url tmp_re=urllib.urlopen(url) html=tmp_re.read() index=re.findall(r&apos;数字是([0-9]{5})&apos;,html) print html `&lt;/pre&gt; ![](http://www.blog.eeljiang.cn/wp-content/uploads/2017/03/14887258259290.jpg)￼ ## 第二关 ![](http://www.blog.eeljiang.cn/wp-content/uploads/2017/03/14887267097303.jpg)￼ 第二题看起来直观多了，关键只有一个密码，而且最多就是三十个数字之一。~~答案是17~~ &lt;pre&gt;`import urllib import re data={&apos;username&apos;:&apos;Tom&apos;} url=&apos;http://www.heibanke.com/lesson/crawler_ex01/&apos; for num in range(1,31): data[&apos;password&apos;]=num post_data=urllib.urlencode(data) print post_data response=urllib.urlopen(url,post_data) html=response.read() result=re.findall(&apos;密码错误&apos;,html) if not result: print html break ￼ 第三关第三关中多了一个csrf保护。也就是每次提交的时候需要多传递一个字串。第二题是乎也有csrf！。。。以下是百科上对csrf的介绍 跨站请求伪造（英语：Cross-site request forgery），也被称为 one-click attack 或者 session riding，通常缩写为 CSRF 或者 XSRF， 是一种挟制用户在当前已登录的Web应用程序上执行非本意的操作的攻击方法。[1] 跟跨网站脚本（XSS）相比，XSS 利用的是用户对指定网站的信任，CSRF 利用的是网站对用户网页浏览器的信任。 一般有两种防御措施： 检查Referer字段 添加校验toke 题目中的就应该属于第二种。 ￼ 未完。。[TOC]]]></content>
+    <content type="text"><![CDATA[闯关地址 第一关简单的说，就是需要你不停地按照页面中的五位数字，在游览器地址栏中最后输入，并进入下一个界面。 前两关用到的都是urllib模块。在爬虫中算是最常见了的吧。 import urllib import re tmp_re=urllib.urlopen(&apos;http://www.heibanke.com/lesson/crawler_ex00/&apos;) html=tmp_re.read() index=re.findall(r&apos;输入数字([0-9]{5})&apos;,html) while index: url=&apos;http://www.heibanke.com/lesson/crawler_ex00/%s/&apos; % index[0] print url tmp_re=urllib.urlopen(url) html=tmp_re.read() index=re.findall(r&apos;数字是([0-9]{5})&apos;,html) print html `&lt;/pre&gt; ![](http://www.blog.eeljiang.cn/wp-content/uploads/2017/03/14887258259290.jpg) ## 第二关 ![](http://www.blog.eeljiang.cn/wp-content/uploads/2017/03/14887267097303.jpg) 第二题看起来直观多了，关键只有一个密码，而且最多就是三十个数字之一。~~答案是17~~ &lt;pre&gt;`import urllib import re data={&apos;username&apos;:&apos;Tom&apos;} url=&apos;http://www.heibanke.com/lesson/crawler_ex01/&apos; for num in range(1,31): data[&apos;password&apos;]=num post_data=urllib.urlencode(data) print post_data response=urllib.urlopen(url,post_data) html=response.read() result=re.findall(&apos;密码错误&apos;,html) if not result: print html break 第三关第三关中多了一个csrf保护。也就是每次提交的时候需要多传递一个字串。第二题是乎也有csrf！。。。以下是百科上对csrf的介绍 跨站请求伪造（英语：Cross-site request forgery），也被称为 one-click attack 或者 session riding，通常缩写为 CSRF 或者 XSRF， 是一种挟制用户在当前已登录的Web应用程序上执行非本意的操作的攻击方法。[1] 跟跨网站脚本（XSS）相比，XSS 利用的是用户对指定网站的信任，CSRF 利用的是网站对用户网页浏览器的信任。 一般有两种防御措施： 检查Referer字段 添加校验toke 题目中的就应该属于第二种。 未完。。[TOC]]]></content>
       <categories>
         <category>未分类</category>
       </categories>
       <tags>
-        <tag>静态网站</tag>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
@@ -89,6 +100,7 @@
       </categories>
       <tags>
         <tag>MWeb</tag>
+        <tag>Markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -99,8 +111,8 @@
         <category>未分类</category>
       </categories>
       <tags>
-        <tag>chrome</tag>
         <tag>stylish</tag>
+        <tag>chrome</tag>
       </tags>
   </entry>
   <entry>
@@ -130,6 +142,9 @@
       <categories>
         <category>未分类</category>
       </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Windows引导修复记录]]></title>
@@ -138,10 +153,13 @@
       <categories>
         <category>Linux</category>
       </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[添加Swap及开启挂起记录]]></title>
-    <url>%2F2016%2F09%2F19%2Fcj5m15skq0015wufuv4fkscjb%2F</url>
+    <url>%2F2016%2F09%2F19%2Fcj5m1nmmp000y64fuopbk4msc%2F</url>
     <content type="text"><![CDATA[有人说内存比较大的时候（比如我的是8g），就不需要swap内存了。在windows上好像的确是不太需要虚拟内存了。然而当我想要挂起的时候，发现挂起后就无法唤醒了。 经过测验：1.并非外接显示器的缘故。只用笔记本自带的显示器也无法唤醒（显示器是新添加的，谁知道会不会是它的缘故呢）2.缺失laptop-mode-tools. 经过$sudo apt-get install laptop-mode-tools后，再cat /proc/sys/vm/laptop_mode，发现数字是0，因此为非启动状态。于是编辑 /etc/laptop-mode/laptop-mode.conf,设置ENABLE_LAPTOP_MODE_ON_AC=1，看起来是连着电源的时候也能挂起的意思吧。再sudo laptop-mode start,最后再cat 一遍/proc/sys/vm/laptop_mode，结果是2了。小小激动了一把。然而并没什么用。3.几天后想到休眠时把内存中的东西放到硬盘里，也许中间需要swap来过度什么的。又想到自己没有swap，所以打算添加一个swap分区。 添加过程：1.自己的ubuntu是笔记本上剩下的30g硬盘，几乎全装给了 / 目录，而swap又需要内存的一半到2倍左右，也就是5-10g吧。2.搜索到添加swap有两种方式：1.传统分区添加。2.比较方便的创建一个大文件，然后转化成swap。遂选择第二种。3.首先用dd命令创建10g的空间,创建在/root/swapfile下。$dd if=/dev/zero of=/root/swapfile bs=1M count=102404.然后将文件转化为swap格式。$mkswap /root/swapfile5.启用swap文件:$swapon /swapfile提示权限644的权限不好，暂时不知道为啥，就根据系统的建议改成600吧 $chmod 600 /root/swaofile6.最后$free 命令可以看到的确有了10g的swap空间。7.在/etc/fstab中添加一行,这样swap就每次开机有效了！/root/swapfile swap swap defaults 0 0(估计比较特殊吧，都不用uuid的)8.另外之前乱修改fstab搞得无法启动系统了，所以给fstab加了chattr +i，今天又忘记了，sudo了半天都修改不了，花了很久才意识到……]]></content>
       <categories>
         <category>Linux</category>
@@ -159,6 +177,9 @@
       <categories>
         <category>Linux</category>
       </categories>
+      <tags>
+        <tag>Liunx</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[VI的一些基本用法]]></title>
@@ -167,6 +188,10 @@
       <categories>
         <category>Linux</category>
       </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Vim</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[【转】神器——Chrome开发者工具]]></title>
@@ -209,6 +234,9 @@
       <categories>
         <category>杂物</category>
       </categories>
+      <tags>
+        <tag>English</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[PHP中::、->、Self、$this操作符的区别]]></title>
@@ -217,6 +245,9 @@
       <categories>
         <category>PHP</category>
       </categories>
+      <tags>
+        <tag>PHP</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[C++sort()函数的用法]]></title>
@@ -249,6 +280,9 @@
       <categories>
         <category>PHP</category>
       </categories>
+      <tags>
+        <tag>PHP</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[【转】如何着手学习一个新的PHP框架]]></title>
@@ -284,6 +318,9 @@
       <categories>
         <category>CSS</category>
       </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[比较输入数字与随机数组首元素大小]]></title>
@@ -292,6 +329,9 @@
       <categories>
         <category>c++</category>
       </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[汉诺塔/指针/递归]]></title>
@@ -301,6 +341,9 @@
         <category>ACM</category>
         <category>c++</category>
       </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[[转]大数运算的算法]]></title>
@@ -309,13 +352,9 @@
       <categories>
         <category>ACM</category>
       </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[世界，您好！]]></title>
-    <url>%2F2016%2F02%2F14%2F1%2F</url>
-    <content type="text"><![CDATA[欢迎使用WordPress。这是您的第一篇文章。编辑或删除它，然后开始写作吧！]]></content>
-      <categories>
-        <category>未分类</category>
-      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>算法</tag>
+      </tags>
   </entry>
 </search>

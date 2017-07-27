@@ -95,7 +95,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="REMEMBER">
-<meta property="og:url" content="http://45.76.66.159/tags/Linux/index.html">
+<meta property="og:url" content="http://45.76.66.159/tags/linux/index.html">
 <meta property="og:site_name" content="REMEMBER">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://45.76.66.159/tags/Linux/"/>
+  <link rel="canonical" href="http://45.76.66.159/tags/linux/"/>
 
 
 
 
 
-  <title>Tag: Linux | REMEMBER</title>
+  <title>Tag: linux | REMEMBER</title>
   
 
 
@@ -288,7 +288,7 @@
 
   <div id="posts" class="posts-collapse">
     <div class="collection-title">
-      <h1>Linux<small>Tag</small>
+      <h1>linux<small>Tag</small>
       </h1>
     </div>
 
@@ -300,9 +300,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2016/09/22/105/" itemprop="url">
+            <a class="post-title-link" href="/2016/09/22/109/" itemprop="url">
               
-                <span itemprop="name">把Home独立分区挂载</span>
+                <span itemprop="name">Ubuntu下软件安装记录</span>
               
             </a>
         
@@ -310,9 +310,37 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-22T20:32:17+08:00"
+              datetime="2016-09-22T20:19:12+08:00"
               content="2016-09-22" >
           09-22
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2016/09/19/cj5m1nmmp000y64fuopbk4msc/" itemprop="url">
+              
+                <span itemprop="name">添加Swap及开启挂起记录</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-09-19T20:01:47+08:00"
+              content="2016-09-19" >
+          09-19
         </time>
       </div>
 
@@ -367,7 +395,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -389,7 +417,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -884,6 +912,46 @@
 
     // handle and trigger popup window;
     $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+ick(function(e) {
       e.stopPropagation();
       if (isfetched === false) {
         searchFunc(path, 'local-search-input', 'local-search-result');
