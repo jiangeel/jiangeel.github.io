@@ -298,6 +298,163 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2016/02/14/14/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eel">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="REMEMBER">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/02/14/14/" itemprop="url">比较输入数字与随机数组首元素大小</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-02-14T18:38:40+08:00">
+                2016-02-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article</span>
+                
+                <span title="Words count in article">
+                  122
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#include “stdafx.h”</p>
+<p>#include &lt;string&gt;</p>
+<p>#include &lt;iostream&gt;</p>
+<p>#include &lt;ctime&gt;</p>
+<p>#include &lt;cstdlib&gt;</p>
+<p>using namespace std;</p>
+<p>/<em> run this program using the console pauser or add your own getch, system(“pause”) or input loop </em>/</p>
+<p>int myCompare(const int j, const int a[]);</p>
+<p>int main(int argc, char** argv) {</p>
+<p>srand(( unsigned)time(NULL ));</p>
+<p>int a[10];</p>
+<p>for (auto &amp;i : a)</p>
+<p>i = rand() % 10;</p>
+<p>cout &lt;&lt; “enter a number:” &lt;&lt; endl;</p>
+<p>int j;</p>
+<p>cin &gt;&gt; j;</p>
+<p>cout &lt;&lt; “您输入的数与数组首元素中较大的是：” &lt;&lt; myCompare(j, a) &lt;&lt; endl;</p>
+<p>cout &lt;&lt; “数组的全部元素是：” &lt;&lt; endl;</p>
+<p>for (auto i : a)</p>
+<p>cout &lt;&lt; i &lt;&lt; ‘ ‘;</p>
+<p>cout &lt;&lt; endl;</p>
+<p>return 0;</p>
+<p>}</p>
+<p>int myCompare(const int j, const int *a)</p>
+<p>{</p>
+<p>return (j &gt; <em>a) ? j : </em>a;</p>
+<p>}</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2016/02/14/9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -623,7 +780,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -645,7 +802,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

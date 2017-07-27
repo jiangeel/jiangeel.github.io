@@ -298,6 +298,159 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/07/27/cj5mb8pbq00009qfu9ztyubz4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eel">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="REMEMBER">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/27/cj5mb8pbq00009qfu9ztyubz4/" itemprop="url">使用SSH Key登录并禁用root密码登录并修改端口号</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-27T15:34:00+08:00">
+                2017-07-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article</span>
+                
+                <span title="Words count in article">
+                  547
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="使用密钥登录"><a href="#使用密钥登录" class="headerlink" title="使用密钥登录"></a>使用密钥登录</h2><h3 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h3><p>ssh除了使用密码验证外，还可以使用公私密钥的验证方式。<br>客户端生成一个私钥和一个与之对应的公钥，然后将公钥上传到服务器上。</p>
+<h3 id="本地机器创建公钥"><a href="#本地机器创建公钥" class="headerlink" title="本地机器创建公钥"></a>本地机器创建公钥</h3><p><code>ssh-keygen -t rsa -C  &#39;your email&#39;</code></p>
+<p><img src="http://otn2ksn9w.bkt.clouddn.com/17-7-27/95411675.jpg" alt=""><br>完成后生成如图两个文件,其中带<code>pub</code>结尾的是公钥,待会需要上传到服务器上保存</p>
+<h3 id="将公钥复制到ssh服务器"><a href="#将公钥复制到ssh服务器" class="headerlink" title="将公钥复制到ssh服务器"></a>将公钥复制到ssh服务器</h3><p>将前一步骤生成的公钥<code>~/id_rsa.pub</code>文件，复制到ssh服务器对应用户下的<code>~/.ssh/authorized_keys</code>文件中。如果不存在则手动创建即可。</p>
+<p><strong>注意</strong> 当第二台设备生成公钥保存到此文件中时，请不要将之前的记录覆盖，应使用追加写入的方式。<br>如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat id_rsa.pub &gt;&gt; .ssh/authorized_keys</div></pre></td></tr></table></figure>
+<h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><p>完成以上步骤后，即可使用以下命令直接登录ssh服务器。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh username@hostname</div></pre></td></tr></table></figure>
+<h3 id="自定义别名"><a href="#自定义别名" class="headerlink" title="自定义别名"></a>自定义别名</h3><p>可以在<code>~/.ssh/config</code>中配置（未存在则新建即可）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Host                  yoyoyo</div><div class="line">HostName              hostname  #ssh服务器ip或域名</div><div class="line">User                  root #ssh服务器用户名</div><div class="line">IdentityFile          id_rsa #生成的私钥</div></pre></td></tr></table></figure>
+<p>保存后即可使用以下命令快捷登录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh yoyoyo</div></pre></td></tr></table></figure>
+<h2 id="禁用密码验证登录"><a href="#禁用密码验证登录" class="headerlink" title="禁用密码验证登录"></a>禁用密码验证登录</h2><ol>
+<li>在服务器上配置：<code>/etc/ssh/sshd_config</code></li>
+<li>找到下面一行<code>PasswordAuthentication yes</code></li>
+<li>将<code>yes</code>改为<code>no</code>后保存。</li>
+<li>重启 <code>sshd</code>服务</li>
+</ol>
+<p><strong>关于密钥的生成:</strong><br>有教程是在服务器上生成，然后将密钥传回本地的。<br>如果是服务器生成的话，<strong>切记将密钥传回本地后从服务器删除。</strong><br>因此我选择在本地生成密钥，后上传公钥的方法较为稳妥。</p>
+<h2 id="更改端口"><a href="#更改端口" class="headerlink" title="更改端口"></a>更改端口</h2><p>还是在<code>/etc/ssh/sshd_config</code>中，找到 port项目，取消注释并修改为较大的端口，可以防端口扫描。</p>
+<p>返回到本地<code>~/.ssh/config</code>中，在之前的配置中增加 port 项和对应设置的端口：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Host                  yoyoyo</div><div class="line">HostName              hostname  #ssh服务器ip或域名</div><div class="line">Port                  1234 #端口号</div><div class="line">User                  root #ssh服务器用户名</div><div class="line">IdentityFile          id_rsa #生成的私钥</div></pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.jianshu.com/p/460b4ce4f8e1" target="_blank" rel="external">在Mac上远程登录VPS</a><br><a href="https://www.duoluodeyu.com/1114.html" target="_blank" rel="external">Linux配置使用SSH Key登录并禁用root密码登录</a></p>
+<h2 id="END"><a href="#END" class="headerlink" title="END"></a>END</h2>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/07/26/cj5m22u6e0000etfuiv2y52k6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1831,220 +1984,6 @@ for num in range(1,31):
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/03/03/157/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Eel">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="REMEMBER">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/03/157/" itemprop="url">用Stylish修改网页，加快重复性劳动时的速度</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-03T21:38:16+08:00">
-                2017-03-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article</span>
-                
-                <span title="Words count in article">
-                  723
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="stylish简介"><a href="#stylish简介" class="headerlink" title="stylish简介"></a>stylish简介</h2><blockquote>
-<p>利用用户样式管理器Stylish来重新编辑网站的样式。您可利用Stylish为许多网站安装主题和皮肤，也可创建自己的主题和皮肤。<br>  ★ 为Reddit添加黑色风格，使用简约的Facebook，或者更改Google、Twitter或您最爱的任意网站的外观。</p>
-<p>★ 自定义背景、配色方案、字体甚至动画。</p>
-<p>★ 方便地禁用、启用、编辑或删除任意已安装主题。</p>
-<p>★ 利用Stylish的CSS编辑器创建自己的用户样式（主题），然后与数百万Stylish用户共享。</p>
-</blockquote>
-<p>## </p>
-<p>&emsp;&emsp;最近需要在一个视频网站上大量地上传视频，并附加封面、简介以及选择一些<code>允许转载</code>等勾选框。<img src="http://www.blog.eeljiang.cn/wp-content/uploads/2017/03/屏幕快照-2017-03-04-19.03.47.png" alt="%e5%b1%8f%e5%b9%95%e5%bf%ab%e7%85%a7-2017-03-04-19-03-47"></p>
-<p>&emsp;&emsp;然而因为宿舍网速慢，每次都需要去上课前挂起上传，白天在教学楼期间用手机<code>远程操控</code>寝室里的电脑进行确认。由于手机屏幕小，原生网页中的选项按钮比较小，并且有许多元素都没有用到，所以计划用chrome的<code>stylish</code>插件对上传的页面修改一下，方便手机远程操控时的操作，毕竟上传视频的电脑反应比较慢，多滚动一下页面也要迟钝好久。在几十上百次的上传过程中能省下不少时间，<del>也省下一些流量</del>。</p>
-<p>&emsp;&emsp;在chrome的商店中搜索并安装<code>stylish</code>后，可以直接在地址栏右边的插件图标上点击<code>左键</code>，并选择<code>新建样式</code>，插件会自动跳转到编辑页面。</p>
-<p><img src="http://www.blog.eeljiang.cn/wp-content/uploads/2017/03/屏幕快照-2017-03-04-19.17.27.png" alt="%e5%b1%8f%e5%b9%95%e5%bf%ab%e7%85%a7-2017-03-04-19-17-27"></p>
-<p>&emsp;&emsp;底部的<code>应用对象</code>栏代表中间所编辑的<code>css</code>代码作用的网页地址，其中地址支持完整的<code>页面地址</code>、<code>网址前缀</code>和<code>匹配正则表达式</code>的相应网页。</p>
-<p><img src="http://www.blog.eeljiang.cn/wp-content/uploads/2017/03/屏幕快照-2017-03-04-19.15.37.png" alt="%e5%b1%8f%e5%b9%95%e5%bf%ab%e7%85%a7-2017-03-04-19-15-37"></p>
-<p>&emsp;&emsp;我简单编辑的样式如下：（其实绝大部分都是隐藏了无用的元素，把几个不能选择的按钮隐藏，并扩大了要选择的按钮。）</p>
-<pre><code>.card-staff {
-    display: none
-}
-.card-label {
-    display: none
-}
-.card-label {
-    display: none
-}
-.related-href-ul {
-    display: none
-}
-.cwi-right {
-    display: none
-}
-.cwi-left-tbox {
-    height: 100px;
-}
-.cwi-txt1 {
-    height: 100px;
-}
-.card-btn-box .card-btn-box {
-    position: absolute;
-    right: 350px;
-    width: 400px;
-}
-.card_allow p[data-allow=&apos;false&apos;] {
-    display: none;
-}
-.type-tit + p {
-    display: none
-}
-/* .allow-tit +p{
-display:none;
-} */
-
-.page-footer {
-    display: none;
-}
-.cardupload-secbox {
-    height: auto
-}
-.cf-bottom {
-    display: none;
-}
-
-.au1-box2{
-padding:20px;
-}
-
-.au1-box1{
-padding:20px;
-}
-
-.confirm-pub{
-padding:20px;
-    position:absolute;
-    left:30px;   
-}
-</code></pre><p>&nbsp;&nbsp;添加后保存，返回网页，可以看到已经有了一些变化。<br><img src="http://www.blog.eeljiang.cn/wp-content/uploads/2017/03/屏幕快照-2017-03-04-19.02.52.png" alt="%e5%b1%8f%e5%b9%95%e5%bf%ab%e7%85%a7-2017-03-04-19-02-52"></p>
-<p>&emsp;&emsp;看起来并不优雅，变化也没有很大，但是对于小屏幕的手机操作来讲已经是很大的进步了。仔细看可以发现页面短了许多，因此游览时不需要滚动到下面再点击确认发布了<del>在手机上滚动网页真的很难</del>。</p>
-<hr>
-<p><strong>相关技能</strong>：</p>
-<ul>
-<li>远程控制软件：teamviewer（个人版免费)</li>
-<li>chrome检查元素工具</li>
-<li>css样式</li>
-</ul>
-<hr>
-<p>[TOC]</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2095,7 +2034,7 @@ padding:20px;
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -2117,7 +2056,7 @@ padding:20px;
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

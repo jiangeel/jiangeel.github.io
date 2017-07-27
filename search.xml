@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[使用SSH Key登录并禁用root密码登录并修改端口号]]></title>
+    <url>%2F2017%2F07%2F27%2Fcj5mb8pbq00009qfu9ztyubz4%2F</url>
+    <content type="text"><![CDATA[使用密钥登录工作原理ssh除了使用密码验证外，还可以使用公私密钥的验证方式。客户端生成一个私钥和一个与之对应的公钥，然后将公钥上传到服务器上。 本地机器创建公钥ssh-keygen -t rsa -C &#39;your email&#39; 完成后生成如图两个文件,其中带pub结尾的是公钥,待会需要上传到服务器上保存 将公钥复制到ssh服务器将前一步骤生成的公钥~/id_rsa.pub文件，复制到ssh服务器对应用户下的~/.ssh/authorized_keys文件中。如果不存在则手动创建即可。 注意 当第二台设备生成公钥保存到此文件中时，请不要将之前的记录覆盖，应使用追加写入的方式。如： 1cat id_rsa.pub &gt;&gt; .ssh/authorized_keys 登录完成以上步骤后，即可使用以下命令直接登录ssh服务器。 1ssh username@hostname 自定义别名可以在~/.ssh/config中配置（未存在则新建即可） 1234Host yoyoyoHostName hostname #ssh服务器ip或域名User root #ssh服务器用户名IdentityFile id_rsa #生成的私钥 保存后即可使用以下命令快捷登录： 1ssh yoyoyo 禁用密码验证登录 在服务器上配置：/etc/ssh/sshd_config 找到下面一行PasswordAuthentication yes 将yes改为no后保存。 重启 sshd服务 关于密钥的生成:有教程是在服务器上生成，然后将密钥传回本地的。如果是服务器生成的话，切记将密钥传回本地后从服务器删除。因此我选择在本地生成密钥，后上传公钥的方法较为稳妥。 更改端口还是在/etc/ssh/sshd_config中，找到 port项目，取消注释并修改为较大的端口，可以防端口扫描。 返回到本地~/.ssh/config中，在之前的配置中增加 port 项和对应设置的端口： 12345Host yoyoyoHostName hostname #ssh服务器ip或域名Port 1234 #端口号User root #ssh服务器用户名IdentityFile id_rsa #生成的私钥 参考在Mac上远程登录VPSLinux配置使用SSH Key登录并禁用root密码登录 END]]></content>
+      <tags>
+        <tag>Linux</tag>
+        <tag>SSH</tag>
+        <tag>安全防护</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Safari Bookmarklet 实现切换 Google 搜索结果的语言]]></title>
     <url>%2F2017%2F07%2F26%2Fcj5m22u6e0000etfuiv2y52k6%2F</url>
     <content type="text"><![CDATA[背景Google 搜索的时候,常常遇到下面这样的情景:输入的关键词是若干个英文,如: safari stylish 由于输入的两个关键词都是英文单词, 且没有恰当的中文翻译, Google 默认给出的结果是英文结果优先, 而英文结果过多以至于掩盖中文结果。 产生以上困扰的原因是我的英语水平处于勉强能看懂英文但较为吃力的水平，因此一般只有在没有满意的中文结果时才去翻看英文结果。 当然可以通过点击工具-&gt;不限语言-&gt;中文网页的方式切换成中文,需要英文时再点清除恢复默认搜索语言但是要左点一下右点一下太麻烦了。 步骤JavaScript 代码:1javascript:void(function()&#123;if(location.hostname.indexOf(&quot;google&quot;))&#123;var keyword = document.getElementsByName(&quot;q&quot;)[0].value;if(location.href.indexOf(&quot;zh-CN&quot;)&lt;0)&#123;location.href = &quot;https://www.google.com/?&amp;q=#q=&quot; + keyword + &quot;&amp;lr=lang_zh-CN%7Clang_zh-TW&quot;;&#125;else&#123;location.href = &quot;https://www.google.com/?&amp;q=#q=&quot; + keyword&#125;&#125;&#125;)() 添加书签在 safari 中添加一个书签,名字和位置都随意,然后将书签地址改为以上代码 此时在谷歌搜索界面点击该书签就能在中文网页和不限语言之间来回切换了 设置快捷键如果只能用鼠标点的话当然是不可接受的 在系统偏好设置-&gt;键盘-&gt;快捷键中找到如下图位置在应用快捷键中点击中下方的+号,并在弹出窗口中 选择 应用为Safari.app, 标题为之前添加的书签名(必须一模一样), 设置相应的快捷键 使用至此在使用 Google 搜索时就能通过快捷键切换搜索语言了 缺点 js 代码只匹配了 主机名关键词google,在用谷歌搜索图片、视频、新闻等时会跳转到普通搜索结果，不过这几个我倒是从来搜，搜了也不用换语言，所以暂时没有影响。 快捷键并不是全局的, 且优先级不高，我设置的 option + s,光标聚焦在搜索框或地址栏的时候会打出ß符号. 另外原本想按照 Search Engine Switcher 那样做一个扩展的,但是找了半天都没学会怎么下载开发者证书,生成 .safariextension的扩展文件,如果谁会的话请联系我… 参考链接妈妈再也不用担心我的 MacBook 发热了计划2不是你熟悉的 macOS 快捷键Bookmarklet编写指南https://github.com/RayPS/Search-Engine-Switcher END]]></content>
