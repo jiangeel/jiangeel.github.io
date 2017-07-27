@@ -143,7 +143,8 @@
         <category>未分类</category>
       </categories>
       <tags>
-        <tag>linux</tag>
+        <tag>Linux</tag>
+        <tag>Ubuntu</tag>
       </tags>
   </entry>
   <entry>
@@ -166,8 +167,8 @@
         <category>未分类</category>
       </categories>
       <tags>
-        <tag>swap</tag>
-        <tag>linux</tag>
+        <tag>Linux</tag>
+        <tag>Swap</tag>
       </tags>
   </entry>
   <entry>
@@ -179,6 +180,7 @@
       </categories>
       <tags>
         <tag>Linux</tag>
+        <tag>Ubuntu</tag>
       </tags>
   </entry>
   <entry>
