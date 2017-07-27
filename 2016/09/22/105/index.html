@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Linux,分区挂载," />
 
 
 
@@ -94,13 +94,14 @@
 
 
 <meta name="description" content="背景： 我的电脑只有500g机械+64g固态。某天发现有30g机械空余着，便安装了linux玩。没想到一用就变成了几天不开win了。linux用的一多，之前给的30g也瞬间不够了，就打算再从win那里挤一点出来，扩充一下。目标：打算按网上许多人说的，把/home单独挂载出来，以后出了问题，重装系统什么的也方便。过程： 在windows下用分区助手割下50g空余空间。 然而：磁盘分完后，原来隔壁的/">
+<meta name="keywords" content="Linux,分区挂载">
 <meta property="og:type" content="article">
 <meta property="og:title" content="把Home独立分区挂载">
 <meta property="og:url" content="http://45.76.66.159/2016/09/22/105/index.html">
 <meta property="og:site_name" content="REMEMBER">
 <meta property="og:description" content="背景： 我的电脑只有500g机械+64g固态。某天发现有30g机械空余着，便安装了linux玩。没想到一用就变成了几天不开win了。linux用的一多，之前给的30g也瞬间不够了，就打算再从win那里挤一点出来，扩充一下。目标：打算按网上许多人说的，把/home单独挂载出来，以后出了问题，重装系统什么的也方便。过程： 在windows下用分区助手割下50g空余空间。 然而：磁盘分完后，原来隔壁的/">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-07-25T11:33:05.000Z">
+<meta property="og:updated_time" content="2017-07-27T06:06:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="把Home独立分区挂载">
 <meta name="twitter:description" content="背景： 我的电脑只有500g机械+64g固态。某天发现有30g机械空余着，便安装了linux玩。没想到一用就变成了几天不开win了。linux用的一多，之前给的30g也瞬间不够了，就打算再从win那里挤一点出来，扩充一下。目标：打算按网上许多人说的，把/home单独挂载出来，以后出了问题，重装系统什么的也方便。过程： 在windows下用分区助手割下50g空余空间。 然而：磁盘分完后，原来隔壁的/">
@@ -120,9 +121,9 @@
       author: 'Author'
     },
     algolia: {
-      applicationID: 'TY5VB6QJ7R',
-      apiKey: 'de1f9edc549b9bb82599b757a8528ea3',
-      indexName: 'blog_Next',
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
@@ -391,6 +392,8 @@
 <p>在windows下用分区助手割下50g空余空间。</p>
 <p>然而：磁盘分完后，原来隔壁的/boot分区就没了！</p>
 <div>整个文件夹下都空了……</div><br><div>无奈只好再用刻录在u盘的启动盘把刚分出来的50g再完整装一遍linux，然后把新系统boot中的文件拷贝到原来空的boot中去。然后再在upstart模式下修改/etc/fstab中挂载boot的UUID。</div><br><div>在拷贝boot的过程中，用了rsync命令来进行同步。同步完了再用diff检查一下两个文件夹的异同（可以用meld这个图形化工具来分析，比较直观）。</div><br><div></div><br><div>终于能正常启动了以后，再到启动盘中，再像拷贝boot那样，在准备好的50g空闲分区中建立/home，把原来的home同步过去，再把原来home给清空（不然挂载到新分区了后，老地方还是占用这这么多空间），无误后修改fstab，重启，完成。</div><br><div>（其实一开始我单纯的直接在fstab中添加了一行新分区home的uuid和后面的常规参数，而新分区里其实并没有home文件夹以及里面的数据，导致卡在登陆界面，无限循环在输入密码又无法载入桌面的情况……）</div><br><div></div>
+
+
       
     </div>
 
@@ -416,6 +419,14 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/分区挂载/" rel="tag"># 分区挂载</a>
+          
+        </div>
       
 
       
@@ -502,7 +513,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -524,7 +535,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

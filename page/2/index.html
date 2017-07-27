@@ -116,9 +116,9 @@
       author: 'Author'
     },
     algolia: {
-      applicationID: 'TY5VB6QJ7R',
-      apiKey: 'de1f9edc549b9bb82599b757a8528ea3',
-      indexName: 'blog_Next',
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
@@ -744,6 +744,8 @@ padding:20px;
 <p>在windows下用分区助手割下50g空余空间。</p>
 <p>然而：磁盘分完后，原来隔壁的/boot分区就没了！</p>
 <div>整个文件夹下都空了……</div><br><div>无奈只好再用刻录在u盘的启动盘把刚分出来的50g再完整装一遍linux，然后把新系统boot中的文件拷贝到原来空的boot中去。然后再在upstart模式下修改/etc/fstab中挂载boot的UUID。</div><br><div>在拷贝boot的过程中，用了rsync命令来进行同步。同步完了再用diff检查一下两个文件夹的异同（可以用meld这个图形化工具来分析，比较直观）。</div><br><div></div><br><div>终于能正常启动了以后，再到启动盘中，再像拷贝boot那样，在准备好的50g空闲分区中建立/home，把原来的home同步过去，再把原来home给清空（不然挂载到新分区了后，老地方还是占用这这么多空间），无误后修改fstab，重启，完成。</div><br><div>（其实一开始我单纯的直接在fstab中添加了一行新分区home的uuid和后面的常规参数，而新分区里其实并没有home文件夹以及里面的数据，导致卡在登陆界面，无限循环在输入密码又无法载入桌面的情况……）</div><br><div></div>
+
+
           
         
       
@@ -1054,7 +1056,7 @@ padding:20px;
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2016/09/19/91/">
+    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2016/09/19/cj5m15skq0015wufuv4fkscjb/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eel">
@@ -1073,7 +1075,7 @@ padding:20px;
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/09/19/91/" itemprop="url">添加Swap及开启挂起记录</a></h1>
+                <a class="post-title-link" href="/2016/09/19/cj5m15skq0015wufuv4fkscjb/" itemprop="url">添加Swap及开启挂起记录</a></h1>
         
 
         <div class="post-meta">
@@ -2002,7 +2004,7 @@ padding:20px;
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -2024,7 +2026,7 @@ padding:20px;
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

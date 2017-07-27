@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[Safari Bookmarklet 实现切换 Google 搜索结果的语言]]></title>
-    <url>%2F2017%2F07%2F26%2Fcj5m0ndci000dlbfu90n8cadd%2F</url>
+    <url>%2F2017%2F07%2F26%2Fcj5m15sjo0002wufutgba4y3w%2F</url>
     <content type="text"><![CDATA[背景Google 搜索的时候,常常遇到下面这样的情景:输入的关键词是若干个英文,如: safari stylish 由于输入的两个关键词都是英文单词, 且没有恰当的中文翻译, Google 默认给出的结果是英文结果优先, 而英文结果过多以至于掩盖中文结果。 产生以上困扰的原因是我的英语水平处于勉强能看懂英文但较为吃力的水平，因此一般只有在没有满意的中文结果时才去翻看英文结果。 当然可以通过点击工具-&gt;不限语言-&gt;中文网页的方式切换成中文,需要英文时再点清除恢复默认搜索语言但是要左点一下右点一下太麻烦了。 步骤JavaScript 代码:1javascript:void(function()&#123;if(location.hostname.indexOf(&quot;google&quot;))&#123;var keyword = document.getElementsByName(&quot;q&quot;)[0].value;if(location.href.indexOf(&quot;zh-CN&quot;)&lt;0)&#123;location.href = &quot;https://www.google.com/?&amp;q=#q=&quot; + keyword + &quot;&amp;lr=lang_zh-CN%7Clang_zh-TW&quot;;&#125;else&#123;location.href = &quot;https://www.google.com/?&amp;q=#q=&quot; + keyword&#125;&#125;&#125;)() 添加书签在 safari 中添加一个书签,名字和位置都随意,然后将书签地址改为以上代码 此时在谷歌搜索界面点击该书签就能在中文网页和不限语言之间来回切换了 设置快捷键如果只能用鼠标点的话当然是不可接受的 在系统偏好设置-&gt;键盘-&gt;快捷键中找到如下图位置在应用快捷键中点击中下方的+号,并在弹出窗口中 选择 应用为Safari.app, 标题为之前添加的书签名(必须一模一样), 设置相应的快捷键 使用至此在使用 Google 搜索时就能通过快捷键切换搜索语言了 缺点 js 代码只匹配了 主机名关键词google,在用谷歌搜索图片、视频、新闻等时会跳转到普通搜索结果，不过这几个我倒是从来搜，搜了也不用换语言，所以暂时没有影响。 快捷键并不是全局的, 且优先级不高，我设置的 option + s,光标聚焦在搜索框或地址栏的时候会打出ß符号. 另外原本想按照 Search Engine Switcher 那样做一个扩展的,但是找了半天都没学会怎么下载开发者证书,生成 .safariextension的扩展文件,如果谁会的话请联系我… 参考链接妈妈再也不用担心我的 MacBook 发热了计划2不是你熟悉的 macOS 快捷键Bookmarklet编写指南https://github.com/RayPS/Search-Engine-Switcher END]]></content>
       <categories>
         <category>Mac</category>
@@ -17,7 +17,7 @@
   </entry>
   <entry>
     <title><![CDATA[暑假第一记]]></title>
-    <url>%2F2017%2F07%2F25%2Fcj5m0nde9002rlbfu7h8dkxu1%2F</url>
+    <url>%2F2017%2F07%2F25%2Fcj5m15slr002wwufuq659hm01%2F</url>
     <content type="text"><![CDATA[VPS前几天折腾好了国外 vultr 的vps, 打算渐渐远离国内的阿里云了.昨晚随便找了个国外域名和 dns 管理的服务商my.freenom.com注册了 eeljiang.cf, .cf的域名好像是免费一年的,也不知道后面会怎样。 更新后来发现freenom 注册的域名居然屏蔽了大陆的 IP, 也就是不翻墙的话是访问不了的? (还有这种操作) 想了想还是忍痛买了正规的. com吧, 说是忍痛一百块一年其实也不贵。 dns 解析要用国内的服务商才好，国外的解析服务的话，国内访问的时候可能会出现无法解析的情况。看知乎上推荐的最多的 是dnspod。 跑去搜索一看, 原来已经被腾讯收购了……整一个账号也成了腾讯云了，注册完就变成腾讯云用户了，这样一来又感觉和之前阿里云的没啥区别了。 所以截至目前, eeljiang.cn, eeljiang.cf, eeljiang.com, 都是可以访问的了, 其中除了.com,其他两个都将在几个月后过期并不再续费。.cn需要实名备案实在有点难受,最近形势又有点紧 BLOG今晚终于把原来阿里云上的搭建的 wordpress 上的几篇文章转移过来了。博客框架改用了比 wp 更轻量的 hexo。因为轻, 所以很多操作都在命令行上进行了,我还是很喜欢的. 到目前为止 hexo 给我的印象是非常好的.从插件的安装到主题的选择,还有本地和服务端的部署都很顺利.明天准备尝试同时部署到 github 上. 搞笑的是一开始不知道 hexo 是要装在自己电脑端的, 我直接装在了远端 vps 上,虽然也装好了,然而日志提示输入localhost:4000进行访问的时候还没发觉不对劲,强行输入了 eeljiang.cf:4000 才刷出来.后来仔细看了文档才搞明白. 更新在 github 上创建和自己同名的仓库+github.io, 就能生成个人静态博客页面,每个账户有且只有一个这样的静态页面,容量大概是500M.如我 github 的用户名是 jiangeel,那么就创建 名为jiangeel.github.io的仓库.如下图,报错是因为我已经创建过了. 然后你就拥有了一个和普通项目 差不多的页面。 图中的文件是 hexo 生成的作为博客的静态文件，我们可以直接访问项目的名字作为的地址,也就是 http://jiangeel.github.io 来访问由这些静态文件形成的博客界面。 最终效果在全部配置完毕后,最后可以通过以下操作来管理博客界面 在本地用 markdown 编辑器将文章编辑完毕 $ hexo g -d 来一键生成静态文件并部署到远端 (g=generate,d=deploy) 具体配置参考https://hexo.io/zh-cn/docs/index.html]]></content>
   </entry>
   <entry>
@@ -40,9 +40,10 @@
     <title><![CDATA[修改Hosts实现科学上网]]></title>
     <url>%2F2017%2F03%2F10%2F232%2F</url>
     <content type="text"><![CDATA[&nbsp; 好气啊，在手机上都写地差不多了，到了电脑上被同步成了未完成的状态，又得重写近些天原来十分稳定又快速的shadowsocks开始不在状态了，严重的时候什么都打不开，几分钟就要重启一下。 想去官网提交个工单反馈一下都没办法。（百度是搜不到官网的） 四处搜索的时候就不小心学会了另一个科学上网的方法：修改hosts文件。 hosts hosts文件是一个用于储存计算机网络中各节点信息的计算机文件。这个文件负责将主机名称映射到相应的IP地址。hosts文件通常用于补充或替换网络中DNS的功能。和DNS不同的是，计算机的用户可以直接对hosts文件进行控制。 简单的说hosts文件就是一个和dns服务器一样解析域名的。 区别在于，hosts是存在本地计算机中的，不同的操作系统位置有所不同。 操作系统 路径 Unix、类Unix系统（例如Linux等） /etc/hosts Microsoft Windows %SystemRoot%\System32\drivers\etc\hosts Android /etc/hosts（指向/system/etc/hosts的符号链接) iOS /etc/hosts（指向/private/etc/hosts的符号链接) Mac OS X 10.2和更新版本 /etc/hosts（指向/private/etc/hosts的符号链接） 原理在GFW屏蔽国外网站的方法中，有一种最简单的就是dns污染，将请求的目标域名指向一个无用的IP，从而实现阻止访问。 而修改hosts后，本机就会直接访问对应的IP，而绕过上游DNS服务器。 修改方法访问网站的IP是会变化的，我们需要每隔一到几个月就更新一次hosts文件。 在万能的github上已经有大神整理并定时更新的hosts文件，我们去下载后替换即可。 最新可用的 hosts文件 &nbsp; 这里还有更加方便的方法，即一件更新并替换的工具。 Hosts Tool Pool 优点 不经过 vpn 或者代理商的服务器，直接访问，所以速度快，较为稳定。 免费 使用限制 只能对固定ip的网站访问，并需要https的连接。因此youtube上的视频是加载不了的。（YouTube网页本身能打开） 目标网站IP变动后就需要更新hosts，不能一劳永逸。 hosts的其他用法屏蔽某些网页将需要屏蔽的 域名 和 ip按相同格式写入hosts即可，其中ip改为127.0.0.1。再次访问改域名时会重定向至空白页。]]></content>
-      <categories>
-        <category>ACM</category>
-      </categories>
+      <tags>
+        <tag>Hosts</tag>
+        <tag>科学上网</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[If __Name__ == '__Main__']]></title>
@@ -98,6 +99,7 @@
         <category>未分类</category>
       </categories>
       <tags>
+        <tag>chrome</tag>
         <tag>stylish</tag>
       </tags>
   </entry>
@@ -116,6 +118,10 @@
       <categories>
         <category>未分类</category>
       </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>分区挂载</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Ubuntu下软件安装记录]]></title>
@@ -135,12 +141,16 @@
   </entry>
   <entry>
     <title><![CDATA[添加Swap及开启挂起记录]]></title>
-    <url>%2F2016%2F09%2F19%2F91%2F</url>
+    <url>%2F2016%2F09%2F19%2Fcj5m15skq0015wufuv4fkscjb%2F</url>
     <content type="text"><![CDATA[有人说内存比较大的时候（比如我的是8g），就不需要swap内存了。在windows上好像的确是不太需要虚拟内存了。然而当我想要挂起的时候，发现挂起后就无法唤醒了。 经过测验：1.并非外接显示器的缘故。只用笔记本自带的显示器也无法唤醒（显示器是新添加的，谁知道会不会是它的缘故呢）2.缺失laptop-mode-tools. 经过$sudo apt-get install laptop-mode-tools后，再cat /proc/sys/vm/laptop_mode，发现数字是0，因此为非启动状态。于是编辑 /etc/laptop-mode/laptop-mode.conf,设置ENABLE_LAPTOP_MODE_ON_AC=1，看起来是连着电源的时候也能挂起的意思吧。再sudo laptop-mode start,最后再cat 一遍/proc/sys/vm/laptop_mode，结果是2了。小小激动了一把。然而并没什么用。3.几天后想到休眠时把内存中的东西放到硬盘里，也许中间需要swap来过度什么的。又想到自己没有swap，所以打算添加一个swap分区。 添加过程：1.自己的ubuntu是笔记本上剩下的30g硬盘，几乎全装给了 / 目录，而swap又需要内存的一半到2倍左右，也就是5-10g吧。2.搜索到添加swap有两种方式：1.传统分区添加。2.比较方便的创建一个大文件，然后转化成swap。遂选择第二种。3.首先用dd命令创建10g的空间,创建在/root/swapfile下。$dd if=/dev/zero of=/root/swapfile bs=1M count=102404.然后将文件转化为swap格式。$mkswap /root/swapfile5.启用swap文件:$swapon /swapfile提示权限644的权限不好，暂时不知道为啥，就根据系统的建议改成600吧 $chmod 600 /root/swaofile6.最后$free 命令可以看到的确有了10g的swap空间。7.在/etc/fstab中添加一行,这样swap就每次开机有效了！/root/swapfile swap swap defaults 0 0(估计比较特殊吧，都不用uuid的)8.另外之前乱修改fstab搞得无法启动系统了，所以给fstab加了chattr +i，今天又忘记了，sudo了半天都修改不了，花了很久才意识到……]]></content>
       <categories>
         <category>Linux</category>
         <category>未分类</category>
       </categories>
+      <tags>
+        <tag>swap</tag>
+        <tag>linux</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Ubuntu第一次系统损坏记录]]></title>
@@ -165,6 +175,9 @@
       <categories>
         <category>chrome</category>
       </categories>
+      <tags>
+        <tag>Chrome</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[【转】Web建站技术中，HTML、HTML5、XHTML、CSS、SQL、JavaScript、PHP、ASP.NET、WebServices是什么？]]></title>
@@ -173,6 +186,9 @@
       <categories>
         <category>WEB</category>
       </categories>
+      <tags>
+        <tag>Web</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[【转】如何删除神不知鬼不觉，删除男友电脑里的游戏但保留图标，让他打开就不能玩？]]></title>
@@ -181,6 +197,10 @@
       <categories>
         <category>杂物</category>
       </categories>
+      <tags>
+        <tag>游戏</tag>
+        <tag>奇技淫巧</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[计算机专业英语词汇收录]]></title>
@@ -206,6 +226,9 @@
         <category>ACM</category>
         <category>c++</category>
       </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[最大公约数与最小公倍数]]></title>
@@ -215,6 +238,9 @@
         <category>ACM</category>
         <category>c++</category>
       </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Php的url路由技术]]></title>
@@ -231,6 +257,9 @@
       <categories>
         <category>PHP</category>
       </categories>
+      <tags>
+        <tag>PHP</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Json语法]]></title>
@@ -260,14 +289,6 @@
     <title><![CDATA[比较输入数字与随机数组首元素大小]]></title>
     <url>%2F2016%2F02%2F14%2F14%2F</url>
     <content type="text"><![CDATA[#include “stdafx.h” #include &lt;string&gt; #include &lt;iostream&gt; #include &lt;ctime&gt; #include &lt;cstdlib&gt; using namespace std; / run this program using the console pauser or add your own getch, system(“pause”) or input loop / int myCompare(const int j, const int a[]); int main(int argc, char** argv) { srand(( unsigned)time(NULL )); int a[10]; for (auto &amp;i : a) i = rand() % 10; cout &lt;&lt; “enter a number:” &lt;&lt; endl; int j; cin &gt;&gt; j; cout &lt;&lt; “您输入的数与数组首元素中较大的是：” &lt;&lt; myCompare(j, a) &lt;&lt; endl; cout &lt;&lt; “数组的全部元素是：” &lt;&lt; endl; for (auto i : a) cout &lt;&lt; i &lt;&lt; ‘ ‘; cout &lt;&lt; endl; return 0; } int myCompare(const int j, const int *a) { return (j &gt; a) ? j : a; }]]></content>
-      <categories>
-        <category>c++</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[C++ Sort函数的用法]]></title>
-    <url>%2F2016%2F02%2F14%2F11%2F</url>
-    <content type="text"><![CDATA[&nbsp; ##sort**函数的用法 做ACM题的时候，排序是一种经常要用到的操作。如果每次都自己写个冒泡之类的O(n^2)排序，不但程序容易超时，而且浪费宝贵的比赛时间，还很有可能写错。STL里面有个sort函数，可以直接对数组排序，复杂度为nlog2(n)。使用这个函数，需要包含头文件。这个函数可以传两个参数或三个参数。第一个参数是要排序的区间首地址，第二个参数是区间尾地址的下一地址。也就是说，排序的区间是[a,b)。简单来说，有一个数组int a[100]，要对从a[0]到a[99]的元素进行排序，只要写sort(a,a+100)就行了，默认的排序方式是升序。拿我出的“AC的策略”这题来说，需要对数组t的第0到len-1的元素排序，就写sort(t,t+len);对向量v排序也差不多，sort(v.begin(),v.end());排序的数据类型不局限于整数，只要是定义了小于运算的类型都可以，比如字符串类string。如果是没有定义小于运算的数据类型，或者想改变排序的顺序，就要用到第三参数——比较函数。比较函数是一个自己定义的函数，返回值是bool型，它规定了什么样的关系才是“小于”。想把刚才的整数数组按降序排列，可以先定义一个比较函数cmpbool cmp(int a,int b){return a&gt;b;}排序的时候就写sort(a,a+100,cmp); 假设自己定义了一个结构体nodestruct node{int a;int b;double c;}有一个node类型的数组node arr[100]，想对它进行排序：先按a值升序排列，如果a值相同，再按b值降序排列，如果b还相同，就按c降序排列。就可以写这样一个比较函数： 以下是代码片段：bool cmp(node x,node y){if(x.a!=y.a) return x.a if(x.b!=y.b) return x.b&gt;y.b;return return x.c&gt;y.c;} 排序时写sort(arr,a+100,cmp); qsort(s[0],n,sizeof(s[0]),cmp);int cmp(const void a,const void b){return (int )a-(int )b;} 一、对int类型数组排序 int num[100]; Sample: int cmp ( const void a , const void b ){return (int )a - (int )b;} qsort(num,100,sizeof(num[0]),cmp); 二、对char类型数组排序（同int类型） char word[100]; Sample: int cmp( const void a , const void b ){return (char )a - (int )b;} qsort(word,100,sizeof(word[0]),cmp); 三、对double类型数组排序（特别要注意） double in[100]; int cmp( const void a , const void b ){return (double )a &gt; (double )b ? 1 : -1;} qsort(in,100,sizeof(in[0]),cmp)**； 四、对结构体一级排序 struct In{double data;int other;}s[100] //**按照data的值从小到大将结构体排序,关于结构体内的排序关键数据data的类型可以很多种，参考上面的例子写 int cmp( const void a ,const void b){return ((In )a)-&gt;data - ((In )b)-&gt;data ;} qsort(s,100,sizeof(s[0]),cmp); 五、对结构体 struct In{int x;int y;}s[100]; //**按照x从小到大排序，当x相等时按照y从大到小排序 **int cmp( const void a , const void b ){struct In c = (In )a;struct In d = (In )b;if(c-&gt;x != d-&gt;x) return c-&gt;x - d-&gt;x;else return d-&gt;y - c-&gt;y;} qsort(s,100,sizeof(s[0]),cmp); 六、对字符串进行排序 struct In{int data;char str[100];}s[100]; //**按照结构体中字符串str的字典顺序排序 **int cmp ( const void a , const void b ){return strcmp( ((In )a)-&gt;str , ((In )b)-&gt;str );} qsort(s,100,sizeof(s[0]),cmp); 七、计算几何中求凸包的cmp int cmp(const void a,const void b) //**重点cmp函数，把除了1点外的所有点，旋转角度排序{struct point c=(point )a;struct point d=(point )b;if( calc(c,d,p[1]) &lt; 0) return 1;else if( !calc(c,d,p[1]) &amp;&amp; dis(c-&gt;x,c-&gt;y,p[1].x,p[1].y) &lt; dis(d-&gt;x,d-&gt;y,p[1].x,p[1].y)) //如果在一条直线上，则把远的放在前面return 1;else return -1;} *]]></content>
       <categories>
         <category>c++</category>
       </categories>
