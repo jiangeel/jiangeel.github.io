@@ -298,7 +298,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/07/27/cj5mb8pbq00009qfu9ztyubz4/">
+    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/07/27/cj5mdj6bv0007uffuk05ullpc/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eel">
@@ -317,7 +317,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/27/cj5mb8pbq00009qfu9ztyubz4/" itemprop="url">使用SSH Key登录并禁用root密码登录并修改端口号</a></h1>
+                <a class="post-title-link" href="/2017/07/27/cj5mdj6bv0007uffuk05ullpc/" itemprop="url">使用SSH Key登录并禁用root密码登录并修改端口号</a></h1>
         
 
         <div class="post-meta">
@@ -385,31 +385,19 @@
       
         
           
-            <h2 id="使用密钥登录"><a href="#使用密钥登录" class="headerlink" title="使用密钥登录"></a>使用密钥登录</h2><h3 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h3><p>ssh除了使用密码验证外，还可以使用公私密钥的验证方式。<br>客户端生成一个私钥和一个与之对应的公钥，然后将公钥上传到服务器上。</p>
-<h3 id="本地机器创建公钥"><a href="#本地机器创建公钥" class="headerlink" title="本地机器创建公钥"></a>本地机器创建公钥</h3><p><code>ssh-keygen -t rsa -C  &#39;your email&#39;</code></p>
-<p><img src="http://otn2ksn9w.bkt.clouddn.com/17-7-27/95411675.jpg" alt=""><br>完成后生成如图两个文件,其中带<code>pub</code>结尾的是公钥,待会需要上传到服务器上保存</p>
-<h3 id="将公钥复制到ssh服务器"><a href="#将公钥复制到ssh服务器" class="headerlink" title="将公钥复制到ssh服务器"></a>将公钥复制到ssh服务器</h3><p>将前一步骤生成的公钥<code>~/id_rsa.pub</code>文件，复制到ssh服务器对应用户下的<code>~/.ssh/authorized_keys</code>文件中。如果不存在则手动创建即可。</p>
-<p><strong>注意</strong> 当第二台设备生成公钥保存到此文件中时，请不要将之前的记录覆盖，应使用追加写入的方式。<br>如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat id_rsa.pub &gt;&gt; .ssh/authorized_keys</div></pre></td></tr></table></figure>
-<h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><p>完成以上步骤后，即可使用以下命令直接登录ssh服务器。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh username@hostname</div></pre></td></tr></table></figure>
-<h3 id="自定义别名"><a href="#自定义别名" class="headerlink" title="自定义别名"></a>自定义别名</h3><p>可以在<code>~/.ssh/config</code>中配置（未存在则新建即可）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Host                  yoyoyo</div><div class="line">HostName              hostname  #ssh服务器ip或域名</div><div class="line">User                  root #ssh服务器用户名</div><div class="line">IdentityFile          id_rsa #生成的私钥</div></pre></td></tr></table></figure>
-<p>保存后即可使用以下命令快捷登录：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh yoyoyo</div></pre></td></tr></table></figure>
-<h2 id="禁用密码验证登录"><a href="#禁用密码验证登录" class="headerlink" title="禁用密码验证登录"></a>禁用密码验证登录</h2><ol>
-<li>在服务器上配置：<code>/etc/ssh/sshd_config</code></li>
-<li>找到下面一行<code>PasswordAuthentication yes</code></li>
-<li>将<code>yes</code>改为<code>no</code>后保存。</li>
-<li>重启 <code>sshd</code>服务</li>
-</ol>
-<p><strong>关于密钥的生成:</strong><br>有教程是在服务器上生成，然后将密钥传回本地的。<br>如果是服务器生成的话，<strong>切记将密钥传回本地后从服务器删除。</strong><br>因此我选择在本地生成密钥，后上传公钥的方法较为稳妥。</p>
-<h2 id="更改端口"><a href="#更改端口" class="headerlink" title="更改端口"></a>更改端口</h2><p>还是在<code>/etc/ssh/sshd_config</code>中，找到 port项目，取消注释并修改为较大的端口，可以防端口扫描。</p>
-<p>返回到本地<code>~/.ssh/config</code>中，在之前的配置中增加 port 项和对应设置的端口：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Host                  yoyoyo</div><div class="line">HostName              hostname  #ssh服务器ip或域名</div><div class="line">Port                  1234 #端口号</div><div class="line">User                  root #ssh服务器用户名</div><div class="line">IdentityFile          id_rsa #生成的私钥</div></pre></td></tr></table></figure>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.jianshu.com/p/460b4ce4f8e1" target="_blank" rel="external">在Mac上远程登录VPS</a><br><a href="https://www.duoluodeyu.com/1114.html" target="_blank" rel="external">Linux配置使用SSH Key登录并禁用root密码登录</a></p>
-<h2 id="END"><a href="#END" class="headerlink" title="END"></a>END</h2>
-          
+          使用密钥登录工作原理ssh除了使用密码验证外，还可以使用公私密钥的验证方式。客户端生成一个私钥和一个与之对应的公钥，然后将公钥上传到服务器上。
+本地机器创建公钥ssh-keygen -t rsa -C  &#39;your email&#39;
+完成后生成如图两个文件,其中带pub结尾的是公钥,待会需要上传到服务器上保存
+将公钥复制到ssh服务器将前一步骤生成的公钥~/id_rsa.pub文件，复制到ssh服务器对应用户下的~/.ssh/authorized_keys文件中。如果不存在则手动创建即可。
+注意 当第二台设备生成公钥保存到此文件中时，请不要将之前的记录覆盖，应使用追加写入的方式。如
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/27/cj5mdj6bv0007uffuk05ullpc/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -451,7 +439,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/07/26/cj5m22u6e0000etfuiv2y52k6/">
+    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/07/26/cj5mdj6c10009uffuk0e72dcd/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eel">
@@ -470,7 +458,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/26/cj5m22u6e0000etfuiv2y52k6/" itemprop="url">Safari Bookmarklet 实现切换 Google 搜索结果的语言</a></h1>
+                <a class="post-title-link" href="/2017/07/26/cj5mdj6c10009uffuk0e72dcd/" itemprop="url">Safari Bookmarklet 实现切换 Google 搜索结果的语言</a></h1>
         
 
         <div class="post-meta">
@@ -538,30 +526,19 @@
       
         
           
-            <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>Google 搜索的时候,常常遇到下面这样的情景:<br>输入的关键词是若干个英文,如:<br> <code>safari stylish</code></p>
-<p>由于输入的两个关键词都是英文单词, 且没有恰当的中文翻译, Google 默认给出的结果是英文结果优先, 而英文结果过多以至于掩盖中文结果。</p>
-<p>产生以上困扰的原因是我的英语水平处于勉强能看懂英文但较为吃力的水平，因此一般只有在没有满意的中文结果时才去翻看英文结果。</p>
-<p>当然可以通过点击<code>工具</code>-&gt;<code>不限语言</code>-&gt;<code>中文网页</code>的方式切换成中文,需要英文时再点<code>清除</code>恢复默认搜索语言<br><img src="http://otn2ksn9w.bkt.clouddn.com/17-7-26/42107748.jpg" alt=""><br>但是要左点一下右点一下太麻烦了。</p>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="JavaScript-代码"><a href="#JavaScript-代码" class="headerlink" title="JavaScript 代码:"></a>JavaScript 代码:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">javascript:void(function()&#123;if(location.hostname.indexOf(&quot;google&quot;))&#123;var keyword = document.getElementsByName(&quot;q&quot;)[0].value;if(location.href.indexOf(&quot;zh-CN&quot;)&lt;0)&#123;location.href = &quot;https://www.google.com/?&amp;q=#q=&quot; + keyword + &quot;&amp;lr=lang_zh-CN%7Clang_zh-TW&quot;;&#125;else&#123;location.href = &quot;https://www.google.com/?&amp;q=#q=&quot; + keyword&#125;&#125;&#125;)()</div></pre></td></tr></table></figure>
-<h3 id="添加书签"><a href="#添加书签" class="headerlink" title="添加书签"></a>添加书签</h3><p>在 safari 中添加一个书签,名字和位置都随意,然后将书签地址改为以上代码</p>
-<p><img src="http://otn2ksn9w.bkt.clouddn.com/17-7-26/78773830.jpg" alt=""> </p>
-<p>此时在谷歌搜索界面点击该书签就能在<code>中文网页</code>和<code>不限语言</code>之间来回切换了</p>
-<h3 id="设置快捷键"><a href="#设置快捷键" class="headerlink" title="设置快捷键"></a>设置快捷键</h3><p><strong>如果只能用鼠标点的话当然是不可接受的</strong></p>
-<p>在<code>系统偏好设置</code>-&gt;<code>键盘</code>-&gt;<code>快捷键</code>中找到如下图位置<br>在<code>应用快捷键</code>中点击中下方的<code>+</code>号,并在弹出窗口中</p>
-<ul>
-<li>选择 应用为<code>Safari.app</code>, </li>
-<li>标题为之前添加的书签名(必须一模一样),</li>
-<li>设置相应的快捷键<br><img src="http://otn2ksn9w.bkt.clouddn.com/17-7-26/16891697.jpg" alt=""></li>
-</ul>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>至此在使用 Google 搜索时就能通过快捷键切换搜索语言了</p>
-<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ol>
-<li>js 代码只匹配了 主机名关键词<code>google</code>,在用谷歌搜索图片、视频、新闻等时会跳转到普通搜索结果，不过这几个我倒是从来搜，搜了也不用换语言，所以暂时没有影响。</li>
-<li>快捷键并不是全局的, 且优先级不高，我设置的 <code>option + s</code>,光标聚焦在搜索框或地址栏的时候会打出<code>ß</code>符号.</li>
-</ol>
-<h2 id="另外"><a href="#另外" class="headerlink" title="另外"></a>另外</h2><p>原本想按照 Search Engine Switcher 那样做一个扩展的,但是找了半天都没学会怎么下载开发者证书,生成 <code>.safariextension</code>的扩展文件,如果谁会的话请联系我…</p>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="http://zythum.github.io/mama2/" target="_blank" rel="external">妈妈再也不用担心我的 MacBook 发热了计划2</a><br><a href="https://sspai.com/post/39169?utm_source=weibo&amp;utm_medium=sspai&amp;utm_campaign=weibo&amp;utm_content=shortcut&amp;utm_term=tips" target="_blank" rel="external">不是你熟悉的 macOS 快捷键</a><br><a href="http://www.ruanyifeng.com/blog/2011/06/a_guide_for_writing_bookmarklet.html" target="_blank" rel="external">Bookmarklet编写指南</a><br><a href="https://github.com/RayPS/Search-Engine-Switcher" target="_blank" rel="external">https://github.com/RayPS/Search-Engine-Switcher</a></p>
-<h2 id="END"><a href="#END" class="headerlink" title="END"></a>END</h2>
-          
+          背景Google 搜索的时候,常常遇到下面这样的情景:输入的关键词是若干个英文,如: safari stylish
+由于输入的两个关键词都是英文单词, 且没有恰当的中文翻译, Google 默认给出的结果是英文结果优先, 而英文结果过多以至于掩盖中文结果。
+产生以上困扰的原因是我的英语水平处于勉强能看懂英文但较为吃力的水平，因此一般只有在没有满意的中文结果时才去翻看英文结果。
+当然可以通过点击工具-&gt;不限语言-&gt;中文网页的方式切换成中文,需要英文时再点清除恢复默认搜索语言但是要左点一下右点一下太麻烦了。
+步骤JavaScript 代码:1javascript:void(functi
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/26/cj5mdj6c10009uffuk0e72dcd/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -603,7 +580,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/07/25/cj5m22u86002fetfuwgzf4f8b/">
+    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/07/25/cj5mdj6dg002vuffu7qae3hpt/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eel">
@@ -622,7 +599,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/25/cj5m22u86002fetfuwgzf4f8b/" itemprop="url">暑假第一记</a></h1>
+                <a class="post-title-link" href="/2017/07/25/cj5mdj6dg002vuffu7qae3hpt/" itemprop="url">暑假第一记</a></h1>
         
 
         <div class="post-meta">
@@ -690,32 +667,17 @@
       
         
           
-            <h1 id="VPS"><a href="#VPS" class="headerlink" title="VPS"></a>VPS</h1><p>前几天折腾好了国外 vultr 的vps, 打算渐渐远离国内的阿里云了.<br>昨晚随便找了个国外域名和 dns 管理的服务商<code>my.freenom.com</code>注册了 <code>eeljiang.cf</code>, <code>.cf</code>的域名好像是免费一年的,也不知道后面会怎样。</p>
-<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><p>后来发现<code>freenom</code> 注册的域名居然屏蔽了大陆的 IP, 也就是不翻墙的话是访问不了的? <del>(还有这种操作)</del> 想了想还是忍痛买了正规的<code>. com</code>吧, 说是忍痛一百块一年其实也不贵。</p>
-<p> dns 解析要用国内的服务商才好，国外的解析服务的话，国内访问的时候可能会出现无法解析的情况。看知乎上推荐的最多的 是<code>dnspod</code>。 跑去搜索一看, 原来已经被腾讯收购了……整一个账号也成了腾讯云了，注册完就变成腾讯云用户了，这样一来又感觉和之前阿里云的没啥区别了。</p>
-<p>所以截至目前,</p>
-<ul>
-<li><a href="eeljiang.cn">eeljiang.cn</a>,</li>
-<li><a href="eeljiang.cf">eeljiang.cf</a>,</li>
-<li><a href="eeljiang.com">eeljiang.com</a>,</li>
-</ul>
-<p>都是可以访问的了, 其中除了<code>.com</code>,其他两个都将在几个月后过期并不再续费。<del>.cn需要实名备案实在有点难受,最近形势又有点紧</del></p>
-<h1 id="BLOG"><a href="#BLOG" class="headerlink" title="BLOG"></a>BLOG</h1><p>今晚终于把原来阿里云上的搭建的 wordpress 上的几篇文章转移过来了。博客框架改用了比 wp 更轻量的 <code>hexo</code>。因为轻, 所以很多操作都在命令行上进行了,我还是很喜欢的.</p>
-<p>到目前为止 hexo 给我的印象是非常好的.从插件的安装到主题的选择,还有本地和服务端的部署都很顺利.明天准备尝试同时部署到 github 上.</p>
-<p>搞笑的是一开始不知道 hexo 是要装在自己电脑端的, 我直接装在了远端 vps 上,虽然也装好了,然而日志提示输入<code>localhost:4000</code>进行访问的时候还没发觉不对劲,强行输入了 <code>eeljiang.cf:4000</code> 才刷出来.<br>后来仔细看了文档才搞明白.<br><img src="http://otn2ksn9w.bkt.clouddn.com/17-7-25/90311499.jpg" alt="hexo 在本地成功运行"></p>
-<h3 id="更新-1"><a href="#更新-1" class="headerlink" title="更新"></a>更新</h3><p>在 <code>github</code> 上创建和自己同名的仓库+github.io, 就能生成个人静态博客页面,每个账户有且只有一个这样的静态页面,容量大概是500M.<br>如我 github 的用户名是 jiangeel,那么就创建 名为<code>jiangeel.github.io</code>的仓库.如下图,报错是因为我已经创建过了.<br><img src="http://otn2ksn9w.bkt.clouddn.com/17-7-25/87654579.jpg" alt=""></p>
-<p>然后你就拥有了一个和普通项目 差不多的页面。<br><img src="http://otn2ksn9w.bkt.clouddn.com/17-7-25/35535836.jpg" alt=""></p>
-<p>图中的文件是 hexo 生成的作为博客的静态文件，我们可以直接访问项目的名字作为的地址,也就是<a href="http://jiangeel.github.io" target="_blank" rel="external"> http://jiangeel.github.io</a> 来访问由这些静态文件形成的博客界面。</p>
-<h2 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h2><p>在全部配置完毕后,最后可以通过以下操作来管理博客界面</p>
-<ol>
-<li>在本地用 markdown 编辑器将文章编辑完毕</li>
-<li><code>$ hexo g -d</code> 来一键生成静态文件并部署到远端 (g=generate,d=deploy)</li>
-</ol>
-<blockquote>
-<p>具体配置参考<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">https://hexo.io/zh-cn/docs/index.html</a></p>
-</blockquote>
-
-          
+          VPS前几天折腾好了国外 vultr 的vps, 打算渐渐远离国内的阿里云了.昨晚随便找了个国外域名和 dns 管理的服务商my.freenom.com注册了 eeljiang.cf, .cf的域名好像是免费一年的,也不知道后面会怎样。
+更新后来发现freenom 注册的域名居然屏蔽了大陆的 IP, 也就是不翻墙的话是访问不了的? (还有这种操作) 想了想还是忍痛买了正规的. com吧, 说是忍痛一百块一年其实也不贵。
+ dns 解析要用国内的服务商才好，国外的解析服务的话，国内访问的时候可能会出现无法解析的情况。看知乎上推荐的最多的 是dnspod。 跑去搜索一看, 原来已经被腾讯收购了……
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/25/cj5mdj6dg002vuffu7qae3hpt/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -844,26 +806,24 @@
       
         
           
-            <p>基本都是单文件的小练习，在一行一行地敲的过程中又再接触、再理解了下面的语法或者使用技巧。</p>
-<p>但是我相信以后再遇到还是有一些会忘记，还是要去查去记的。</p>
-<h2 id="‘2048’的小游戏"><a href="#‘2048’的小游戏" class="headerlink" title="‘2048’的小游戏"></a><a href="https://www.shiyanlou.com/courses/368" target="_blank" rel="external">‘2048’的小游戏</a></h2><p><img src="http://www.blog.eeljiang.cn/wp-content/uploads/2017/03/屏幕快照-2017-03-17-11.38.50.png" alt="屏幕快照 2017-03-17 11.38.50"></p>
-<p>2.ord<br>3. char = keyboard.getch()<br>4. lambda匿名函数<br>5. 函数定义中的变量可以在定义部分之后，函数调用时所有变量必须在这之前<br>6. defaultdict（）<br>7. line = (1,2,3,4,5)[1:] 等于去掉元祖的第一个元素<br>8. ‘’.join<br>9. ‘’.format(num)</p>
-<h2 id="html2pdf"><a href="#html2pdf" class="headerlink" title="html2pdf"></a><a href="https://github.com/lzjun567/crawler_html2pdf/tree/master/pdf" target="_blank" rel="external">html2pdf</a></h2><ol>
-<li>enumerate()</li>
-<li>docstring</li>
-<li>urlparse</li>
-<li>.format</li>
-<li>wkhtmltopdf/image</li>
-<li>re</li>
-<li>with open() as f:</li>
-</ol>
-<h2 id="python送爱心"><a href="#python送爱心" class="headerlink" title="python送爱心"></a><a href="https://github.com/lzjun567/crawler_html2pdf/tree/master/heart" target="_blank" rel="external">python送爱心</a></h2><p><img src="http://www.blog.eeljiang.cn/wp-content/uploads/2017/03/屏幕快照-2017-03-17-11.34.52.png" alt="屏幕快照 2017-03-17 11.34.52"></p>
-<ol>
-<li>yield</li>
-<li>worldcloud</li>
-</ol>
-
-          
+          基本都是单文件的小练习，在一行一行地敲的过程中又再接触、再理解了下面的语法或者使用技巧。
+但是我相信以后再遇到还是有一些会忘记，还是要去查去记的。
+‘2048’的小游戏
+2.ord3. char = keyboard.getch()4. lambda匿名函数5. 函数定义中的变量可以在定义部分之后，函数调用时所有变量必须在这之前6. defaultdict（）7. line = (1,2,3,4,5)[1:] 等于去掉元祖的第一个元素8. ‘’.join9. ‘’.format(num)
+html2pdf
+enumerate()
+docstring
+urlparse
+.format
+wkhtm
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/17/236/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -992,36 +952,22 @@
       
         
           
-            <p>&nbsp;</p>
-<h4 id="好气啊，在手机上都写地差不多了，到了电脑上被同步成了未完成的状态，又得重写"><a href="#好气啊，在手机上都写地差不多了，到了电脑上被同步成了未完成的状态，又得重写" class="headerlink" title="好气啊，在手机上都写地差不多了，到了电脑上被同步成了未完成的状态，又得重写"></a>好气啊，在手机上都写地差不多了，到了电脑上被同步成了未完成的状态，又得重写</h4><p>近些天原来十分稳定又快速的shadowsocks开始不在状态了，严重的时候什么都打不开，几分钟就要重启一下。</p>
-<p>想去官网提交个工单反馈一下都没办法。（百度是搜不到官网的）</p>
-<p>四处搜索的时候就不小心学会了另一个科学上网的方法：修改hosts文件。</p>
-<h2 id="hosts"><a href="#hosts" class="headerlink" title="hosts"></a>hosts</h2><blockquote>
-<p>hosts文件是一个用于储存计算机网络中各节点信息的计算机文件。这个文件负责将主机名称映射到相应的IP地址。hosts文件通常用于补充或替换网络中DNS的功能。和DNS不同的是，计算机的用户可以直接对hosts文件进行控制。</p>
-</blockquote>
-<p>简单的说<code>hosts</code>文件就是一个和<code>dns服务器</code>一样<code>解析域名</code>的。</p>
-<p>区别在于，hosts是存在本地计算机中的，不同的操作系统位置有所不同。</p>
-<table><br><thead><br><tr><br>  <th>操作系统</th><br>  <th>路径</th><br></tr><br></thead><br><tbody><br><tr><br>  <td>Unix、类Unix系统（例如Linux等）</td><br>  <td>/etc/hosts</td><br></tr><br><tr><br>  <td>Microsoft Windows</td><br>  <td>%SystemRoot%\System32\drivers\etc\hosts</td><br></tr><br><tr><br>  <td>Android</td><br>  <td>/etc/hosts（指向/system/etc/hosts的符号链接)</td><br></tr><br><tr><br>  <td>iOS</td><br>  <td>/etc/hosts（指向/private/etc/hosts的符号链接)</td><br></tr><br><tr><br>  <td>Mac OS X 10.2和更新版本</td><br>  <td>/etc/hosts（指向/private/etc/hosts的符号链接）</td><br></tr><br></tbody><br></table>
+          &nbsp;
+好气啊，在手机上都写地差不多了，到了电脑上被同步成了未完成的状态，又得重写近些天原来十分稳定又快速的shadowsocks开始不在状态了，严重的时候什么都打不开，几分钟就要重启一下。
+想去官网提交个工单反馈一下都没办法。（百度是搜不到官网的）
+四处搜索的时候就不小心学会了另一个科学上网的方法：修改hosts文件。
+hosts
+hosts文件是一个用于储存计算机网络中各节点信息的计算机文件。这个文件负责将主机名称映射到相应的IP地址。hosts文件通常用于补充或替换网络中DNS的功能。和DNS不同的是，计算机的用户可以直接对hosts文件进行控制。
 
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>在GFW屏蔽国外网站的方法中，有一种最简单的就是dns污染，将请求的目标域名指向一个无用的IP，从而实现阻止访问。</p>
-<p>而修改hosts后，本机就会直接访问对应的IP，而绕过上游DNS服务器。</p>
-<h2 id="修改方法"><a href="#修改方法" class="headerlink" title="修改方法"></a>修改方法</h2><p>访问网站的IP是会变化的，我们需要每隔一到几个月就更新一次hosts文件。</p>
-<p>在万能的github上已经有大神整理并定时更新的hosts文件，我们去下载后替换即可。</p>
-<p><a href="https://github.com/racaljk/hosts" target="_blank" rel="external">最新可用的 hosts文件</a></p>
-<p>&nbsp;</p>
-<p>这里还有更加方便的方法，即一件更新并替换的工具。</p>
-<p><a href="https://coding.net/u/scaffrey/p/hosts/git/tree/master/tools" target="_blank" rel="external">Hosts Tool Pool</a></p>
-<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ul>
-<li>不经过 <code>vpn</code> 或者<code>代理商</code>的服务器，直接访问，所以速度快，较为稳定。<p></p></li>
-<li>免费</li>
-</ul>
-<h2 id="使用限制"><a href="#使用限制" class="headerlink" title="使用限制"></a>使用限制</h2><ul>
-<li>只能对固定ip的网站访问，并需要https的连接。因此youtube上的视频是加载不了的。（YouTube网页本身能打开）</li>
-<li>目标网站IP变动后就需要更新hosts，不能一劳永逸。</li>
-</ul>
-<h2 id="hosts的其他用法"><a href="#hosts的其他用法" class="headerlink" title="hosts的其他用法"></a>hosts的其他用法</h2><h4 id="屏蔽某些网页"><a href="#屏蔽某些网页" class="headerlink" title="屏蔽某些网页"></a>屏蔽某些网页</h4><p></p><p>将需要屏蔽的 <code>域名</code> 和 <code>ip</code>按相同格式写入hosts即可，其中ip改为<code>127.0.0.1</code>。<br>再次访问改域名时会重定向至空白页。</p>
-
-          
+简单的说hosts文件就是一个
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/10/232/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1150,8 +1096,8 @@
       
         
           
-            <p>以前看到许多python的小项目，最代码后都会有一句</p>
-<pre><code>if __name__ == &apos;__main__&apos;:
+          以前看到许多python的小项目，最代码后都会有一句
+if __name__ == &apos;__main__&apos;:
     main()
 `&lt;/pre&gt;
 
@@ -1163,31 +1109,15 @@
 
 * * *
 
-模块是对象，并且所有的模块都有一个内置属性 `__name__`。一个模块的 `__name__` 的值取决于你如何应用模块。
-</code></pre><ul>
-<li>如果 import 一个模块，那么模块<strong>name</strong> 的值通常为模块文件名，不带路径或者文件扩展名。<p></p></li>
-<li><p>但如果像一个标准的程序样直接运行模块，在这种情况下, <code>__name__</code>的值将是一个特别缺省<code>__main__</code>。</p>
-<hr>
-<p></p><p>总之</p>
-<table><br><thead><br><tr><br>  <th>运行方式</th><br>  <th>‘<strong>name</strong>‘的值</th><br></tr><br></thead><br><tbody><br><tr><br>  <td>在cmd中直接运行.py文件</td><br>  <td>‘<strong>main</strong>‘</td><br></tr><br><tr><br>  <td>import入一个.py</td><br>  <td>文件名不带扩展</td><br></tr><br></tbody><br></table>
-
-<p>从而用if <strong>name</strong> == ‘<strong>main</strong>‘来判断是否是在直接运行该.py文件。</p>
-<p>当被 import 作为模块调用的时候，if以下的代码就不会被执行，也就是说main()函数不会被执行。</p>
-<p>如:<br>##Test.py</p>
-<p><pre>`<br>class Test:</pre></p>
-<pre><code>def __init(self):pass
-
-def f(self):print &apos;Hello, World!&apos;
-</code></pre><p>if <strong>name</strong> == ‘<strong>main</strong>‘:</p>
-<pre><code>Test().f()
-</code></pre></li>
-</ul>
-<p><img src="http://www.blog.eeljiang.cn/wp-content/uploads/2017/03/14889862138711.jpg" alt=""></p>
-<p>图中可以看出: <code>__name__ == &#39;__main__&#39;</code></p>
-<p>而如果：<br><img src="http://www.blog.eeljiang.cn/wp-content/uploads/2017/03/14889865357714.jpg" alt=""></p>
-<p>可以看到 <code>__name__</code>为我的文件<code>test.py</code>的不带扩展的文件名。</p>
-
-          
+模块是对象，并且所有的模块都有一个内置
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/08/209/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1316,10 +1246,10 @@ def f(self):print &apos;Hello, World!&apos;
       
         
           
-            <p>这是今天吃饭的时候在收藏夹里翻出的，一个很久以前收藏的，实验楼上的免费学习课程。</p>
-<p>当初收藏了一定有道理……<br>所以就跟着做了一下。</p>
-<p><a href="https://www.shiyanlou.com/courses/705" target="_blank" rel="external">PyQt 实现简易浏览器</a></p>
-<h2 id="PyQt5的基础用法"><a href="#PyQt5的基础用法" class="headerlink" title="PyQt5的基础用法"></a>PyQt5的基础用法</h2><pre><code>from PyQt5.QtWidgets import *
+          这是今天吃饭的时候在收藏夹里翻出的，一个很久以前收藏的，实验楼上的免费学习课程。
+当初收藏了一定有道理……所以就跟着做了一下。
+PyQt 实现简易浏览器
+PyQt5的基础用法from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 
@@ -1328,151 +1258,15 @@ import sys
 class Color(QWidget):
     def __init__(self, color, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.setAutoFillBackground(True)
-
-        palette = self.palette()
-        palette.setColor(QPalette.Window, QColor(color))
-        self.setPalette(palette)
-
-class MainWindow(QMainWindow):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-        # self.windowTitleChanged.connect(self._my_func)
-        # 设置标题
-        self.setWindowTitle(&apos;My first App&apos;)
-
-        # 水平布局
-        layout = QGridLayout()
-
-        # # 添加布局
-        # layout = QVBoxLayout()
-        # 展示的部件列表
-        widgets = [QCheckBox,
-                   QComboBox,
-                   QDateEdit,
-                   QDateTimeEdit,
-                   QDial,
-                   QDoubleSpinBox,
-                   QFontComboBox,
-                   QLCDNumber,
-                   QLineEdit,
-                   QProgressBar,
-                   QPushButton,
-                   QRadioButton,
-                   QSlider,
-                   QSpinBox,
-                   QTimeEdit]
-
-        for item in widgets:
-            layout.addWidget(item())
-
-        # color主要是用来测试layout的水平、垂直和网格布局，然而并没有生效
-        colors = [&apos;red&apos;, &apos;green&apos;, &apos;blue&apos;, &apos;yellow&apos;]
-        for color in colors:
-            layout.addWidget(Color(color))
-
-        # 创建按钮
-        for i in range(5):
-            button = QPushButton(str(i))
-            button.pressed.connect(lambda x=i: self._my_func(x))
-            layout.addWidget(button)
-
-        # 添加工具栏
-        tb = QToolBar(&apos;Help&apos;)
-        tb.setIconSize(QSize(16, 16))
-        # 添加到主窗口
-        self.addToolBar(tb)
-        # 添加按钮动作并夹在图像
-        button_action = QAction(QIcon(&apos;icons/penguin.png&apos;),&apos;Menu button&apos;,self)
-
-        button_action.setStatusTip(&apos;This is menu button&apos;)
-        button_action.triggered.connect(self.onButtonClick)
-        button_action.setCheckable(True)
-
-        tb.addAction(button_action)
-        self.setStatusBar(QStatusBar(self))
-
-        # 添加新的菜单选项
-        button_action2 = QAction(&apos;C++&apos;,self)
-        button_action3 = QAction(&apos;Python&apos;,self)
-        button_action2.setCheckable(True)
-        # 用false应该就是不能打勾状态了
-        button_action3.setCheckable(False)
-        button_action2.triggered.connect(self.onButtonClick)
-        button_action3.triggered.connect(self.onButtonClick)
-
-        # 添加按钮动作
-        button_action4 = QAction(&apos;hello , eeljiang&apos;, self)
-        button_action4.triggered.connect(self.onButtonClick)
-
-        # 添加菜单栏
-        mb = self.menuBar()
-        # 禁用原生菜单栏
-        mb.setNativeMenuBar(False)
-        file_menu = mb.addMenu(&apos;&amp;amp;File&apos;)
-        #file_menu.addAction(button_action)
-        file_menu.addSeparator()
-        file_menu.addAction(button_action4)
-
-        # 添加二级菜单
-        build_system_menu = file_menu.addMenu(&apos;&amp;amp;Build System&apos;)
-        build_system_menu.addAction(button_action2)
-        build_system_menu.addSeparator()
-        build_system_menu.addAction(button_action3)
-
-        widget = QWidget()
-        widget.setLayout(layout)
-        self.setCentralWidget(widget)
-
-    def onButtonClick(self,s):
-        print(s)
-
-    def _my_func(self, n):
-        print(&apos;click button %s&apos; % n)
-
-    def onButtonClick(self, s):
-        dlg = CustomDialog(self)
-        dlg.exec_()
-
-# 自定义对话框
-class CustomDialog(QDialog):
-    def __init__(self,*args,**kwargs):
-        super().__init__(*args, **kwargs)
-        self.setWindowTitle(&apos;new Dialog&apos;)
-
-        # 添加按钮选项
-        QBtn = QDialogButtonBox.Ok | QDialogButtonBox.Cancel | QDialogButtonBox.Cancel
-        buttonBox = QDialogButtonBox(QBtn)
-        buttonBox.accepted.connect(self.accept)
-        buttonBox.rejected.connect(self.reject)
-
-        layout = QVBoxLayout()
-        layout.addWidget(buttonBox)
-        self.setLayout(layout)
-
-# 创建应用实例，通过sys。argv 传入命令行参数
-app = QApplication(sys.argv)
-# 创建窗口实例
-window = MainWindow()
-# 显示窗口
-window.show()
-# 执行应用，进入事件循环
-app.exec()
-
-# 按钮&amp;gt;布局&amp;gt;部件&amp;gt;窗口
-# button&amp;gt;layout&amp;gt;widget&amp;gt;window
-</code></pre><h2 id="PyQt5实现简易游览器"><a href="#PyQt5实现简易游览器" class="headerlink" title="PyQt5实现简易游览器"></a>PyQt5实现简易游览器</h2><p>之前安装的PYQt5不会同时安装这次需要的qtwebkit。需要单独安装。</p>
-<hr>
-<p>然而</p>
-<p>我的qt之前安装的是5.8，并不能导入qtwebkit。在stackoverflow上找到一个答案说从5.6开始就已经没有了。。</p>
-<blockquote>
-<p>QtWebKit got deprecated upstream in Qt 5.5 and removed in 5.6.</p>
-</blockquote>
-<p><a href="http://stackoverflow.com/questions/37876987/cannot-import-qtwebkitwidgets-in-pyqt5" target="_blank" rel="external">Cannot import QtWebKitWidgets in PyQt5</a></p>
-<p>下次再找其他的模块做吧。</p>
-
-          
+     
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/07/173/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1601,10 +1395,10 @@ app.exec()
       
         
           
-            <p>和linux中一样，在命令行中用pip下载python第三方库的时候虽然方便，但总是很慢。一个不小心就断了，下载个比较大的，比如这回我想要的<code>PyQt5</code>有73M之多，而在50M的电信宽带下也只有15kb/s的速度……</p>
-<p>这次下定决心要解决命令行安装库时改善速度的问题。</p>
-<h2 id="临时的方法"><a href="#临时的方法" class="headerlink" title="临时的方法"></a>临时的方法</h2><p>比如安装PyQt5:</p>
-<pre><code>pip install PyQt5 -i http://pypi.douban.com/simple
+          和linux中一样，在命令行中用pip下载python第三方库的时候虽然方便，但总是很慢。一个不小心就断了，下载个比较大的，比如这回我想要的PyQt5有73M之多，而在50M的电信宽带下也只有15kb/s的速度……
+这次下定决心要解决命令行安装库时改善速度的问题。
+临时的方法比如安装PyQt5:
+pip install PyQt5 -i http://pypi.douban.com/simple
 `&lt;/pre&gt;
 
 这是使用豆瓣的源，当然还有其他的，比如阿里云的。
@@ -1614,22 +1408,15 @@ app.exec()
 ## 永久的方法
 
 linux／mac： ~/.pip/pip.conf
-windows： %HOMEPATH%pippip.ini
-
-如果没有的话，需要自己建立新的文件夹以及文件。
-
-对应的系统分别在上面的文件中写入以下配置。
-
-&lt;pre&gt;`[global]
-
-index-url = http://mirrors.aliyun.com/pypi/simple/
-
-[install]
-
-trusted-host=mirrors.aliyun.com
-</code></pre><p>保存后pip即会默认使用设定的源。</p>
-
-          
+win
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/06/170/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1758,10 +1545,10 @@ trusted-host=mirrors.aliyun.com
       
         
           
-            <p><a href="http://www.heibanke.com/lesson/crawler_ex00/" target="_blank" rel="external">闯关地址</a></p>
-<h2 id="第一关"><a href="#第一关" class="headerlink" title="第一关"></a>第一关</h2><p><img src="http://www.blog.eeljiang.cn/wp-content/uploads/2017/03/14887260152861.jpg" alt=""><br>简单的说，就是需要你不停地按照页面中的五位数字，在游览器地址栏中最后输入，并进入下一个界面。</p>
-<p>前两关用到的都是<code>urllib</code>模块。在爬虫中算是最常见了的吧。</p>
-<pre><code>import urllib
+          闯关地址
+第一关简单的说，就是需要你不停地按照页面中的五位数字，在游览器地址栏中最后输入，并进入下一个界面。
+前两关用到的都是urllib模块。在爬虫中算是最常见了的吧。
+import urllib
 import re
 
 tmp_re=urllib.urlopen(&apos;http://www.heibanke.com/lesson/crawler_ex00/&apos;)
@@ -1769,52 +1556,15 @@ html=tmp_re.read()
 index=re.findall(r&apos;输入数字([0-9]{5})&apos;,html)
 
 while index:
-        url=&apos;http://www.heibanke.com/lesson/crawler_ex00/%s/&apos; % index[0]
-        print url
-        tmp_re=urllib.urlopen(url)
-        html=tmp_re.read()
-        index=re.findall(r&apos;数字是([0-9]{5})&apos;,html)
-print html
-`&lt;/pre&gt;
-
-![](http://www.blog.eeljiang.cn/wp-content/uploads/2017/03/14887258259290.jpg)
-
-## 第二关
-
-![](http://www.blog.eeljiang.cn/wp-content/uploads/2017/03/14887267097303.jpg)
-第二题看起来直观多了，关键只有一个密码，而且最多就是三十个数字之一。~~答案是17~~
-
-&lt;pre&gt;`import urllib
-import re
-
-data={&apos;username&apos;:&apos;Tom&apos;}
-url=&apos;http://www.heibanke.com/lesson/crawler_ex01/&apos;
-
-for num in range(1,31):
-        data[&apos;password&apos;]=num
-        post_data=urllib.urlencode(data)
-        print post_data
-        response=urllib.urlopen(url,post_data)
-        html=response.read()
-        result=re.findall(&apos;密码错误&apos;,html)
-        if not result:
-                print html
-                break
-</code></pre><p><img src="http://www.blog.eeljiang.cn/wp-content/uploads/2017/03/14887268104387.jpg" alt=""></p>
-<h2 id="第三关"><a href="#第三关" class="headerlink" title="第三关"></a>第三关</h2><p>第三关中多了一个csrf保护。也就是每次提交的时候需要多传递一个字串。<br><del>第二题是乎也有csrf！。。。</del><br>以下是百科上对csrf的介绍</p>
-<blockquote>
-<p>跨站请求伪造（英语：Cross-site request forgery），也被称为 one-click attack 或者 session riding，通常缩写为 CSRF 或者 XSRF， 是一种挟制用户在当前已登录的Web应用程序上执行非本意的操作的攻击方法。[1] 跟跨网站脚本（XSS）相比，XSS 利用的是用户对指定网站的信任，CSRF 利用的是网站对用户网页浏览器的信任。</p>
-</blockquote>
-<p>一般有两种防御措施：</p>
-<ul>
-<li>检查Referer字段</li>
-<li>添加校验toke</li>
-</ul>
-<p>题目中的就应该属于第二种。</p>
-<p><img src="http://www.blog.eeljiang.cn/wp-content/uploads/2017/03/14887292276127.jpg" alt=""></p>
-<h2 id="未完。。"><a href="#未完。。" class="headerlink" title="未完。。"></a>未完。。</h2><p>[TOC]</p>
-
-          
+        url=&apos;http://
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/06/167/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2056,7 +1806,7 @@ for num in range(1,31):
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

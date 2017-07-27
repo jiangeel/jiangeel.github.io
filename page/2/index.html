@@ -385,92 +385,23 @@
       
         
           
-            <h2 id="stylish简介"><a href="#stylish简介" class="headerlink" title="stylish简介"></a>stylish简介</h2><blockquote>
-<p>利用用户样式管理器Stylish来重新编辑网站的样式。您可利用Stylish为许多网站安装主题和皮肤，也可创建自己的主题和皮肤。<br>  ★ 为Reddit添加黑色风格，使用简约的Facebook，或者更改Google、Twitter或您最爱的任意网站的外观。</p>
-<p>★ 自定义背景、配色方案、字体甚至动画。</p>
-<p>★ 方便地禁用、启用、编辑或删除任意已安装主题。</p>
-<p>★ 利用Stylish的CSS编辑器创建自己的用户样式（主题），然后与数百万Stylish用户共享。</p>
-</blockquote>
-<p>## </p>
-<p>&emsp;&emsp;最近需要在一个视频网站上大量地上传视频，并附加封面、简介以及选择一些<code>允许转载</code>等勾选框。<img src="http://www.blog.eeljiang.cn/wp-content/uploads/2017/03/屏幕快照-2017-03-04-19.03.47.png" alt="%e5%b1%8f%e5%b9%95%e5%bf%ab%e7%85%a7-2017-03-04-19-03-47"></p>
-<p>&emsp;&emsp;然而因为宿舍网速慢，每次都需要去上课前挂起上传，白天在教学楼期间用手机<code>远程操控</code>寝室里的电脑进行确认。由于手机屏幕小，原生网页中的选项按钮比较小，并且有许多元素都没有用到，所以计划用chrome的<code>stylish</code>插件对上传的页面修改一下，方便手机远程操控时的操作，毕竟上传视频的电脑反应比较慢，多滚动一下页面也要迟钝好久。在几十上百次的上传过程中能省下不少时间，<del>也省下一些流量</del>。</p>
-<p>&emsp;&emsp;在chrome的商店中搜索并安装<code>stylish</code>后，可以直接在地址栏右边的插件图标上点击<code>左键</code>，并选择<code>新建样式</code>，插件会自动跳转到编辑页面。</p>
-<p><img src="http://www.blog.eeljiang.cn/wp-content/uploads/2017/03/屏幕快照-2017-03-04-19.17.27.png" alt="%e5%b1%8f%e5%b9%95%e5%bf%ab%e7%85%a7-2017-03-04-19-17-27"></p>
-<p>&emsp;&emsp;底部的<code>应用对象</code>栏代表中间所编辑的<code>css</code>代码作用的网页地址，其中地址支持完整的<code>页面地址</code>、<code>网址前缀</code>和<code>匹配正则表达式</code>的相应网页。</p>
-<p><img src="http://www.blog.eeljiang.cn/wp-content/uploads/2017/03/屏幕快照-2017-03-04-19.15.37.png" alt="%e5%b1%8f%e5%b9%95%e5%bf%ab%e7%85%a7-2017-03-04-19-15-37"></p>
-<p>&emsp;&emsp;我简单编辑的样式如下：（其实绝大部分都是隐藏了无用的元素，把几个不能选择的按钮隐藏，并扩大了要选择的按钮。）</p>
-<pre><code>.card-staff {
-    display: none
-}
-.card-label {
-    display: none
-}
-.card-label {
-    display: none
-}
-.related-href-ul {
-    display: none
-}
-.cwi-right {
-    display: none
-}
-.cwi-left-tbox {
-    height: 100px;
-}
-.cwi-txt1 {
-    height: 100px;
-}
-.card-btn-box .card-btn-box {
-    position: absolute;
-    right: 350px;
-    width: 400px;
-}
-.card_allow p[data-allow=&apos;false&apos;] {
-    display: none;
-}
-.type-tit + p {
-    display: none
-}
-/* .allow-tit +p{
-display:none;
-} */
+          stylish简介
+利用用户样式管理器Stylish来重新编辑网站的样式。您可利用Stylish为许多网站安装主题和皮肤，也可创建自己的主题和皮肤。  ★ 为Reddit添加黑色风格，使用简约的Facebook，或者更改Google、Twitter或您最爱的任意网站的外观。
+★ 自定义背景、配色方案、字体甚至动画。
+★ 方便地禁用、启用、编辑或删除任意已安装主题。
+★ 利用Stylish的CSS编辑器创建自己的用户样式（主题），然后与数百万Stylish用户共享。
 
-.page-footer {
-    display: none;
-}
-.cardupload-secbox {
-    height: auto
-}
-.cf-bottom {
-    display: none;
-}
-
-.au1-box2{
-padding:20px;
-}
-
-.au1-box1{
-padding:20px;
-}
-
-.confirm-pub{
-padding:20px;
-    position:absolute;
-    left:30px;   
-}
-</code></pre><p>&nbsp;&nbsp;添加后保存，返回网页，可以看到已经有了一些变化。<br><img src="http://www.blog.eeljiang.cn/wp-content/uploads/2017/03/屏幕快照-2017-03-04-19.02.52.png" alt="%e5%b1%8f%e5%b9%95%e5%bf%ab%e7%85%a7-2017-03-04-19-02-52"></p>
-<p>&emsp;&emsp;看起来并不优雅，变化也没有很大，但是对于小屏幕的手机操作来讲已经是很大的进步了。仔细看可以发现页面短了许多，因此游览时不需要滚动到下面再点击确认发布了<del>在手机上滚动网页真的很难</del>。</p>
-<hr>
-<p><strong>相关技能</strong>：</p>
-<ul>
-<li>远程控制软件：teamviewer（个人版免费)</li>
-<li>chrome检查元素工具</li>
-<li>css样式</li>
-</ul>
-<hr>
-<p>[TOC]</p>
-
-          
+## 
+&emsp;&emsp;最近需要在一个视频网站上大量地上传视频，并附加封面、简介以及选择一些允许转载等勾选框。
+&ems
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/03/157/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -599,9 +530,16 @@ padding:20px;
       
         
           
-            <p>数组有()和[],其中()中值定义后为不可修改,[]可以修改值<br>可以return多个值,代表返回一个()数组<br>def 定义函数,不需要返回类型<br>if和for用冒号<br>继承写在类名后()内<br>类内的函数要参数self,调用类内属性要self.name<br>构造函数<strong>init</strong>()<br>与或非用and or not<br>存在没有顺序的 键值对:字典<br>import导入其他py文件<br>包裹传递:在函数括号内参数前加<em>表示传入的是个数组(如果是字典的话加*</em>)</p>
+          数组有()和[],其中()中值定义后为不可修改,[]可以修改值可以return多个值,代表返回一个()数组def 定义函数,不需要返回类型if和for用冒号继承写在类名后()内类内的函数要参数self,调用类内属性要self.name构造函数init()与或非用and or not存在没有顺序的 键值对:字典import导入其他py文件包裹传递:在函数括号内参数前加表示传入的是个数组(如果是字典的话加*)
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/10/29/125/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -730,14 +668,19 @@ padding:20px;
       
         
           
-            <p>背景：</p>
-<p>我的电脑只有500g机械+64g固态。某天发现有30g机械空余着，便安装了linux玩。没想到一用就变成了几天不开win了。linux用的一多，之前给的30g也瞬间不够了，就打算再从win那里挤一点出来，扩充一下。<br>目标：打算按网上许多人说的，把/home单独挂载出来，以后出了问题，重装系统什么的也方便。<br>过程：</p>
-<p>在windows下用分区助手割下50g空余空间。</p>
-<p>然而：磁盘分完后，原来隔壁的/boot分区就没了！</p>
-<div>整个文件夹下都空了……</div><br><div>无奈只好再用刻录在u盘的启动盘把刚分出来的50g再完整装一遍linux，然后把新系统boot中的文件拷贝到原来空的boot中去。然后再在upstart模式下修改/etc/fstab中挂载boot的UUID。</div><br><div>在拷贝boot的过程中，用了rsync命令来进行同步。同步完了再用diff检查一下两个文件夹的异同（可以用meld这个图形化工具来分析，比较直观）。</div><br><div></div><br><div>终于能正常启动了以后，再到启动盘中，再像拷贝boot那样，在准备好的50g空闲分区中建立/home，把原来的home同步过去，再把原来home给清空（不然挂载到新分区了后，老地方还是占用这这么多空间），无误后修改fstab，重启，完成。</div><br><div>（其实一开始我单纯的直接在fstab中添加了一行新分区home的uuid和后面的常规参数，而新分区里其实并没有home文件夹以及里面的数据，导致卡在登陆界面，无限循环在输入密码又无法载入桌面的情况……）</div><br><div></div>
-
-
-          
+          背景：
+我的电脑只有500g机械+64g固态。某天发现有30g机械空余着，便安装了linux玩。没想到一用就变成了几天不开win了。linux用的一多，之前给的30g也瞬间不够了，就打算再从win那里挤一点出来，扩充一下。目标：打算按网上许多人说的，把/home单独挂载出来，以后出了问题，重装系统什么的也方便。过程：
+在windows下用分区助手割下50g空余空间。
+然而：磁盘分完后，原来隔壁的/boot分区就没了！
+整个文件夹下都空了……无奈只好再用刻录在u盘的启动盘把刚分出来的50g再完整装一遍linux，然后把新系统boot中的文件拷贝到原来空的boot中去。然后再在upstart模式下
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/09/22/105/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -866,9 +809,15 @@ padding:20px;
       
         
           
-            <p>2016年09月17日09:33:02 cheat<br>2016年09月17日09:33:13 laptop-mode-tools 挂起问题 未解决<br>2016年09月17.-09B*<br>2016年09月17日10:34:10 locate命令 用root来updatedb更新信息库。<br>2016年09月17日10:59:50 永久添加alias 目录~/bashrc<br>2016年09月17日12:36:20 nload 监控总体网速<br>2016年09月17日13:06:18 sudo iftop -n -i 网卡.<br>2016年09月17日14:14:25 装deb软件 dpkg -i xxx.deb，sudo apt-get -f install<br>2016年09月17日14:24:16 安装了virtualbox 和xp<br>2016年09月17日16:34:02 安装了 speedometer 目前比较好看的 图形 监控<br>2016年09月17日16:49:42 安装了rar<br>2016年09月17日16:58:46 安装了font-manager 然而启动会卡死，已删除<br>2016年09月17日19:00:59 安装了wps<br>2016年09月17日19:38:16 顶部网速监控 indicator-sysmonitor<br>2016年09月17日19:39:59 添加公钥 sudo apt-key adv –keyserver keyserver.ubuntu.com –recv-keys 8D5A09DC9B929006<br>2016年09月17日20:47:14 编写了ss启动脚本.<br>2016年09月17日21:26:48 ss开机自启成功. sudo vim /etc/rc.local<br>2016年09月17日22:50:40 挂载了u盘。但只是只读 查看uuid:blkid<br>2016年09月17日22:50:55 开启开机详细信息（删掉了一个“quiet”）<br>2016年09月17日22:55:01 安装了GParted<br>2016年09月18日11:08:27 安装了gvim<br>2016年09月18日13:55:48 安装了keynav,然而并不好用。<br>2016年09月19日06:24:51 修复/etc/fstab 文件。删除了之前添加的u盘挂载。开机成功！！！<br>2016年09月19日16:32:35 安装了dconf-tools，类似注册表，修改默认启动的终端<br>2016年09月21日23:21:23 安装了jre和eclipse<br>2016年09月23日04:15:48 安装了meld.</p>
-
-          
+          2016年09月17日09:33:02 cheat2016年09月17日09:33:13 laptop-mode-tools 挂起问题 未解决2016年09月17.-09B*2016年09月17日10:34:10 locate命令 用root来updatedb更新信息库。2016年09月17日10:59:50 永久添加alias 目录~/bashrc2016年09月17日12:36:20 nload 监控总体网速2016年09月17日13:06:18 sudo iftop -n -i 网卡.2016年09月17日14:14:25 装deb软件 dpkg -i xxx.deb，sudo apt-
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/09/22/109/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -997,9 +946,15 @@ padding:20px;
       
         
           
-            <p>昨天刚把linux进不去的问题解决好，今天windows又进不去了……<br>原因是这样的：原来的开机过程是，先进入windows的选择系统黑白界面，如果选了linux，就再进入ubuntu的紫色grub，再选择进入ubuntu或linux救援模式或进入win10（也就是跳到黑白选项）。如此一来，开机要走好多步，而进入了grub以后又依旧能返回去选择win10，那我就想着把第一个黑白菜单默认进入linux，然后跳过等待时间不就好了嘛。<br>当我在windows用easyBCD设置默认系统和跳过等待后（其实在我的电脑右键属性里也能直接设置），就再也进不去windows了……<br>原因分析：开机直接跳过黑白菜单后来到grub，进入linux无问题，然而如果想进入win的话，又会马上加载到grub…仔细想想应该是因为黑白菜单被跳过了.…没错，当初在grub下选择win的确是进入黑白菜单继续选择系统而已，算来算去，原来是进入win需要按一下，进入linux需要按两下；现在哪怕我成功了，也只是变成进入linux按一下，进入win按两下…<br>解决过程：1.百度搜索到windows在c盘有一个boot.ini，里面记录了开机等待的时间。然而在linux下挂载c盘的分区后进入查看，并没有此文件。<br>2.搜索关于启动引导的修复结果中，几乎全部都是grub或mbr损坏、被覆盖等原因，其中大多都是windows能进，linix不能引导的问题。然而我是两者都正常，只是没时间而已……<br>3.最后借助了第三方援助，用同学刻录了pe的u盘启动，进入后对着pe的我的电脑，右键属性里改回30s等待时间，重启，完成。<br><img src="http://www.blog.eeljiang.cn/wp-content/uploads/2016/09/542624.jpg" alt="542624"></p>
-
-          
+          昨天刚把linux进不去的问题解决好，今天windows又进不去了……原因是这样的：原来的开机过程是，先进入windows的选择系统黑白界面，如果选了linux，就再进入ubuntu的紫色grub，再选择进入ubuntu或linux救援模式或进入win10（也就是跳到黑白选项）。如此一来，开机要走好多步，而进入了grub以后又依旧能返回去选择win10，那我就想着把第一个黑白菜单默认进入linux，然后跳过等待时间不就好了嘛。当我在windows用easyBCD设置默认系统和跳过等待后（其实在我的电脑右键属性里也能直接设置），就再也进不去windows了……原因分析：开机直接跳过黑白菜单后来到
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/09/20/96/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1041,7 +996,7 @@ padding:20px;
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2016/09/19/cj5m22u77000petfuj9zixnp8/">
+    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2016/09/19/cj5mdj6cg000wuffufnmy6syt/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eel">
@@ -1060,7 +1015,7 @@ padding:20px;
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/09/19/cj5m22u77000petfuj9zixnp8/" itemprop="url">添加Swap及开启挂起记录</a></h1>
+                <a class="post-title-link" href="/2016/09/19/cj5mdj6cg000wuffufnmy6syt/" itemprop="url">添加Swap及开启挂起记录</a></h1>
         
 
         <div class="post-meta">
@@ -1128,11 +1083,16 @@ padding:20px;
       
         
           
-            <p>有人说内存比较大的时候（比如我的是8g），就不需要swap内存了。在windows上好像的确是不太需要虚拟内存了。然而当我想要挂起的时候，发现挂起后就无法唤醒了。</p>
-<p>经过测验：<br>1.并非外接显示器的缘故。只用笔记本自带的显示器也无法唤醒（显示器是新添加的，谁知道会不会是它的缘故呢）<br>2.缺失laptop-mode-tools. 经过$sudo apt-get install laptop-mode-tools后，再cat /proc/sys/vm/laptop_mode，发现数字是0，因此为非启动状态。<br>于是编辑 /etc/laptop-mode/laptop-mode.conf,设置ENABLE_LAPTOP_MODE_ON_AC=1，看起来是连着电源的时候也能挂起的意思吧。再sudo laptop-mode start,最后再cat 一遍/proc/sys/vm/laptop_mode，结果是2了。小小激动了一把。然而并没什么用。<br>3.几天后想到休眠时把内存中的东西放到硬盘里，也许中间需要swap来过度什么的。又想到自己没有swap，所以打算添加一个swap分区。</p>
-<p>添加过程：<br>1.自己的ubuntu是笔记本上剩下的30g硬盘，几乎全装给了 / 目录，而swap又需要内存的一半到2倍左右，也就是5-10g吧。<br>2.搜索到添加swap有两种方式：1.传统分区添加。2.比较方便的创建一个大文件，然后转化成swap。遂选择第二种。<br>3.首先用dd命令创建10g的空间,创建在/root/swapfile下。$dd if=/dev/zero of=/root/swapfile bs=1M count=10240<br>4.然后将文件转化为swap格式。$mkswap /root/swapfile<br>5.启用swap文件:$swapon /swapfile<br>提示权限644的权限不好，暂时不知道为啥，就根据系统的建议改成600吧 $chmod 600 /root/swaofile<br>6.最后$free 命令可以看到的确有了10g的swap空间。<br>7.在/etc/fstab中添加一行,这样swap就每次开机有效了！<br>/root/swapfile swap swap defaults 0 0<br>(估计比较特殊吧，都不用uuid的)<br>8.另外之前乱修改fstab搞得无法启动系统了，所以给fstab加了chattr +i，今天又忘记了，sudo了半天都修改不了，花了很久才意识到……</p>
-
-          
+          有人说内存比较大的时候（比如我的是8g），就不需要swap内存了。在windows上好像的确是不太需要虚拟内存了。然而当我想要挂起的时候，发现挂起后就无法唤醒了。
+经过测验：1.并非外接显示器的缘故。只用笔记本自带的显示器也无法唤醒（显示器是新添加的，谁知道会不会是它的缘故呢）2.缺失laptop-mode-tools. 经过$sudo apt-get install laptop-mode-tools后，再cat /proc/sys/vm/laptop_mode，发现数字是0，因此为非启动状态。于是编辑 /etc/laptop-mode/laptop-mode.conf,设置ENABLE_L
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/09/19/cj5mdj6cg000wuffufnmy6syt/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1261,10 +1221,16 @@ padding:20px;
       
         
           
-            <p>不知名原因某一次重启后（很久没重启了），忽然无法进入系统了。<br>查看系统启动日志有很多failed的加载项，然而并看不懂，关键字也无法搜索到。<br>海量搜索可能原因后总结目前情况：<br>1.grub正常，可以选择正常启动或进入救援模式等。<br>2. resume模式带中文，但全是乱码，看不懂无法使用。<br>3.可以进入救援模式，以root身份修改文件。（找到出问题的配置文件应该就能解决了）<br>4.然而并不知道是什么原因，所以不知道该修改什么文件。</p>
-<p>5.根据一大堆启动日志来看，failed的出现都是在加载引导系统的时候出的问题。同时根据网络上搜索到的解决方案来看，把我的情况模糊匹配成/etc/fstab这个文件出问题了吧。（没错我的确在学习u盘挂载的时候修改过了。）<br>6.vi编辑fstab，删除最后一行当初为了挂载u盘添加的u盘的uuid等信息后reboot进入正常模式。成功！<br>7.总结原因：在fstab中添加的是系统启动时挂载的磁盘，之前都没出问题是因为u盘没拔出，所以即使重启也能正确挂载。而这次u盘被拔出后无法挂载故启动不能。经测试，插入u盘后便能成功启动。总之，还是删掉fstab中的u盘挂载代码吧，毕竟ubuntu里u盘插上就已经能自动挂载了。。</p>
-
-          
+          不知名原因某一次重启后（很久没重启了），忽然无法进入系统了。查看系统启动日志有很多failed的加载项，然而并看不懂，关键字也无法搜索到。海量搜索可能原因后总结目前情况：1.grub正常，可以选择正常启动或进入救援模式等。2. resume模式带中文，但全是乱码，看不懂无法使用。3.可以进入救援模式，以root身份修改文件。（找到出问题的配置文件应该就能解决了）4.然而并不知道是什么原因，所以不知道该修改什么文件。
+5.根据一大堆启动日志来看，failed的出现都是在加载引导系统的时候出的问题。同时根据网络上搜索到的解决方案来看，把我的情况模糊匹配成/etc/fstab这个文件出问题了吧。（没
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/09/19/89/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1393,10 +1359,15 @@ padding:20px;
       
         
           
-            <div></div><br><div></div><br><div>1.<em>关于退出:</em></div><br><div></div><br><div>:wq! —-强制保存退出</div><br><div></div><br><div>:wq  —- 保存退出</div><br><div></div><br><div>:  x   —– 作用和:wq 一样</div><br><div></div><br><div>ZZ  —- 作用和:wq一样，(注意Z是大写的，并且不是在命令模式)</div><br><div></div><br><div>:q  —- 退出</div><br><div></div><br><div>:q! —  强制退出</div><br><div></div><br><div>========================================================</div><br><div></div><br><div>2.<em>关于移动:</em></div><br><div></div><br><div>h : 在当前行向左移动一个字符</div><br><div></div><br><div>j: 移动到下一行</div><br><div></div><br><div>k:移动到上一行</div><br><div></div><br><div>l:在当前行向右移动一个字符</div><br><div></div><br><div>Ctrl +f: 向前滚动一页</div><br><div></div><br><div>Ctrl +b:向后滚动一页</div><br><div></div><br><div>:n   将光标定位到第n行</div><br><div></div><br><div>:   $   将光标定位到最后一行</div><br><div></div><br><div>0    将光标定位到本行的行首</div><br><div></div><br><div>$    将光标定位到本行的行尾</div><br><div></div><br><div>G    将光标定位到本文章的最后一行，与:   $功能相同。</div><br><div></div><br><div>H    将光标定位到屏幕的顶端</div><br><div></div><br><div>M    将光标定位到屏幕的中间</div><br><div></div><br><div>L     将光标定位到屏幕的底端</div><br><div></div><br><div>===========================================================</div><br><div></div><br><div>3.<em>关于搜索：</em></div><br><div></div><br><div>/: 后面跟要查找的东西，在文件中向前搜索</div><br><div></div><br><div>?:后面跟要查找的东西，在文件中向后搜索</div><br><div></div><br><div>n: 向前重复搜索</div><br><div></div><br><div>N: 向后重复搜索</div><br><div></div><br><div>===========================================================</div><br><div></div><br><div>4.<em>关于复制</em></div><br><div></div><br><div>yy: 复制光标当前行</div><br><div></div><br><div>nyy: 复制光标当前行到当前行以下的n-1行</div><br><div></div><br><div>:1,100 co 200 将1~100的内容复制到第200行。</div><br><div></div><br><div>:100,102 co $ 将100~102行的内容复制到最后一行。</div><br><div></div><br><div>===========================================================</div><br><div></div><br><div>5.<em>关于粘贴:</em></div><br><div></div><br><div>p :   粘贴到当前行的下一行</div><br><div></div><br><div>P(大) :   粘贴到当前行的 上一行</div><br><div></div><br><div>===========================================================</div><br><div></div><br><div>6.<em>关于删除.剪切:</em></div><br><div></div><br><div>dd  删除当前行</div><br><div></div><br><div>ndd  与nyy相似</div><br><div></div><br><div>dw  删除一个单词</div><br><div></div><br><div>ndw  与ndd相似</div><br><div></div><br><div>x    删除一个字符</div><br><div></div><br><div>nx   删除n个字符</div><br><div></div><br><div>dG   删除当前光标到文件末尾的所有内容。</div><br><div></div><br><div>d0   删除当前光标到本行行首的所有内容</div><br><div></div><br><div>d$   删除当前光标到本行行尾的所有内容</div><br><div></div><br><div>:1,100d  删除1~100</div><br><div></div><br><div>:100d    删除第100行</div><br><div></div><br><div>:1,100 mo $  将1~100行的内容移动到最后一行。</div><br><div></div><br><div>======================================================</div><br><div></div><br><div>7.<em>关于插入：</em></div><br><div></div><br><div>i:  在当前位置的字符前面进入插入模式</div><br><div></div><br><div>I: 在当前行的开头进行插入</div><br><div></div><br><div>a: 在当前位置的字符后面进入插入模式</div><br><div></div><br><div>A: 在当前行的结尾进行插入</div><br><div></div><br><div>o:  在当前行下面打开一个新行进行插入</div><br><div></div><br><div>O:在当前行上面打开一个新行进行插入</div><br><div></div><br><div>======================================================</div><br><div></div><br><div>8.<em>关于撤销:</em></div><br><div></div><br><div>u: 撤销上一次的更改</div><br><div></div><br><div>=======================================================</div><br><div></div><br><div>9.<em>关于替换：</em></div><br><div></div><br><div>regexp:是要匹配的式样</div><br><div></div><br><div>replacement: 是要替换的字符串<em></em></div><br><div></div><br><div>:s /regexp/replacement  ————————-替换当前行出现的第一个式样</div><br><div></div><br><div>:s/regexp/replacement/g————————-替换当前行所有的匹配</div><br><div></div><br><div>:%s/regexp/replacement/g———————–替换文件中所有匹配式样</div><br><div></div><br><div>==========================================================</div><br><div></div><br><div></div><br><div><em>PS: 还有一个重要的命令就是”.” 命令，这个命令是用来重复上一命令的</em></div>
-
-
-          
+          1.关于退出::wq! —-强制保存退出:wq  —- 保存退出:  x   —– 作用和:wq 一样ZZ  —- 作用和:wq一样，(注意Z是大写的，并且不是在命令模式):q  —- 退出:q! —  强制退出========================================================2.关于移动:h : 在当前行向左移动一个字符j: 移动到下一行k:移动到上一行l:在当前行向右移动一个字符Ctrl +f: 向前滚动一页Ctrl +b:向后滚动一页:n   将光标定位到第n行:   $   将光标定位到最后一行0    将光标定位到本行的行首$    将光
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/02/17/82/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1525,143 +1496,21 @@ padding:20px;
       
         
           
-            <div>
-
-<p><a href="http://xuelangzf.github.io/2014/09/19/chrome_DevTools_1/" target="_blank" rel="external">原文地址</a></p>
-<p>这里我假设你用的是Chrome浏览器，如果恰好你做web开发，或者是比较好奇网页中的一些渲染效果并且喜欢折腾，那么你一定知道Chrome的开发者工具了。其实其他浏览器也有类似工具，比如Firefox下的firebug。本文将会详细讲述如何使用Chrome开发者工具，希望里面有些让你感到惊艳的东西！即使你不用Chrome，那么文中的某些内容也会相当有用。</p>
-<p>首先啰嗦一下如何打开开发者工具吧。可以直接在页面上点击右键，然后选择审查元素；或者是打开Tools–Developer Tools；或者是用快捷键 <kbd>Command Option + I</kbd> 打开。打开后我们看到的界面大概如下：</p>
-<p><img src="http://www.blog.eeljiang.cn/wp-content/uploads/2016/02/20140919_CDT_Summary.png" alt="20140919_CDT_Summary"><img src="file:///C:/Users/ADMINI~1/AppData/Local/Temp/enhtmlclip/20140919_CDT_Summary.png" alt=""></p>
-<p>&nbsp;</p>
-<p>Google Chrome一共提供了8大组工具：</p>
-<ol>
-<li>Elements: 允许我们从浏览器的角度看页面，也就是说我们可以看到chrome渲染页面所需要的的HTML、CSS和DOM(Document Object Model)对象。此外，还可以编辑这些内容更改页面显示效果；</li>
-<li>Network: 可以看到页面向服务器请求了哪些资源、资源的大小以及加载资源花费的时间，当然也能看到哪些资源不能成功加载。此外，还可以查看HTTP的请求头，返回内容等；</li>
-<li>Sources: 主要用来调试js；</li>
-<li>Timeline: 提供了加载页面时花费时间的完整分析，所有事件，从下载资源到处理Javascript，计算CSS样式等花费的时间都展示在Timeline中；</li>
-<li>Profiles: 分析web应用或者页面的执行时间以及内存使用情况；</li>
-<li>Resources: 对本地缓存（IndexedDB、Web SQL、Cookie、应用程序缓存、Web Storage）中的数据进行确认及编辑；</li>
-<li>Audits: 分析页面加载的过程，进而提供减少页面加载时间、提升响应速度的方案；</li>
-<li>Console: 显示各种警告与错误信息，并且提供了shell用来和文档、开发者工具交互。<br>强大的Chrome开发者工具提供了很棒的提示功能，当我们把鼠标悬停在某些项时，会显示一些很有用的提示信息，有时候我们可以得到意想不到的收获。此外，开发者工具还提供了Emulation功能，做移动开发时特别有用。下面先详细研究一下8大工具的使用方法。</li>
-</ol>
-<h1 id="Elements"><a href="#Elements" class="headerlink" title="Elements"></a><a href="https://developer.chrome.com/devtools/docs/dom-and-styles" target="_blank" rel="external">Elements</a></h1><p>Elements工具像一把手术刀一样“解剖”了当前页面，我们看到的Elements页面一般像这样子：</p>
-<p><img src="http://www.blog.eeljiang.cn/wp-content/uploads/2016/02/20140919_CDT_Element.png" alt="chrome开发者工具"></p>
-<p><img src="file:///C:/Users/ADMINI~1/AppData/Local/Temp/enhtmlclip/20140919_CDT_Element.png" alt=""></p>
-<p>图中标记为1的红色区块为页面HTML文件，HTML中的每个元素比如<code>&amp;lt;body&amp;gt;、&amp;lt;p&amp;gt;</code>都是一个DOM节点，所有的DOM节点组成了DOM树。我们完全可以把红色区块1当做是DOM树，把HTML元素标签看做DOM节点。</p>
-<p>当我们在这里选中某一DOM对象时，网页中相应元素也会被阴影覆盖。我们可以对DOM对象进行修改，修改后结果会在页面实时显示出来。此外，还可以用 <kbd>Command + f</kbd> 搜索DOM树中指定的内容，或者是以HTML形式更改页面元素，如下图：</p>
-<p>&nbsp;</p>
-<p><img src="file:///C:/Users/ADMINI~1/AppData/Local/Temp/enhtmlclip/20140919_CDT_Element_html.png" alt=""><img src="http://xuelangzf-github.qiniudn.com/20140919_CDT_Element_html.png" alt="图3\. 更改内容"></p>
-<p>选中DOM对象之后右键即可以看到一些辅助的功能，如图中标记为2的区块所示：</p>
-<ol>
-<li>Add Attribute: 在标签中增加新的属性；</li>
-<li><p>Force Element State: 有时候我们为页面元素添加一些动态的样式，比如当鼠标悬停在元素上时的样式，这种动态样式很难调试。我们可以使用<code>Force Element State</code>强制元素状态，便于调试，如下图：</p>
-<pre>![图4\. 强制元素状态](http://xuelangzf-github.qiniudn.com/20140919_CDT_Element_dynamic_style.gif)</pre>
-</li>
-<li><p>Edit as HTML: 以HTML形式更改页面元素；</p>
-</li>
-<li>Copy XPath: 复制<a>XPath</a>；</li>
-<li>Delete Node: 删除DOM节点；</li>
-<li>Break On: 设置<a>DOM 断点</a>。<br>图中被标记为3的蓝色区块显示当前标签的路径：从html开始一直到当前位置，我们单击路径中任何一个标签，即可以跳转到相应标签内容中去。</li>
-</ol>
-<p>图中标记为4的蓝色区块实时显示当前选中标签的CSS样式、属性等，一共有以下5小部分：</p>
-<ul>
-<li>Styles: 显示用户定义的样式，比如请求的default.css中的样式，和通过Javasript生成的样式，还有开发者工具添加的样式；</li>
-<li>Computed: 显示开发者工具计算好的元素样式；</li>
-<li>Event Listeners: 显示当前HTML DOM节点和其祖先节点的所有JavaScript<a>事件监听器</a>，这里的监听脚本可以来自Chrome的插件。可以点击右边小漏斗形状(filter)选择只显示当前节点的事件监听器。</li>
-<li>DOM Breakpoints: 列出所有的<a>DOM 断点</a>；</li>
-<li>Properties: 超级全面地列出当前选中内容的属性，不过基本很少用到。<br>实际应用中我们经常会用到Styles，如下图：</li>
-</ul>
-<p><img src="file:///C:/Users/ADMINI~1/AppData/Local/Temp/enhtmlclip/20140919_CDT_Element_styles.png" alt=""><img src="http://xuelangzf-github.qiniudn.com/20140919_CDT_Element_styles.png" alt="图5\. Element 样式"></p>
-<p>图中标记为1的+号为<code>New style rule</code>，可以为当前标签添加新的选择器，新建立的样式为inspector-stylesheet。此外，也可以直接在原有的样式上增加、修改、禁用样式属性，如图中标记2显示。</p>
-<p>在New style rule右边为<code>Toggle Element State</code>，选择后会出现标记3显示的选择框，如果选中<code>:hover</code>后，即可以看到鼠标悬停在页面元素上时的CSS样式了，作用类似于前面的Force Element Satte，更多内容可以看<a href="http://stackoverflow.com/questions/4515124/see-hover-state-in-chrome-developer-tools" target="_blank" rel="external">:hover state in Chrome Developer Tools</a> 。</p>
-<p>更强大的是，开发者工具以直观的图形展示了盒子模型的margin、border、padding部分，如标记5所示。下面动态图给出了盒子模型的一个示例：</p>
-<p><img src="http://xuelangzf-github.qiniudn.com/20140919_CDT_Element_box.gif" alt="图6\. 盒子模型示例"><img src="file:///C:/Users/ADMINI~1/AppData/Local/Temp/enhtmlclip/20140919_CDT_Element_box.gif" alt=""></p>
-<h1 id="Network"><a href="#Network" class="headerlink" title="Network"></a><a href="https://developer.chrome.com/devtools/docs/network" target="_blank" rel="external">Network</a></h1><p>有时候我们的网页加载的很慢，而相同网速下，其他网页加载速度并不慢。这时候就得考虑优化网页，优化前我们必须知道加载速度的瓶颈在哪里，这个时候可以考虑使用Network工具。下图为我的博客首页加载时的Network情况：</p>
-<p><img src="http://xuelangzf-github.qiniudn.com/20140919_CDT_Network.png" alt="图7\. Network 总体效果"><img src="file:///C:/Users/ADMINI~1/AppData/Local/Temp/enhtmlclip/20140919_CDT_Network.png" alt=""></p>
-<p>请求的每个资源在Network表格中显示为一行，每个资源都有许多列的内容(如红色区块1)，不过默认情况下不是所有列都显示出来。</p>
-<ul>
-<li>Name/Path: 资源名称以及URL路径；</li>
-<li>Method: HTTP请求方法；</li>
-<li>Status/Text: HTTP状态码/文字解释；</li>
-<li>Type: 请求资源的MIME类型；</li>
-<li>Initiator解释请求是怎么发起的，有四种可能的值：</li>
-<li><ol>
-<li>Parser：请求是由页面的HTML解析时发送的；</li>
-<li>Redirect：请求是由页面重定向发送的；</li>
-<li>Script：请求是由script脚本处理发送的；</li>
-<li>Other：请求是由其他过程发送的，比如页面里的link链接点击，在地址栏输入URL地址。</li>
-</ol>
-</li>
-<li><p>Size/Content: Size是响应头部和响应体结合起来的大小，Content是请求内容解码后的大小。进一步了解可以看这里<a href="http://stackoverflow.com/questions/8072921/chrome-dev-tools-size-vs-content" target="_blank" rel="external">Chrome Dev Tools - “Size” vs “Content”</a>；</p>
-</li>
-<li>Time/Latency: Time是从请求开始到接收到最后一个字节的总时长，Latency是从请求开始到接收到第一个字节的时间；</li>
-<li>Timeline: 显示网络请求的<code>可视化瀑布流</code>，鼠标悬停在某一个时间线上，可以显示整个请求各部分花费的时间。<br>以上是默认显示的列，不过我们可以在瀑布流的顶部右键，这样就可以选择显示或者隐藏更多的列，比如Cache-Control, Connection, Cookies, Domain等。</li>
-</ul>
-<p>我们可以按照上面任意一项来给资源请求排序，只需要单击相应的名字即可。Timeline排序比较复杂，单击Timeline后，需要选择根据Start Time、Response Time、End Time、Duration、Latency中的一项来排序。</p>
-<p>红色区块2中，一共有6个小功能：</p>
-<ol>
-<li>Record Network Log: 红色表示此时正在记录资源请求信息；</li>
-<li>Clear: 清空所有的资源请求信息；</li>
-<li>Filter: 过滤资源请求信息；</li>
-<li>Use small resource raws: 每一行显示更少的内容；</li>
-<li>Perserve Log: 再次记录请求的信息时不擦出之前的资源信息；</li>
-<li>Disable cache: 不允许缓存的话，所有资源均重新加载。<br>选择Filter后，就会出现如红色区块3所显示的过滤条件，当我们点击某一内容类型(可以是Documents, Stylesheets, Images, Scripts, XHR, Fonts, WebSockets, Other)后，只显示该特定类型的资源。在<a>XHR请求</a>中，可以在一个请求上右键选择“Replay XHR”来重新运行一个XHR请求。</li>
-</ol>
-<p>有时候我们需要把Network里面内容传给别人，这时候可以在资源请求行的空白处右键然后选择<code>Save as HAR with Content</code>保存为一个HAR文件。然后可以在一些第三方工具网站，比如<a href="http://ericduran.github.io/chromeHAR/" target="_blank" rel="external">这里</a>重现网络请求信息。</p>
-<p>选定某一资源后，我们还可以<code>Copy as cURL</code>，也就是复制网络请求作为curl命令的参数，详细内容看 <a href="https://developer.chrome.com/devtools/docs/network#copying-requests-as-curl-commands" target="_blank" rel="external">Copying requests as cURL commands</a></p>
-<p>此外，我们还可以查看网络请求的请求头，响应头，已经返回的内容等信息，如下图：</p>
-<p><img src="http://xuelangzf-github.qiniudn.com/20140919_CDT_Network_content.png" alt="图8\. 网页请求内容"><img src="file:///C:/Users/ADMINI~1/AppData/Local/Temp/enhtmlclip/20140919_CDT_Network_content.png" alt=""></p>
-<p>资源的详细内容有以下几个：</p>
-<ul>
-<li>HTTP request and response headers</li>
-<li>Resource preview: 可行时进行资源预览；</li>
-<li>HTTP response: 未处理过的资源内容；</li>
-<li>Cookie names and values: HTTP请求以及返回中传输的所有Cookies；</li>
-<li>WebSocket messages: 通过WebSocket发送和接收到的信息；</li>
-<li>Resource network timing: 图形化显示资源加载过程中各阶段花费的时间。</li>
-</ul>
-<h1 id="补充解释"><a href="#补充解释" class="headerlink" title="补充解释"></a>补充解释</h1><p><strong><a>[XPath]</a></strong></p>
-<p>XPath 是一门在 XML 文档中查找信息的语言。XPath 用于在 XML 文档中通过元素和属性进行导航。比如在图2中，</p>
-<pre><code>&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;https://github.com/NUKnightLab/TimelineJS&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;这里&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt;
-</code></pre><p><pre></pre><br>这里a标签的Xpath为：/html/body/div[2]/p[1]/a，解读为：html里面body标签的第二个div标签的第一个p标签下的a标签。</p>
-<p><strong><a>[HTML DOM事件]</a></strong></p>
-<p>HTML DOM允许我们在某一事件发生时执行特定的JavaScript脚本，这里的事件可以是：</p>
-<ul>
-<li>鼠标移到某元素之上；</li>
-<li>窗口或框架被重新调整大小；</li>
-<li>文本被选中；</li>
-<li>用户在HTML元素上单击；</li>
-<li>某个键盘按键被按下…<br>这里事件发生时执行的javascript脚本就是事件监听器。</li>
-</ul>
-<p><strong><a>[DOM 断点]</a></strong></p>
-<p>DOM 断点（DOM Breakpoints）可以监听某个 DOM 被修改情况，在Elements中某个元素上右键可以设置三种不同情况的断点：</p>
-<ul>
-<li>子节点修改</li>
-<li>自身属性修改</li>
-<li>自身节点被删除<br>设置后 DOM Breakpoints 列表中就会出现该 DOM 断点。</li>
-</ul>
-<p>一旦监听的DOM被修改时，断点就会定位到执行修改操作的代码，这对于绑定了多个事件的 DOM 调试有很大的帮助。</p>
-<p><strong><a>[XMLHttpRequest]</a></strong></p>
-<p>XMLHttpRequest是一个浏览器接口，使得Javascript可以进行HTTP(S)通信。XMLHttpRequest 对象用于在后台与服务器交换数据，这样就可以</p>
-<ul>
-<li>在不重新加载页面的情况下更新网页</li>
-<li>在页面已加载后从服务器请求数据</li>
-<li>在页面已加载后从服务器接收数据</li>
-<li>在后台向服务器发送数据<br>更多关于XHR的内容可以看阮一峰老师的<a href="http://www.ruanyifeng.com/blog/2012/09/xmlhttprequest_level_2.html" target="_blank" rel="external">XMLHttpRequest Level 2 使用指南</a>。</li>
-</ul>
-<p><strong><a>[WebSocket]</a></strong></p>
-<p><a href="http://dev.w3.org/html5/websockets/" target="_blank" rel="external">WebSocket规范</a>定义了一种 API，可在网络浏览器和服务器之间建立“套接字”连接。简单地说：客户端和服务器之间存在持久的连接，而且双方都可以随时开始发送数据。这样就解决了长期以来只能由客户端发起请求才能从服务器获取信息这一问题。</p>
-<p>更多关于WebSocket的内容可以看<a href="">WebSockets 简介：将套接字引入网络</a></p>
-<p><strong>[本文环境]</strong></p>
-<ul>
-<li>操作系统：OS X 10.9.4</li>
-<li>Chrome版本：Version 37.0.2062.120<br>参考：<br><a href="https://developer.chrome.com/devtools" target="_blank" rel="external">Chrome DevTools Overview</a><br><a href="http://www.html5rocks.com/en/tutorials/developertools/part1/" target="_blank" rel="external">Introduction to Chrome Developer Tools</a><br><a href="http://code.tutsplus.com/articles/chrome-dev-tools-networking-and-the-console--net-28167" target="_blank" rel="external">Chrome Dev Tools: Networking and the Console</a></li>
-</ul>
-<p></p></div><br>&nbsp;<p></p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-
           
+
+原文地址
+这里我假设你用的是Chrome浏览器，如果恰好你做web开发，或者是比较好奇网页中的一些渲染效果并且喜欢折腾，那么你一定知道Chrome的开发者工具了。其实其他浏览器也有类似工具，比如Firefox下的firebug。本文将会详细讲述如何使用Chrome开发者工具，希望里面有些让你感到惊艳的东西！即使你不用Chrome，那么文中的某些内容也会相当有用。
+首先啰嗦一下如何打开开发者工具吧。可以直接在页面上点击右键，然后选择审查元素；或者是打开Tools–Developer Tools；或者是用快捷键 Command Option + I 打开。打开后我们看到的界面大概如下：
+
+&n
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/02/16/64/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1790,99 +1639,22 @@ padding:20px;
       
         
           
-            <p>一个学期前我也和楼主差不多不知道这些都是啥，一个学期之后差不多都弄懂了，来讲讲自己的理解吧 &gt; &lt; 因为接触的时间不是很长，有错误的地方欢迎指正~</p>
-<p>首先要知道网站访问大概是什么个过程：<br>假设你在浏览器地址栏输入这个问题的地址</p>
-<p>访问过程和下图差不多，浏览器和服务器交流，服务器和数据库交流（有时候数据库就在服务器那台机子上）<br><img src="http://www.blog.eeljiang.cn/wp-content/uploads/2016/02/Image-300x211.jpg" alt="Image"></p>
-<p><img src="file:///C:/Users/ADMINI~1/AppData/Local/Temp/enhtmlclip/Image.jpg" alt=""><br><strong>HTML 与 CSS</strong><br>你家电脑拿到一个 html （就是上图 HTTP 响应的 body 里的内容）之后，就会对它进行解析渲染。HTML 就是一种标记语言。类比一下，大家在论坛上经常会用一些代码来添加富文本内容，举一些栗子：</p>
-<ul>
-<li>用来贴图</li>
-<li>用来贴地址</li>
-<li>表示标签里的文字应该被删掉（默认添加删除线效果）<br>这种<strong>论坛代码</strong>也是一种标记语言，HTML 的作用就和它差不多。服务器返回给你的html文件里面，写的是一些代码，大概是这样的：</li>
-</ul>
-<p><img src="file:///C:/Users/ADMINI~1/AppData/Local/Temp/enhtmlclip/Image(1" alt="">.jpg)<img src="http://www.blog.eeljiang.cn/wp-content/uploads/2016/02/Image1-300x225.jpg" alt="Image1"></p>
-<p>浏览器拿到这些代码之后，分析一下给你渲染好页面显示出来，如果不用css，效果是这样的，按照浏览器默认的样式显示出列表、图片、超链接、输入框、按钮等等：</p>
-<p><img src="file:///C:/Users/ADMINI~1/AppData/Local/Temp/enhtmlclip/Image(2" alt="">.jpg)<img src="http://www.blog.eeljiang.cn/wp-content/uploads/2016/02/Imag3e-273x300.jpg" alt="Imag3e"><br>是不是觉得默认样式有点看瞎狗眼呢……所以很多时候我们需要自定义样式，现行通用的规定样式的语言是CSS，我们可以用它写一些定义样式的代码，然后在 html 文件里用一个&lt;link&gt;标签把这些规定样式的 CSS 代码与表达内容语义的 HTML 代码关联起来，然后你就能看到一个符合人类正常审美的页面了:</p>
-<p><img src="file:///C:/Users/ADMINI~1/AppData/Local/Temp/enhtmlclip/Image(3" alt="">.jpg)<img src="http://www.blog.eeljiang.cn/wp-content/uploads/2016/02/Imsage-300x134.jpg" alt="Imsage"><br>CSS 代码的格式基本是<br>比如知乎顶上那个蓝色的导航条，它的 CSS 大约是这样的</p>
-<p><img src="file:///C:/Users/ADMINI~1/AppData/Local/Temp/enhtmlclip/Image(4" alt="">.jpg)<img src="http://www.blog.eeljiang.cn/wp-content/uploads/2016/02/Imagsse-300x188.jpg" alt="Imagsse"><br>第一个属性对应的代码翻译成人话，就是它的位置（position）应该是不动（fixed）的，浏览器会兢兢业业地去实现这段代码要求实现的效果， 所以你在页面上翻来翻去顶上那个导航条都会死死地黏在窗口顶部不跟着滚动。<br>再拿里面的其他几个属性做栗子解释一下就是：</p>
-<ul>
-<li>left 和 top 为零指明这个导航条要紧贴着窗口的左上角</li>
-<li>width 和 height 指定这个导航条的宽和高</li>
-<li>background 指明这个导航条的背景是一种渐变的蓝色<br>浏览器就会根据这些 CSS 代码，“画”出对应的样式。</li>
-</ul>
-<p><strong>HTML 5 与 XHTML</strong><br>像人的语言一样，网络上的网页里的 HTML 代码也不一定是标准的，好比有时候你发音不太标准，别人会去猜测你说的到底是什么一样，有些时候前端程序猿不小心写错了 HTML，浏览器也会试图猜测他们原来想写的是什么，做对应的渲染，而猜是要有一个常识做依据的。加上有些浏览器支持一些标签，有一些又不支持，以及其他混乱的情况，为了防止大家鸡同鸭讲，我们需要对 HTML 代码里能有什么标签，标签怎么写，标签可以有什么属性这些东西有一定的共识，建立一个通行的标准，HTML5 就是其中一个比较新的标准。这个标准新加了很多可以用的标签和属性，然后各大浏览器也吭哧吭哧按这个标准去实现了很多这些新加的标签和属性，本来前端程序员要写一堆代码去实现的效果，现在浏览器都给你实现好了，只要写两三行，调用一下浏览器给你实现的部分就能搞定，简单愉快，所以很多人都在热情地推广这个标准~（当然新标准也不可能是完美的，总会有一些问题，怕跑题这里按下不表~）</p>
-<p>至于 XHTML，就是 HTML 的近亲 XML 和 HTML 自己的杂交品种，对语法要求比较严格，并且为了兼容 XML，在语法上与 HTML 有一些不同~</p>
-<p><strong>JavaScript 与浏览器脚本</strong><br>有了表示内容和语义的 HTML，规定样式的 CSS，得到的是一个静态的页面，没什么动画（其实用 CSS 还是可以有一些动画的，不过这个跑题了），按 F5 才会刷新数据，都 21世纪了，这么呆板单调的网页怎么能展现我大智人种族的创造性口胡！于是我们有了 Javascript（JS） 来给页面添加一些动态的效果，比如知乎问题的标签，鼠标移上去会弹出一个小窗口，这个就是 JS 实现的效果啦。</p>
-<p><img src="file:///C:/Users/ADMINI~1/AppData/Local/Temp/enhtmlclip/Image(5" alt="">.jpg)<img src="http://www.blog.eeljiang.cn/wp-content/uploads/2016/02/Imageaa-300x155.jpg" alt="Imageaa"><br>浏览器都会帮你实现一些 JS 可以用的工具（函数，对象什么的），你只要写一些 JS 的代码，保存在 xxx.js 里，在 html 文件中用 &lt;script&gt; 关联进来就可以用了，像上图这个效果应该就包括了</p>
-<ol>
-<li>鼠标悬停到标签上时创建一个新的 &lt;div&gt; 小窗口</li>
-<li>用 JS 向知乎服务器发送一个请求，得到这个小窗口应该显示的数据，放在这个小窗口里（这就是所谓的AJAX，不用刷新就能与服务器进行交互，更新页面的一小部分~）<br>浏览器拿到这样的代码，就会解析并实现出相应的效果，楼主问的浏览器脚本，指的就是这样子的代码。其实用来写浏览器脚本的，也不是非得JavaScript 不可，当年还为到底用什么语言写这种代码有过一段战火纷飞的时期，但现在尘埃落定，各大浏览器都默认了：请用 JS 写这些动态效果的代码给我解析~</li>
-</ol>
-<p>以上就是前端部分的内容，下面简述一下后端的东西吧&gt; &lt;</p>
-<p><strong>Web Server 和 Web Services</strong><br>浏览器给服务器发一个请求，服务器不是一看就知道怎么响应的。首先这些请求和响应要有一个通用的写法，也就是要有一个协议，常用的是 HTTP 协议。<br>像最前面的图，服务器的响应写了一个状态码 200 OK ，是 HTTP 协议里约定俗成的一个东西，服务器写 200 OK 在响应里，表示“你请求的这个东西我有”，如果是404 Not Found，就是“你请求的这个东西我这里没有”。<br>HTTP 响应里还包括很多东西，比如 Content-type 表示服务器发过来的文件类型是什么（文本？动画？图片？音频？），这样发过去了人家浏览器好知道怎么展示给用户看。人家服务器怎么知道按协议要写什么东西进去呢，这就是 Web Server 干活的时候了。</p>
-<p>形象化一下HTTP响应，大概就长这样：</p>
-<p><img src="file:///C:/Users/ADMINI~1/AppData/Local/Temp/enhtmlclip/Image(6" alt="">.jpg)<img src="http://www.blog.eeljiang.cn/wp-content/uploads/2016/02/Imageaaa-243x300.jpg" alt="Imageaaa"><br>再上个锤子，浏览器和服务器之间请求响应的过程大致是长这样的，右下角的那些东西就是由 Web Server 生成的（服务器脚本可以做一些改动，但这些一般是 Web Server 的份内活）：</p>
-<p><img src="file:///C:/Users/ADMINI~1/AppData/Local/Temp/enhtmlclip/Image(7" alt="">.jpg)<img src="http://www.blog.eeljiang.cn/wp-content/uploads/2016/02/Imagffffe-300x77.jpg" alt="Imagffffe"><br>再比如说很多时候你访问一个网站，浏览器里输的地址并没有写明你请求的文件，比如这个问题的地址是：但知乎的服务器其实返回了一个html给你，服务器怎么知道这个地址对应要返回什么样的 html 代码给你的？也是 Web Server 干的活。</p>
-<p>除了浏览器输地址敲回车这种赤裸裸的访问，客户端与服务器的交互还有很多种，比如：</p>
-<ul>
-<li><p>前面提到的用 JS 完成的 AJAX，有点像浏览器和服务器之间的悄悄话~<br>还有其他应用软件与服务器的交互，比如：</p>
-</li>
-<li><p>微信、QQ 与腾讯的服务器的交互</p>
-</li>
-<li>网游客户端与网游公司服务器的交互</li>
-<li>搜索引擎用来搜集网页信息的程序（爬虫）与各种各样的网站服务器的交互</li>
-<li><p>只要你知道用什么地址访问、怎样访问人家的服务器，并且有相应权限，你也可以自己写一些程序去和他们的服务器交互（比如用<a href="http://link.zhihu.com/?target=http%3A//open.weibo.com/wiki/%25E5%25BE%25AE%25E5%258D%259AAPI" target="_blank" rel="external">微博API - 新浪微博API</a>获取微博，开发第三方应用或者做数据分析）。<br>从这些栗子里可以看出，客户端与服务器的交互的主体、客体、载体是五花八门的：</p>
-</li>
-<li><p>服务器可以是大型机也可以是个人电脑，只要能跑相应的程序就行</p>
-</li>
-<li>客户端像前面举的栗子里一样，可以是各种软件，而且这些软件不一定运行在个人电脑上，也可以是手机、平板、智能穿戴设备等等</li>
-<li>有时候不是传生成好的 HTML 或者其他服务器上已经有的文件，而是传输经过一定逻辑处理后生成的字符串或者其他各种封装好的数据<br>像前面提到的 HTML 需要有一定标准一样，为了防止混乱和鸡同鸭讲，我们又需要先对这些机器需要怎么交互达成一定共识，再让它们进行交流。人与人之间通信，需要先有一种大家都认识的写法（比如简体字/繁体字）和一种彼此都懂的语言（比如普通话/广东话）。要让这些形形色色的机器能够通过网络进行交互，我们就需要指明一种协议（比如 HTTP/HTTPS）和一种数据封装格式（比如 HTML/XML），Web Server 提供的 Web Service，指的就是这种协议+格式的交流体系。不过 Web Service 的生态系统和 HTML 的标准不一样，用户可以选择的协议和数据封装格式更多，普通的网站访问用的 HTTP + HTML 只是其中一种，一些封闭系统内的交流还可以自己定义一个协议和格式来用（比如 QQ）。</li>
-</ul>
-<p>Web Service 传输的数据再经由本地客户端（浏览器、QQ/微信，网游客户端等）的分析渲染，就能够以普通人能够理解的形式展现出来。此外还有一些 Web Service 并不是为普通用户设计的，像前面提到的微博API，是用来给程序猿进行二次开发的~</p>
-<p>除了提供 Web Service， Web Server 还会兼顾很多功能，包括提供缓存，平衡负载，这样在访问量比较大的时候能有有条不紊地接客。常见的现成的 Web Server 有开源的 Apache、Nginx和微软的IIS，你也可以用一些工具（比如 Node.js ）自己定制一个。因为 Web Server 需要比较好的性能，所以投产时用的 Web Server 通常是C/C++/Java写的，但是其实很多语言都可以写，而且配合上语言底层的优化和好的模型，其他语言写的 Web Server也可以有不错的表现。</p>
-<p><strong>PHP ，服务器脚本，Web Framework</strong><br>开头那张图里服务器接到请求之后可以给访客发送对应的文件，但21世纪的服务器怎么可能只会“接请求-发文件”这么弱智的一招呢，人家还可以处理你上传来的文件的！还可以接受你发过来的各种请求，去操作服务器本地的文件or数据库的！要干这些事，自然服务器那边也少不了要有代码了，这些代码就是服务器脚本。前面说的 Web Service 传输的数据，主要也是由服务器脚本生成，再交由 Web Server ，按照某种协议套好整个响应的格式，返回给客户端的。</p>
-<p>同一个网址，每个人看到的页面不一定是一样的，比如知乎首页的网址都是<br>但是没登陆和登陆之后看到的东西不一样，登陆之后每个人看到的导航栏的用户信息，关注的动态，都不一样。服务器脚本可以对这些不同的状态，生成不同的页面，交给 Web Server 返回给浏览器。<br>知乎的主页给大家看到的 html 整体来说是差不多的，都有导航栏，左边是关注的动态，右边是广告和边栏，每一块的整体构造大同小异，只是一些地方内容有所区别。服务器脚本就是利用已知的数据，在这些因人而异的地方填入相应的内容，生成给每个人看的页面。<br>比如我的主页，导航栏右边的头像和名字跟别人看到的不一样，就是因为这块地方有一个放图片的&lt;img&gt;标签和一个写名字的&lt;span&gt;标签，服务器脚本在查询本地的数据之后给我返回的页面里&lt;img&gt;的标签填了我头像的图片链接，&lt;span&gt;标签里填了我的名字，给别人的页面就填其他链接、其他名字，这样每个人看到的页面就不一样了。</p>
-<p><img src="file:///C:/Users/ADMINI~1/AppData/Local/Temp/enhtmlclip/Image(8" alt="">.jpg)</p>
-<p>[caption id=”attachment_47” align=”alignnone” width=”300”]<img src="http://www.blog.eeljiang.cn/wp-content/uploads/2016/02/Ieeemage-300x28.jpg" alt="Web建站技术中，HTML、HTML5、XHTML、CSS、SQL、JavaScript、PHP、ASP.NET、WebServices是什么？"> Web建站技术中，HTML、HTML5、XHTML、CSS、SQL、JavaScript、PHP、ASP.NET、WebServices是什么？[/caption]</p>
-<p>&nbsp;</p>
-<p><img src="file:///C:/Users/ADMINI~1/AppData/Local/Temp/enhtmlclip/Image(9" alt="">.jpg)<img src="http://www.blog.eeljiang.cn/wp-content/uploads/2016/02/Imawwge-300x50.jpg" alt="Imawwge"><br>PHP 就是一种常见的用来写服务器脚本的语言，其实只要是能拿来写大家传输数据的通用接口（CGI）的语言都可以用来写服务器脚本（也就是说几乎所有编程语言都可以写 = =b），只是因为现成工具的丰富程度和专攻程度不一样，所以有一些语言在写服务器端脚本的时候会比较热门。</p>
-<p>为了方便，我们在写服务器脚本的时候，通常还会用个同语言写的 Web Framework 来处理各种细节，防御一些常见的攻击，提供跨站认证（比如用已有的微博账号注册其他网站）的接口，利用cookie处理登陆状态和用户设置，生成网页模版之类的。如果你用 C# 或者 Visual Basic 写服务器脚本，就可以用 <a href="http://link.zhihu.com/?target=http%3A//ASP.NET" target="_blank" rel="external">http://ASP.NET</a> 这个框架实现这些功能，帮你省点麻烦。不过现在不少人是反过来为了一个好用的 Web Framework 去选择它对应的服务器脚本语言的。</p>
-<p><strong>一个普通网站访问的过程</strong><br>简单概括一下，对于我们普通的网站访问，涉及到的技术就是：</p>
-<ol>
-<li>用户操作浏览器访问，浏览器向服务器发出一个 HTTP 请求；</li>
-<li>服务器接收到 HTTP 请求，Web Server 进行相应的初步处理，使用服务器脚本生成页面；</li>
-<li>服务器脚本（利用Web Framework）调用本地和客户端传来的数据，生成页面；</li>
-<li>Web Server 将生成的页面作为 HTTP 响应的 body，根据不同的处理结果生成 HTTP header，发回给客户端；</li>
-<li>客户端（浏览器）接收到 HTTP 响应，通常第一个请求得到的 HTTP 响应的 body 里是 HTML 代码，于是对 HTML 代码开始解析；</li>
-<li>解析过程中遇到引用的服务器上的资源（额外的 CSS、JS代码，图片、音视频，附件等），再向 Web Server 发送请求，Web Server 找到对应的文件，发送回来；</li>
-<li>浏览器解析 HTML 包含的内容，用得到的 CSS 代码进行外观上的进一步渲染，JS 代码也可能会对外观进行一定的处理；</li>
-<li>用户与页面交互（点击，悬停等等）时，JS 代码对此作出一定的反应，添加特效与动画；</li>
-<li>交互的过程中可能需要向服务器索取或提交额外的数据（局部的刷新，类似微博的新消息通知），一般不是跳转就是通过 JS 代码（响应某个动作或者定时）向 Web Server 发送请求，Web Server 再用服务器脚本进行处理（生成资源or写入数据之类的），把资源返回给客户端，客户端用得到的资源来实现动态效果或其他改变。<br>注意这只是小网站里比较常见的模型，大网站为了解决规模问题还会有很多处理，每个环节都会有一些细微的差异，中间还会使用各种各样的工具减轻服务器的压力，提高效率，方便日常维护~</li>
-</ol>
-<p><strong>延伸阅读</strong> —— <strong>那些看花眼的名词</strong><br>为了方便调试，很多 Web Framework 会自带一个简单的 Web Server，或者有些 Web Server 会自带一个简单的 Web Framework ，实际部署到服务器上开放使用的时候为了性能或者安全等多方面的考虑，可以把内置的 Web Server 换成其他的，比如 Apache 或者 Nginx （举个栗子，知乎用的是 Tornado 做 Framework，Server 换成了 Nginx，见<a href="http://www.zhihu.com/question/19558038" target="_blank" rel="external">知乎使用了哪些框架和开源库？</a>）。如果是开源的东西，还可以在遵守开源协议的前提下自己改一下再用~</p>
-<p>因为后端不像前端已经有 HTML + CSS + JS 这样的既定事实标准，服务器脚本与 Web Framework 的选择很多，所以新手会听到很多眼花缭乱的技术名词的地方多在这里~ 举一些栗子，早年常见的服务器端语言有：</p>
-<ul>
-<li>开源的 PHP</li>
-<li>Sun 公司的 JSP 中使用的 Java</li>
-<li><p>微软的 ASP 中使用的 VBScript<br>现在在这方面的应用热起来的语言有</p>
-</li>
-<li><p>Python，对应常见的 Framework 包括知乎和Quora有用到的 Tornado（其实是自带 Framework 的 Web Server），社区很成熟的 Django （用户包括 Instagram、Pinterest）等</p>
-</li>
-<li>Ruby，一般都用 Rails 这个 Framework，用户包括 Github、早期的 Twitter 等</li>
-<li>逆天的 JavaScript，有了 Node.js 这个平台，Web Server、服务器脚本和浏览器脚本全都可以用 JavaScript 来写……Node.js上最常用的 Framework是Express</li>
-<li>微软家的则跟着 <a href="http://link.zhihu.com/?target=http%3A//ASP.NET" target="_blank" rel="external">http://ASP.NET</a> 转移到了C# 或者 Visual Basic</li>
-<li><p>Erlang，擅长大规模的并发，不少游戏公司拿来写服务器，靠几十个工程师支撑几亿用户的WhatsApp也是用的这个~<br>几种常见的架构包括：</p>
-</li>
-<li><p>LAMP = Linux + Apache + MySQL + PHP（P还可能是Python或Perl。有时候L会改成W=Windows。），也就是服务器上的操作系统是 Linux，Web Server 用 Apache，数据库用 MySQL，服务器脚本用 PHP，这些都是开源技术，网站起步时用起来的成本会比较低，所以是普通网站里非常常见的架构（虽然对于发展得很大的网站会遇到很多瓶颈），Facebook就是这种，淘宝也曾经是。</p>
-</li>
-<li>J2EE，Java 世界的架构，通常是企业用的（银行、大型公司,.etc），比较常见地还会搭配一种 UNIX 做操作系统，Apache 做 Web Server，Tomcat 转换 JSP 到 Java 给服务器程序用（其实它也自带 Web Server），Oracle 数据库等等。不一定拿来建站，常常用来提供企业里的各种需要用到网络的业务。我们学校教务系统就是用J2EE做的=。= 淘宝现在也是从LAMP转型到了这个。</li>
-<li><a href="http://link.zhihu.com/?target=http%3A//ASP.NET" target="_blank" rel="external">http://ASP.NET</a>，微软家的架构，通常会搭配 Windows Server 操作系统，SQL Server 数据库，IIS 做 Web Server。StackOverflow和京东（曾经）就是这个架构。</li>
-<li>神奇的MEAN架构，MongoDB做数据库，Express做 Web Framework，Angular 做前端的 JavaScript 框架，Node.js 用于编写 Web Server。神奇之处在于这几个东西的语言都是 JavaScript （MongoDB的实现不是，但与外界沟通用的语言是）。因为是比较新的架构，还有待时间的考验，不过被很多人（尤其是靠 JavaScript 吃饭的前端程序猿们）热切关注。</li>
-<li>一般来说重点不在技术而且在乎成本的新网站比较喜欢用 LAMP，重视安全稳定和速度的企业和机构喜欢 J2EE，想省事的网站喜欢 <a href="http://link.zhihu.com/?target=http%3A//ASP.NET" target="_blank" rel="external">http://ASP.NET</a>，比较 Geek 的网站和创业公司喜欢折腾各种 Python、Ruby、Node.js世界的东西，Google 这样现成的技术都解决不了需求的超大型网站就自己折腾解决方案。<br>虽然可以用的语言和所属体系五花八门，其实服务器端程序要做的事情本质上都差不多的，就好比自然世界中要表达“吃过了没”这句话的意思，你可以用各种各样的语言在各种各样的场景里表达出来~</li>
-</ul>
-<p>更多详情: <a href="http://www.zhihu.com/question/22689579/answer/22318058" target="_blank" rel="external">http://www.zhihu.com/question/22689579/answer/22318058</a></p>
-<p>&nbsp;</p>
+          一个学期前我也和楼主差不多不知道这些都是啥，一个学期之后差不多都弄懂了，来讲讲自己的理解吧 &gt; &lt; 因为接触的时间不是很长，有错误的地方欢迎指正~
+首先要知道网站访问大概是什么个过程：假设你在浏览器地址栏输入这个问题的地址
+访问过程和下图差不多，浏览器和服务器交流，服务器和数据库交流（有时候数据库就在服务器那台机子上）
+HTML 与 CSS你家电脑拿到一个 html （就是上图 HTTP 响应的 body 里的内容）之后，就会对它进行解析渲染。HTML 就是一种标记语言。类比一下，大家在论坛上经常会用一些代码来添加富文本内容，举一些栗子：
 
-          
+用来贴图
+用来贴地址
+表示标签里的文字应
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/02/16/46/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1987,7 +1759,7 @@ padding:20px;
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
