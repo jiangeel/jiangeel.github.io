@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Linux,Swap," />
+  <meta name="keywords" content="Linux,SSH,安全防护," />
 
 
 
@@ -93,18 +93,20 @@
 
 
 
-<meta name="description" content="有人说内存比较大的时候（比如我的是8g），就不需要swap内存了。在windows上好像的确是不太需要虚拟内存了。然而当我想要挂起的时候，发现挂起后就无法唤醒了。 经过测验：1.并非外接显示器的缘故。只用笔记本自带的显示器也无法唤醒（显示器是新添加的，谁知道会不会是它的缘故呢）2.缺失laptop-mode-tools. 经过$sudo apt-get install laptop-mode-to">
-<meta name="keywords" content="Linux,Swap">
+<meta name="description" content="使用密钥登录工作原理ssh除了使用密码验证外，还可以使用公私密钥的验证方式。客户端生成一个私钥和一个与之对应的公钥，然后将公钥上传到服务器上。 本地机器创建公钥ssh-keygen -t rsa -C  &amp;#39;your email&amp;#39; 完成后生成如图两个文件,其中带pub结尾的是公钥,待会需要上传到服务器上保存 将公钥复制到ssh服务器将前一步骤生成的公钥~/id_rsa.pub文件，复">
+<meta name="keywords" content="Linux,SSH,安全防护">
 <meta property="og:type" content="article">
-<meta property="og:title" content="添加Swap及开启挂起记录">
-<meta property="og:url" content="http://45.76.66.159/2016/09/19/cj5mdj6cg000wuffufnmy6syt/index.html">
+<meta property="og:title" content="使用SSH Key登录并禁用root密码登录并修改端口号">
+<meta property="og:url" content="http://45.76.66.159/2017/07/27/cj5wp4w6y0007bafu3hvibgn2/index.html">
 <meta property="og:site_name" content="REMEMBER">
-<meta property="og:description" content="有人说内存比较大的时候（比如我的是8g），就不需要swap内存了。在windows上好像的确是不太需要虚拟内存了。然而当我想要挂起的时候，发现挂起后就无法唤醒了。 经过测验：1.并非外接显示器的缘故。只用笔记本自带的显示器也无法唤醒（显示器是新添加的，谁知道会不会是它的缘故呢）2.缺失laptop-mode-tools. 经过$sudo apt-get install laptop-mode-to">
+<meta property="og:description" content="使用密钥登录工作原理ssh除了使用密码验证外，还可以使用公私密钥的验证方式。客户端生成一个私钥和一个与之对应的公钥，然后将公钥上传到服务器上。 本地机器创建公钥ssh-keygen -t rsa -C  &amp;#39;your email&amp;#39; 完成后生成如图两个文件,其中带pub结尾的是公钥,待会需要上传到服务器上保存 将公钥复制到ssh服务器将前一步骤生成的公钥~/id_rsa.pub文件，复">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-07-27T06:27:44.000Z">
+<meta property="og:image" content="http://otn2ksn9w.bkt.clouddn.com/17-7-27/95411675.jpg">
+<meta property="og:updated_time" content="2017-07-27T10:42:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="添加Swap及开启挂起记录">
-<meta name="twitter:description" content="有人说内存比较大的时候（比如我的是8g），就不需要swap内存了。在windows上好像的确是不太需要虚拟内存了。然而当我想要挂起的时候，发现挂起后就无法唤醒了。 经过测验：1.并非外接显示器的缘故。只用笔记本自带的显示器也无法唤醒（显示器是新添加的，谁知道会不会是它的缘故呢）2.缺失laptop-mode-tools. 经过$sudo apt-get install laptop-mode-to">
+<meta name="twitter:title" content="使用SSH Key登录并禁用root密码登录并修改端口号">
+<meta name="twitter:description" content="使用密钥登录工作原理ssh除了使用密码验证外，还可以使用公私密钥的验证方式。客户端生成一个私钥和一个与之对应的公钥，然后将公钥上传到服务器上。 本地机器创建公钥ssh-keygen -t rsa -C  &amp;#39;your email&amp;#39; 完成后生成如图两个文件,其中带pub结尾的是公钥,待会需要上传到服务器上保存 将公钥复制到ssh服务器将前一步骤生成的公钥~/id_rsa.pub文件，复">
+<meta name="twitter:image" content="http://otn2ksn9w.bkt.clouddn.com/17-7-27/95411675.jpg">
 
 
 
@@ -132,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://45.76.66.159/2016/09/19/cj5mdj6cg000wuffufnmy6syt/"/>
+  <link rel="canonical" href="http://45.76.66.159/2017/07/27/cj5wp4w6y0007bafu3hvibgn2/"/>
 
 
 
 
 
-  <title>添加Swap及开启挂起记录 | REMEMBER</title>
+  <title>使用SSH Key登录并禁用root密码登录并修改端口号 | REMEMBER</title>
   
 
 
@@ -301,7 +303,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2016/09/19/cj5mdj6cg000wuffufnmy6syt/">
+    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/07/27/cj5wp4w6y0007bafu3hvibgn2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eel">
@@ -318,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">添加Swap及开启挂起记录</h1>
+          <h1 class="post-title" itemprop="name headline">使用SSH Key登录并禁用root密码登录并修改端口号</h1>
         
 
         <div class="post-meta">
@@ -330,8 +332,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-19T20:01:47+08:00">
-                2016-09-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-27T15:34:00+08:00">
+                2017-07-27
               </time>
             
 
@@ -362,7 +364,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  552
+                  547
                 </span>
               
 
@@ -384,10 +386,30 @@
       
 
       
-        <p>有人说内存比较大的时候（比如我的是8g），就不需要swap内存了。在windows上好像的确是不太需要虚拟内存了。然而当我想要挂起的时候，发现挂起后就无法唤醒了。</p>
-<p>经过测验：<br>1.并非外接显示器的缘故。只用笔记本自带的显示器也无法唤醒（显示器是新添加的，谁知道会不会是它的缘故呢）<br>2.缺失laptop-mode-tools. 经过$sudo apt-get install laptop-mode-tools后，再cat /proc/sys/vm/laptop_mode，发现数字是0，因此为非启动状态。<br>于是编辑 /etc/laptop-mode/laptop-mode.conf,设置ENABLE_LAPTOP_MODE_ON_AC=1，看起来是连着电源的时候也能挂起的意思吧。再sudo laptop-mode start,最后再cat 一遍/proc/sys/vm/laptop_mode，结果是2了。小小激动了一把。然而并没什么用。<br>3.几天后想到休眠时把内存中的东西放到硬盘里，也许中间需要swap来过度什么的。又想到自己没有swap，所以打算添加一个swap分区。</p>
-<p>添加过程：<br>1.自己的ubuntu是笔记本上剩下的30g硬盘，几乎全装给了 / 目录，而swap又需要内存的一半到2倍左右，也就是5-10g吧。<br>2.搜索到添加swap有两种方式：1.传统分区添加。2.比较方便的创建一个大文件，然后转化成swap。遂选择第二种。<br>3.首先用dd命令创建10g的空间,创建在/root/swapfile下。$dd if=/dev/zero of=/root/swapfile bs=1M count=10240<br>4.然后将文件转化为swap格式。$mkswap /root/swapfile<br>5.启用swap文件:$swapon /swapfile<br>提示权限644的权限不好，暂时不知道为啥，就根据系统的建议改成600吧 $chmod 600 /root/swaofile<br>6.最后$free 命令可以看到的确有了10g的swap空间。<br>7.在/etc/fstab中添加一行,这样swap就每次开机有效了！<br>/root/swapfile swap swap defaults 0 0<br>(估计比较特殊吧，都不用uuid的)<br>8.另外之前乱修改fstab搞得无法启动系统了，所以给fstab加了chattr +i，今天又忘记了，sudo了半天都修改不了，花了很久才意识到……</p>
-
+        <h2 id="使用密钥登录"><a href="#使用密钥登录" class="headerlink" title="使用密钥登录"></a>使用密钥登录</h2><h3 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h3><p>ssh除了使用密码验证外，还可以使用公私密钥的验证方式。<br>客户端生成一个私钥和一个与之对应的公钥，然后将公钥上传到服务器上。</p>
+<h3 id="本地机器创建公钥"><a href="#本地机器创建公钥" class="headerlink" title="本地机器创建公钥"></a>本地机器创建公钥</h3><p><code>ssh-keygen -t rsa -C  &#39;your email&#39;</code></p>
+<p><img src="http://otn2ksn9w.bkt.clouddn.com/17-7-27/95411675.jpg" alt=""><br>完成后生成如图两个文件,其中带<code>pub</code>结尾的是公钥,待会需要上传到服务器上保存</p>
+<h3 id="将公钥复制到ssh服务器"><a href="#将公钥复制到ssh服务器" class="headerlink" title="将公钥复制到ssh服务器"></a>将公钥复制到ssh服务器</h3><p>将前一步骤生成的公钥<code>~/id_rsa.pub</code>文件，复制到ssh服务器对应用户下的<code>~/.ssh/authorized_keys</code>文件中。如果不存在则手动创建即可。</p>
+<p><strong>注意</strong> 当第二台设备生成公钥保存到此文件中时，请不要将之前的记录覆盖，应使用追加写入的方式。<br>如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat id_rsa.pub &gt;&gt; .ssh/authorized_keys</div></pre></td></tr></table></figure>
+<h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><p>完成以上步骤后，即可使用以下命令直接登录ssh服务器。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh username@hostname</div></pre></td></tr></table></figure>
+<h3 id="自定义别名"><a href="#自定义别名" class="headerlink" title="自定义别名"></a>自定义别名</h3><p>可以在<code>~/.ssh/config</code>中配置（未存在则新建即可）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Host                  yoyoyo</div><div class="line">HostName              hostname  #ssh服务器ip或域名</div><div class="line">User                  root #ssh服务器用户名</div><div class="line">IdentityFile          id_rsa #生成的私钥</div></pre></td></tr></table></figure>
+<p>保存后即可使用以下命令快捷登录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh yoyoyo</div></pre></td></tr></table></figure>
+<h2 id="禁用密码验证登录"><a href="#禁用密码验证登录" class="headerlink" title="禁用密码验证登录"></a>禁用密码验证登录</h2><ol>
+<li>在服务器上配置：<code>/etc/ssh/sshd_config</code></li>
+<li>找到下面一行<code>PasswordAuthentication yes</code></li>
+<li>将<code>yes</code>改为<code>no</code>后保存。</li>
+<li>重启 <code>sshd</code>服务</li>
+</ol>
+<p><strong>关于密钥的生成:</strong><br>有教程是在服务器上生成，然后将密钥传回本地的。<br>如果是服务器生成的话，<strong>切记将密钥传回本地后从服务器删除。</strong><br>因此我选择在本地生成密钥，后上传公钥的方法较为稳妥。</p>
+<h2 id="更改端口"><a href="#更改端口" class="headerlink" title="更改端口"></a>更改端口</h2><p>还是在<code>/etc/ssh/sshd_config</code>中，找到 port项目，取消注释并修改为较大的端口，可以防端口扫描。</p>
+<p>返回到本地<code>~/.ssh/config</code>中，在之前的配置中增加 port 项和对应设置的端口：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Host                  yoyoyo</div><div class="line">HostName              hostname  #ssh服务器ip或域名</div><div class="line">Port                  1234 #端口号</div><div class="line">User                  root #ssh服务器用户名</div><div class="line">IdentityFile          id_rsa #生成的私钥</div></pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.jianshu.com/p/460b4ce4f8e1" target="_blank" rel="external">在Mac上远程登录VPS</a><br><a href="https://www.duoluodeyu.com/1114.html" target="_blank" rel="external">Linux配置使用SSH Key登录并禁用root密码登录</a></p>
+<h2 id="END"><a href="#END" class="headerlink" title="END"></a>END</h2>
       
     </div>
 
@@ -418,7 +440,9 @@
           
             <a href="/tags/Linux/" rel="tag"># Linux</a>
           
-            <a href="/tags/Swap/" rel="tag"># Swap</a>
+            <a href="/tags/SSH/" rel="tag"># SSH</a>
+          
+            <a href="/tags/安全防护/" rel="tag"># 安全防护</a>
           
         </div>
       
@@ -431,8 +455,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/19/89/" rel="next" title="Ubuntu第一次系统损坏记录">
-                <i class="fa fa-chevron-left"></i> Ubuntu第一次系统损坏记录
+              <a href="/2017/07/26/cj5wp4w780009bafukrsgwtfh/" rel="next" title="Safari Bookmarklet 实现切换 Google 搜索结果的语言">
+                <i class="fa fa-chevron-left"></i> Safari Bookmarklet 实现切换 Google 搜索结果的语言
               </a>
             
           </div>
@@ -441,8 +465,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/09/20/96/" rel="prev" title="Windows引导修复记录">
-                Windows引导修复记录 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/03/cj5wp4w7e000cbafu522bl1jz/" rel="prev" title="Flask-Migrate数据库迁移">
+                Flask-Migrate数据库迁移 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -491,8 +515,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -529,7 +562,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -574,6 +607,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用密钥登录"><span class="nav-number">1.</span> <span class="nav-text">使用密钥登录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#工作原理"><span class="nav-number">1.1.</span> <span class="nav-text">工作原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地机器创建公钥"><span class="nav-number">1.2.</span> <span class="nav-text">本地机器创建公钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将公钥复制到ssh服务器"><span class="nav-number">1.3.</span> <span class="nav-text">将公钥复制到ssh服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#登录"><span class="nav-number">1.4.</span> <span class="nav-text">登录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义别名"><span class="nav-number">1.5.</span> <span class="nav-text">自定义别名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#禁用密码验证登录"><span class="nav-number">2.</span> <span class="nav-text">禁用密码验证登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更改端口"><span class="nav-number">3.</span> <span class="nav-text">更改端口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#END"><span class="nav-number">5.</span> <span class="nav-text">END</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
