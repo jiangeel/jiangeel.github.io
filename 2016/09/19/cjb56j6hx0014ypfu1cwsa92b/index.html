@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Linux,Swap," />
 
 
 
@@ -93,13 +93,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="REMEMBER">
-<meta property="og:url" content="http://45.76.66.159/tags/safari/index.html">
+<meta name="description" content="有人说内存比较大的时候（比如我的是8g），就不需要swap内存了。在windows上好像的确是不太需要虚拟内存了。然而当我想要挂起的时候，发现挂起后就无法唤醒了。 经过测验：1.并非外接显示器的缘故。只用笔记本自带的显示器也无法唤醒（显示器是新添加的，谁知道会不会是它的缘故呢）2.缺失laptop-mode-tools. 经过$sudo apt-get install laptop-mode-to">
+<meta name="keywords" content="Linux,Swap">
+<meta property="og:type" content="article">
+<meta property="og:title" content="添加Swap及开启挂起记录">
+<meta property="og:url" content="http://45.76.66.159/2016/09/19/cjb56j6hx0014ypfu1cwsa92b/index.html">
 <meta property="og:site_name" content="REMEMBER">
+<meta property="og:description" content="有人说内存比较大的时候（比如我的是8g），就不需要swap内存了。在windows上好像的确是不太需要虚拟内存了。然而当我想要挂起的时候，发现挂起后就无法唤醒了。 经过测验：1.并非外接显示器的缘故。只用笔记本自带的显示器也无法唤醒（显示器是新添加的，谁知道会不会是它的缘故呢）2.缺失laptop-mode-tools. 经过$sudo apt-get install laptop-mode-to">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-07-27T06:27:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="REMEMBER">
+<meta name="twitter:title" content="添加Swap及开启挂起记录">
+<meta name="twitter:description" content="有人说内存比较大的时候（比如我的是8g），就不需要swap内存了。在windows上好像的确是不太需要虚拟内存了。然而当我想要挂起的时候，发现挂起后就无法唤醒了。 经过测验：1.并非外接显示器的缘故。只用笔记本自带的显示器也无法唤醒（显示器是新添加的，谁知道会不会是它的缘故呢）2.缺失laptop-mode-tools. 经过$sudo apt-get install laptop-mode-to">
 
 
 
@@ -127,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://45.76.66.159/tags/safari/"/>
+  <link rel="canonical" href="http://45.76.66.159/2016/09/19/cjb56j6hx0014ypfu1cwsa92b/"/>
 
 
 
 
 
-  <title>Tag: safari | REMEMBER</title>
+  <title>添加Swap及开启挂起记录 | REMEMBER</title>
   
 
 
@@ -158,7 +163,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -286,44 +291,175 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h1>safari<small>Tag</small>
-      </h1>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2016/09/19/cjb56j6hx0014ypfu1cwsa92b/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eel">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="REMEMBER">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">添加Swap及开启挂起记录</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-19T20:01:47+08:00">
+                2016-09-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article</span>
+                
+                <span title="Words count in article">
+                  552
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>有人说内存比较大的时候（比如我的是8g），就不需要swap内存了。在windows上好像的确是不太需要虚拟内存了。然而当我想要挂起的时候，发现挂起后就无法唤醒了。</p>
+<p>经过测验：<br>1.并非外接显示器的缘故。只用笔记本自带的显示器也无法唤醒（显示器是新添加的，谁知道会不会是它的缘故呢）<br>2.缺失laptop-mode-tools. 经过$sudo apt-get install laptop-mode-tools后，再cat /proc/sys/vm/laptop_mode，发现数字是0，因此为非启动状态。<br>于是编辑 /etc/laptop-mode/laptop-mode.conf,设置ENABLE_LAPTOP_MODE_ON_AC=1，看起来是连着电源的时候也能挂起的意思吧。再sudo laptop-mode start,最后再cat 一遍/proc/sys/vm/laptop_mode，结果是2了。小小激动了一把。然而并没什么用。<br>3.几天后想到休眠时把内存中的东西放到硬盘里，也许中间需要swap来过度什么的。又想到自己没有swap，所以打算添加一个swap分区。</p>
+<p>添加过程：<br>1.自己的ubuntu是笔记本上剩下的30g硬盘，几乎全装给了 / 目录，而swap又需要内存的一半到2倍左右，也就是5-10g吧。<br>2.搜索到添加swap有两种方式：1.传统分区添加。2.比较方便的创建一个大文件，然后转化成swap。遂选择第二种。<br>3.首先用dd命令创建10g的空间,创建在/root/swapfile下。$dd if=/dev/zero of=/root/swapfile bs=1M count=10240<br>4.然后将文件转化为swap格式。$mkswap /root/swapfile<br>5.启用swap文件:$swapon /swapfile<br>提示权限644的权限不好，暂时不知道为啥，就根据系统的建议改成600吧 $chmod 600 /root/swaofile<br>6.最后$free 命令可以看到的确有了10g的swap空间。<br>7.在/etc/fstab中添加一行,这样swap就每次开机有效了！<br>/root/swapfile swap swap defaults 0 0<br>(估计比较特殊吧，都不用uuid的)<br>8.另外之前乱修改fstab搞得无法启动系统了，所以给fstab加了chattr +i，今天又忘记了，sudo了半天都修改不了，花了很久才意识到……</p>
 
-      <h2 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/07/26/cjb56j6gu0006ypfuux2sqlzn/" itemprop="url">
-              
-                <span itemprop="name">Safari Bookmarklet 实现切换 Google 搜索结果的语言</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-26T19:58:00+08:00"
-              content="2017-07-26" >
-          07-26
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/Swap/" rel="tag"># Swap</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/19/89/" rel="next" title="Ubuntu第一次系统损坏记录">
+                <i class="fa fa-chevron-left"></i> Ubuntu第一次系统损坏记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/20/96/" rel="prev" title="Windows引导修复记录">
+                Windows引导修复记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -331,6 +467,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -547,10 +687,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
