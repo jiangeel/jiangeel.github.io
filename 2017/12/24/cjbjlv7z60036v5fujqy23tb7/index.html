@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Python," />
 
 
 
@@ -93,13 +93,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="REMEMBER">
-<meta property="og:url" content="http://45.76.66.159/archives/page/3/index.html">
+<meta name="description" content="全文转载自Hom’s Blog  可迭代对象 Iterable凡是可以用作for循环的都是可迭代对象,包括一般的list,tuple,set,dict,迭代器和生成器(或生成器函数)等. 可迭代对象具有__iter__方法返回迭代器. 可迭代对象可以通过iter(obj)生成迭代器(本质调用__iter__方法). 可迭代对象本质是数据流,一个接一个的数据,但不一定像迭代器和生成器一样记住迭代到">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 迭代器和生成器">
+<meta property="og:url" content="http://45.76.66.159/2017/12/24/cjbjlv7z60036v5fujqy23tb7/index.html">
 <meta property="og:site_name" content="REMEMBER">
+<meta property="og:description" content="全文转载自Hom’s Blog  可迭代对象 Iterable凡是可以用作for循环的都是可迭代对象,包括一般的list,tuple,set,dict,迭代器和生成器(或生成器函数)等. 可迭代对象具有__iter__方法返回迭代器. 可迭代对象可以通过iter(obj)生成迭代器(本质调用__iter__方法). 可迭代对象本质是数据流,一个接一个的数据,但不一定像迭代器和生成器一样记住迭代到">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-12-23T17:14:58.953Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="REMEMBER">
+<meta name="twitter:title" content="Python 迭代器和生成器">
+<meta name="twitter:description" content="全文转载自Hom’s Blog  可迭代对象 Iterable凡是可以用作for循环的都是可迭代对象,包括一般的list,tuple,set,dict,迭代器和生成器(或生成器函数)等. 可迭代对象具有__iter__方法返回迭代器. 可迭代对象可以通过iter(obj)生成迭代器(本质调用__iter__方法). 可迭代对象本质是数据流,一个接一个的数据,但不一定像迭代器和生成器一样记住迭代到">
 
 
 
@@ -127,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://45.76.66.159/archives/page/3/"/>
+  <link rel="canonical" href="http://45.76.66.159/2017/12/24/cjbjlv7z60036v5fujqy23tb7/"/>
 
 
 
 
 
-  <title>Archive | REMEMBER</title>
+  <title>Python 迭代器和生成器 | REMEMBER</title>
   
 
 
@@ -158,7 +163,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -286,402 +291,195 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-    <span class="archive-page-counter">
-      
-      
-       
-      
-      OK! 40 posts in total. Keep on posting.
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/12/24/cjbjlv7z60036v5fujqy23tb7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eel">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="REMEMBER">
     </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python 迭代器和生成器</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-24T01:11:00+08:00">
+                2017-12-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article</span>
+                
+                <span title="Words count in article">
+                  1,432
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
-      
 
+      
+        <blockquote>
+<p>全文转载自<a href="http://platinhom.github.io/2015/09/07/PyIterator/" target="_blank" rel="external">Hom’s Blog</a></p>
+</blockquote>
+<h2 id="可迭代对象-Iterable"><a href="#可迭代对象-Iterable" class="headerlink" title="可迭代对象 Iterable"></a>可迭代对象 Iterable</h2><p>凡是可以用作for循环的都是可迭代对象,包括一般的list,tuple,set,dict,迭代器和生成器(或生成器函数)等.</p>
+<p>可迭代对象具有<code>__iter__</code>方法返回迭代器. 可迭代对象可以通过<code>iter(obj)</code>生成迭代器(本质调用<code>__iter__</code>方法).</p>
+<p>可迭代对象本质是数据流,一个接一个的数据,但不一定像迭代器和生成器一样记住迭代到那个点, 下一个是什么, 利用<code>iter()</code>函数可以将list等转变为迭代器(其实是生成器), 逐个元素投出.</p>
+<p>可以通过<code>isinstance(obj, Iterable)</code> (需要事先<code>from collections import Iterable</code>)来判断对象是否可迭代对象.</p>
+<h2 id="迭代器-Iterator"><a href="#迭代器-Iterator" class="headerlink" title="迭代器 Iterator"></a>迭代器 Iterator</h2><p>凡是可以通过<code>next()</code>方法返回下一个值的可迭代对象就是迭代器. 生成器是一种迭代器<code>.enumurate</code>也是迭代器(本质生成器)</p>
+<p>可以通过<code>isinstance(obj, Iterator)</code> (需要事先<code>from collections import Iterable</code>) 来判断对象是否迭代器.</p>
+<p>迭代到没有值了返回<code>StopIteration</code>错误.</p>
+<p>迭代器拥有<code>__iter__</code>方法和<code>__next__</code>方法,有时隐藏掉(如生产器).但本质具备该两种方法<code>.__iter__</code>方法返回迭代且对象本身, 而next方法则调用下一个元素. 在自定义迭代器时需要定义该两种方法.for循环本质是通过调用可迭代对象的<code>__iter__</code>方法获取迭代器对象,再用next方法遍历元素.</p>
+<h2 id="可迭代对象和迭代器的分开自定义"><a href="#可迭代对象和迭代器的分开自定义" class="headerlink" title="可迭代对象和迭代器的分开自定义"></a>可迭代对象和迭代器的分开自定义</h2><p>分开定义的好处在于, 当对可迭代对象使用<code>iter()</code>转变时,返回一个新的迭代器对象, 这时不受先前产生的相应迭代器对象影响.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">class Zrange:</div><div class="line">    def __init__(self, n):</div><div class="line">        self.n = n</div><div class="line"></div><div class="line">    def __iter__(self):</div><div class="line">        return ZrangeIterator(self.n)</div><div class="line"></div><div class="line">class ZrangeIterator:</div><div class="line">    def __init__(self, n):</div><div class="line">        self.i = 0</div><div class="line">        self.n = n</div><div class="line"></div><div class="line">    def __iter__(self):</div><div class="line">        return self</div><div class="line"></div><div class="line">    def next(self):</div><div class="line">        if self.i &lt; self.n:</div><div class="line">            i = self.i</div><div class="line">            self.i += 1</div><div class="line">            return i</div><div class="line">        else:</div><div class="line">            raise StopIteration()    </div><div class="line"></div><div class="line">            </div><div class="line">zrange = Zrange(3)</div><div class="line">print zrange is iter(zrange)   </div><div class="line">#&gt;&gt;&gt; True  </div><div class="line">print [i for i in zrange]</div><div class="line">#&gt;&gt;&gt;[1,2,3]</div><div class="line">print [i for i in zrange]</div><div class="line">#&gt;&gt;&gt;[1,2,3]</div><div class="line"></div><div class="line"># 若不区分可迭代对象和迭代器, 即这里列表生成式中使用ZrangeIterator的话, </div><div class="line"># 第二次调用时迭代器已被迭代完,第二次会为空集.</div><div class="line">zzrange=ZrangeIterator(3);</div><div class="line">print [i for i in zzrange]</div><div class="line">#&gt;&gt;&gt;[1,2,3]</div><div class="line">print [i for i in zzrange]</div><div class="line">#&gt;&gt;&gt;[]</div></pre></td></tr></table></figure>
+<h2 id="generator生成器对象"><a href="#generator生成器对象" class="headerlink" title="generator生成器对象"></a>generator生成器对象</h2><p>生成器通过<code>生成器函数</code>产生, 生成器函数可以通过常规的def语句来定义, 不用return而是使用yield一次返回一个结果, 返回后停在相应位置, 再次调用时继续执行生成下一个结果, 当生成器结束没有下次执行时, 返回<code>StopIteration</code>.</p>
+<p><code>(x for x in range(10))</code>该表达式产生的是生成器对象,而非列表.</p>
+<p>生成器有<code>close()</code>方法,可以关闭生成器. 另有<code>send(obj)</code>方法,定义yield表达式执行后返回的值. 如<code>val=yield i</code>,正常情况下用next返回的值为None,所以<code>send(None)</code>和next()等价.也可以另外赋值,从而追踪某些情况.另外注意send第一次使用要在执行过yield以后(即最少一次执行迭代)才能使用,否则没有yield的返回值可以定义就会报错.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"># 生成器函数</div><div class="line">def fib(max):</div><div class="line">    n, a, b = 0, 0, 1</div><div class="line">    while n &lt; max:</div><div class="line">        #生成器关键一步yield,每次执行到此返回,下次从此开始.</div><div class="line">        yield b</div><div class="line">        a, b = b, a + b</div><div class="line">        n = n + 1</div><div class="line"># 通过生成器函数产生生成器对象</div><div class="line">g=fib(6);</div><div class="line"># 单独调用生成器对象</div><div class="line">print g.next();</div><div class="line"># 利用循环迭代生成器</div><div class="line">for i in g:</div><div class="line">    print i</div></pre></td></tr></table></figure>
+<h2 id="list等的迭代器"><a href="#list等的迭代器" class="headerlink" title="list等的迭代器."></a>list等的迭代器.</h2><p>将list/dict等转化为迭代器使用<code>iter(obj)</code>函数.</p>
+<p><code>i.next()</code>方法或<code>next(i)</code> 函数遍历迭代器</p>
+<p><code>enumerate(i)</code></p>
+<h2 id="通过iter-函数将list-dict等数据组组转为迭代器"><a href="#通过iter-函数将list-dict等数据组组转为迭代器" class="headerlink" title="通过iter()函数将list/dict等数据组组转为迭代器."></a>通过iter()函数将list/dict等数据组组转为迭代器.</h2><figure class="highlight plain"><figcaption><span>创建一个列表迭代器(listiterator)</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">i1 = iter([1, 2, 3])  # iter是Python BIF，用于生成迭代器，文档见底部</div><div class="line">type(i1)</div><div class="line">&lt;type &apos;listiterator&apos;&gt;</div><div class="line">i1</div><div class="line">&lt;listiterator object at 0x1cedf50&gt;</div><div class="line"></div><div class="line"># 创建一个字典项迭代器(dictionary-itemiterator)</div><div class="line">d = dict(a = 1, b = 2)</div><div class="line">i2 = d.iteritems()  # 生成iterator对象，对于字典来说还有iterkeys, itervalues等方法可用</div><div class="line">i2</div><div class="line">&lt;dictionary-itemiterator object at 0x1dfe208&gt;</div><div class="line">[e for e in d.iteritems()]  # dict.iteritems方法生成的是迭代器元素为键值对形式</div><div class="line">[(&apos;a&apos;, 1), (&apos;b&apos;, 2)]</div><div class="line"></div><div class="line"># 另外还有tuple/set等都可使用iter函数返回iterator对象</div></pre></td></tr></table></figure>
+<h2 id="步进式访问迭代器中元素"><a href="#步进式访问迭代器中元素" class="headerlink" title="步进式访问迭代器中元素"></a>步进式访问迭代器中元素</h2><p><code>obj.next()</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">i = iter(range[3])</div><div class="line">i.next()</div><div class="line">0</div><div class="line">i.next()</div><div class="line">1</div><div class="line">next(i)  # next() - python2.6新增BIF，作用同iterator.next()</div><div class="line">2</div><div class="line">next(i)  # 无元素可迭代时，抛出StopIteration异常，可以通过捕获此异常判断是否迭代完毕</div><div class="line">Traceback (most recent call last):</div><div class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</div><div class="line">StopIteration</div></pre></td></tr></table></figure>
+<h2 id="循环访问遍历迭代器："><a href="#循环访问遍历迭代器：" class="headerlink" title="循环访问遍历迭代器："></a>循环访问遍历迭代器：</h2><figure class="highlight plain"><figcaption><span>手动循环</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">try:</div><div class="line">    while True:</div><div class="line">        next(i)  # python2.6之前版本使用iterator.next()方法</div><div class="line">except StopIteration:</div><div class="line">    print &apos;Done&apos;</div><div class="line"></div><div class="line"># for循环</div><div class="line">&gt;&gt;&gt; i = iter(range(3))</div><div class="line"># 以下句法叫做列表解析，这与生成器表达式类似，之后文章介绍生成器时再记</div><div class="line">&gt;&gt;&gt; [e for e in i]  # for在这里不断调用next函数，直到捕获StopIteration异常后退出</div><div class="line">[0, 1, 2]</div></pre></td></tr></table></figure>
+<h2 id="将迭代器传递给其他函数使用："><a href="#将迭代器传递给其他函数使用：" class="headerlink" title="将迭代器传递给其他函数使用："></a>将迭代器传递给其他函数使用：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; list(iter(range(3)))</div><div class="line">[0, 1, 2]</div></pre></td></tr></table></figure>
+<h2 id="帮助迭代器实现索引功能："><a href="#帮助迭代器实现索引功能：" class="headerlink" title="帮助迭代器实现索引功能："></a>帮助迭代器实现索引功能：</h2><p>使用<code>enumerate</code>函数返回一个迭代器对象, 该对象能够生产一个元组包括<code>(索引,值)</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">enumerate(iterable, start=0)</div></pre></td></tr></table></figure>
+<p>第一参数是可迭代对象包括list/dict/迭代器等, 第二个参数是索引开始的号.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; i = iter(&apos;abc&apos;)  # python中字符串也是可迭代对象</div><div class="line">&gt;&gt;&gt; [(k, v) for k, v in enumerate(i)]  # enumerate返回一个元素为tuple的iterator，文档见底部</div><div class="line">[(0, &apos;a&apos;), (1, &apos;b&apos;), (2, &apos;c&apos;)]</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
       
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
         </div>
       
+
+      
+      
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/24/cjbjlv7xr000iv5fuolerj3x3/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          <span class="post-nav-divider"></span>
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2016/09/22/109/" itemprop="url">
-              
-                <span itemprop="name">Ubuntu下软件安装记录</span>
-              
-            </a>
-        
-      </h2>
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-22T20:19:12+08:00"
-              content="2016-09-22" >
-          09-22
-        </time>
-      </div>
-
-    </header>
+      
+      
+    </footer>
   </article>
 
 
 
-    
-
+    <div class="post-spread">
       
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2016/09/20/96/" itemprop="url">
-              
-                <span itemprop="name">Windows引导修复记录</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-20T16:30:45+08:00"
-              content="2016-09-20" >
-          09-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2016/09/19/cjbjlv7yf001lv5fumnh9i20l/" itemprop="url">
-              
-                <span itemprop="name">添加Swap及开启挂起记录</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-19T20:01:47+08:00"
-              content="2016-09-19" >
-          09-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2016/09/19/89/" itemprop="url">
-              
-                <span itemprop="name">Ubuntu第一次系统损坏记录</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-19T18:47:10+08:00"
-              content="2016-09-19" >
-          09-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2016/02/17/82/" itemprop="url">
-              
-                <span itemprop="name">VI的一些基本用法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-02-17T15:33:28+08:00"
-              content="2016-02-17" >
-          02-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2016/02/16/64/" itemprop="url">
-              
-                <span itemprop="name">【转】神器——Chrome开发者工具</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-02-16T19:17:01+08:00"
-              content="2016-02-16" >
-          02-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2016/02/16/46/" itemprop="url">
-              
-                <span itemprop="name">【转】Web建站技术中，HTML、HTML5、XHTML、CSS、SQL、JavaScript、PHP、ASP.NET、WebServices是什么？</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-02-16T16:20:37+08:00"
-              content="2016-02-16" >
-          02-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2016/02/15/44/" itemprop="url">
-              
-                <span itemprop="name">【转】如何删除神不知鬼不觉，删除男友电脑里的游戏但保留图标，让他打开就不能玩？</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-02-15T17:01:40+08:00"
-              content="2016-02-15" >
-          02-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2016/02/15/42/" itemprop="url">
-              
-                <span itemprop="name">计算机专业英语词汇收录</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-02-15T16:16:47+08:00"
-              content="2016-02-15" >
-          02-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2016/02/14/31/" itemprop="url">
-              
-                <span itemprop="name">PHP中::、->、Self、$this操作符的区别</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-02-14T18:50:08+08:00"
-              content="2016-02-14" >
-          02-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/4/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-
+    </div>
+  </div>
 
 
           </div>
@@ -689,6 +487,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -709,8 +511,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -792,6 +603,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#可迭代对象-Iterable"><span class="nav-number">1.</span> <span class="nav-text">可迭代对象 Iterable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代器-Iterator"><span class="nav-number">2.</span> <span class="nav-text">迭代器 Iterator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可迭代对象和迭代器的分开自定义"><span class="nav-number">3.</span> <span class="nav-text">可迭代对象和迭代器的分开自定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#generator生成器对象"><span class="nav-number">4.</span> <span class="nav-text">generator生成器对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list等的迭代器"><span class="nav-number">5.</span> <span class="nav-text">list等的迭代器.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过iter-函数将list-dict等数据组组转为迭代器"><span class="nav-number">6.</span> <span class="nav-text">通过iter()函数将list/dict等数据组组转为迭代器.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步进式访问迭代器中元素"><span class="nav-number">7.</span> <span class="nav-text">步进式访问迭代器中元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环访问遍历迭代器："><span class="nav-number">8.</span> <span class="nav-text">循环访问遍历迭代器：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将迭代器传递给其他函数使用："><span class="nav-number">9.</span> <span class="nav-text">将迭代器传递给其他函数使用：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#帮助迭代器实现索引功能："><span class="nav-number">10.</span> <span class="nav-text">帮助迭代器实现索引功能：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -905,11 +732,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
 
 
   
