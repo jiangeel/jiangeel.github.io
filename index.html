@@ -298,7 +298,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/12/24/cjbkbt096000hw3fu6j6wiolm/">
+    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/12/27/cjbohb77r000pl7fua1o7lqe6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eel">
@@ -317,7 +317,304 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/24/cjbkbt096000hw3fu6j6wiolm/" itemprop="url">Python 迭代器和生成器</a></h1>
+                <a class="post-title-link" href="/2017/12/27/cjbohb77r000pl7fua1o7lqe6/" itemprop="url">Python 学习之Self，cls，staticmethod，classmethod</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-27T10:47:00+08:00">
+                2017-12-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article</span>
+                
+                <span title="Words count in article">
+                  611
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          总体说明python类的方法有三种：
+
+通过def定义的，普通的一般的，需要至少传递一个参数，一般用self，这样的方法必须通过一个类的实例去访问，类似于 c++ 中通过对象去访问
+
+在 def 前面加上@classmethod，这种类方法的一个特点就是可以通过类名去调用，但是也必须传递一个参数，一般用cls表示 class，表示可以通过类直接调用
+
+在def前面加上@staticmethod，这种类方法是静态的类方法，类似于 c++ 的静态函数，他的一个特点是参数可以为空，同样支持类名和对象两种调用方式
+
+
+
+
+普通的方法，第一个参数需要是self，它表示一个具体的实例本身
+
+如果用了sta
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/27/cjbohb77r000pl7fua1o7lqe6/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/12/25/cjbohb7ak003bl7fuw95ai1cu/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eel">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="REMEMBER">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/25/cjbohb7ak003bl7fuw95ai1cu/" itemprop="url">正则表达式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-25T20:16:00+08:00">
+                2017-12-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article</span>
+                
+                <span title="Words count in article">
+                  167
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          正则表达式
+括号分组以左括排序
+贪婪匹配 是从右向左匹配的
+[^1]：不是1 
+\s：空格 ， \S：非空格
+[\u4E00-\u9FA5]  汉字
+\w = [a-zA-z0-9_]; \W：不是\w
+
+爬虫url去重bitmapbloomfilter
+字符串编码unicode：2字节16位ASCII 在 unicode 中：高8位补零utf-8：英文1字节，汉字3字节，生僻字：4-6字节
+编程、内存中：使用固定长度的unicode网络传输、文件保存：utf-8encode 是 unicode =&gt; utf-8/gb2132  以保存传输decode 是 utf-8/gb2132 =&
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/25/cjbohb7ak003bl7fuw95ai1cu/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/12/24/cjbohb783000xl7fucibt39ce/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eel">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="REMEMBER">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/24/cjbohb783000xl7fucibt39ce/" itemprop="url">Python 迭代器和生成器</a></h1>
         
 
         <div class="post-meta">
@@ -395,7 +692,7 @@
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/24/cjbkbt096000hw3fu6j6wiolm/#more" rel="contents">
+            <a class="btn" href="/2017/12/24/cjbohb783000xl7fucibt39ce/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -441,7 +738,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/12/15/cjbkbt09i000uw3fu93hxsxi5/">
+    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/12/15/cjbohb78a0014l7fu42j7b6iw/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eel">
@@ -460,7 +757,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/15/cjbkbt09i000uw3fu93hxsxi5/" itemprop="url">Scrapy的第一次使用</a></h1>
+                <a class="post-title-link" href="/2017/12/15/cjbohb78a0014l7fu42j7b6iw/" itemprop="url">Scrapy的第一次使用</a></h1>
         
 
         <div class="post-meta">
@@ -533,7 +830,7 @@
           
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/15/cjbkbt09i000uw3fu93hxsxi5/#more" rel="contents">
+            <a class="btn" href="/2017/12/15/cjbohb78a0014l7fu42j7b6iw/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -579,7 +876,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/12/14/cjbkbt09z001pw3fuayqa0hs7/">
+    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/12/14/cjbohb798001xl7fuernohpci/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eel">
@@ -598,7 +895,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/14/cjbkbt09z001pw3fuayqa0hs7/" itemprop="url">Python学习手册记录</a></h1>
+                <a class="post-title-link" href="/2017/12/14/cjbohb798001xl7fuernohpci/" itemprop="url">Python学习手册记录</a></h1>
         
 
         <div class="post-meta">
@@ -682,7 +979,7 @@ c = sorted(c) 支持包括tulpe的排序
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/14/cjbkbt09z001pw3fuayqa0hs7/#more" rel="contents">
+            <a class="btn" href="/2017/12/14/cjbohb798001xl7fuernohpci/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -728,7 +1025,7 @@ c = sorted(c) 支持包括tulpe的排序
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/12/13/cjbkbt09h000sw3fuimv6nu5g/">
+    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/12/13/cjbohb7860010l7fuqarimtix/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eel">
@@ -747,7 +1044,7 @@ c = sorted(c) 支持包括tulpe的排序
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/13/cjbkbt09h000sw3fuimv6nu5g/" itemprop="url">Python对数据的典型操作</a></h1>
+                <a class="post-title-link" href="/2017/12/13/cjbohb7860010l7fuqarimtix/" itemprop="url">Python对数据的典型操作</a></h1>
         
 
         <div class="post-meta">
@@ -831,7 +1128,7 @@ isinstance(data,str) 判断实例类型
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/13/cjbkbt09h000sw3fuimv6nu5g/#more" rel="contents">
+            <a class="btn" href="/2017/12/13/cjbohb7860010l7fuqarimtix/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -877,7 +1174,7 @@ isinstance(data,str) 判断实例类型
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/08/03/cjbkbt093000dw3fur12lo2yr/">
+    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/08/03/cjbohb77e000el7fuk3t43gp6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eel">
@@ -896,7 +1193,7 @@ isinstance(data,str) 判断实例类型
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/03/cjbkbt093000dw3fur12lo2yr/" itemprop="url">Flask-Migrate数据库迁移</a></h1>
+                <a class="post-title-link" href="/2017/08/03/cjbohb77e000el7fuk3t43gp6/" itemprop="url">Flask-Migrate数据库迁移</a></h1>
         
 
         <div class="post-meta">
@@ -972,7 +1269,7 @@ isinstance(data,str) 判断实例类型
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/03/cjbkbt093000dw3fur12lo2yr/#more" rel="contents">
+            <a class="btn" href="/2017/08/03/cjbohb77e000el7fuk3t43gp6/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1018,7 +1315,7 @@ isinstance(data,str) 判断实例类型
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/07/27/cjbkbt0ao002kw3fugoke26vy/">
+    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/07/27/cjbohb7a6002ml7fuzyhyuzgy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eel">
@@ -1037,7 +1334,7 @@ isinstance(data,str) 判断实例类型
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/27/cjbkbt0ao002kw3fugoke26vy/" itemprop="url">使用SSH Key登录并禁用root密码登录并修改端口号</a></h1>
+                <a class="post-title-link" href="/2017/07/27/cjbohb7a6002ml7fuzyhyuzgy/" itemprop="url">使用SSH Key登录并禁用root密码登录并修改端口号</a></h1>
         
 
         <div class="post-meta">
@@ -1113,7 +1410,7 @@ isinstance(data,str) 判断实例类型
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/27/cjbkbt0ao002kw3fugoke26vy/#more" rel="contents">
+            <a class="btn" href="/2017/07/27/cjbohb7a6002ml7fuzyhyuzgy/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1159,7 +1456,7 @@ isinstance(data,str) 判断实例类型
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/07/26/cjbkbt09n0010w3fu83e5xqhi/">
+    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/07/26/cjbohb78c0018l7fucetq0psy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eel">
@@ -1178,7 +1475,7 @@ isinstance(data,str) 判断实例类型
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/26/cjbkbt09n0010w3fu83e5xqhi/" itemprop="url">Safari Bookmarklet 实现切换 Google 搜索结果的语言</a></h1>
+                <a class="post-title-link" href="/2017/07/26/cjbohb78c0018l7fucetq0psy/" itemprop="url">Safari Bookmarklet 实现切换 Google 搜索结果的语言</a></h1>
         
 
         <div class="post-meta">
@@ -1254,7 +1551,7 @@ isinstance(data,str) 判断实例类型
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/26/cjbkbt09n0010w3fu83e5xqhi/#more" rel="contents">
+            <a class="btn" href="/2017/07/26/cjbohb78c0018l7fucetq0psy/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1300,7 +1597,7 @@ isinstance(data,str) 判断实例类型
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/07/25/cjbkbt0av002sw3funj1e90wq/">
+    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/07/25/cjbohb7ad002xl7fuedi19rw2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eel">
@@ -1319,7 +1616,7 @@ isinstance(data,str) 判断实例类型
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/25/cjbkbt0av002sw3funj1e90wq/" itemprop="url">暑假第一记</a></h1>
+                <a class="post-title-link" href="/2017/07/25/cjbohb7ad002xl7fuedi19rw2/" itemprop="url">暑假第一记</a></h1>
         
 
         <div class="post-meta">
@@ -1393,297 +1690,7 @@ isinstance(data,str) 判断实例类型
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/25/cjbkbt0av002sw3funj1e90wq/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/03/17/236/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Eel">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="REMEMBER">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/17/236/" itemprop="url">三月份的几个Python练手小项目</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-17T17:59:52+08:00">
-                2017-03-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article</span>
-                
-                <span title="Words count in article">
-                  171
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          基本都是单文件的小练习，在一行一行地敲的过程中又再接触、再理解了下面的语法或者使用技巧。
-但是我相信以后再遇到还是有一些会忘记，还是要去查去记的。
-‘2048’的小游戏
-2.ord3. char = keyboard.getch()4. lambda匿名函数5. 函数定义中的变量可以在定义部分之后，函数调用时所有变量必须在这之前6. defaultdict（）7. line = (1,2,3,4,5)[1:] 等于去掉元祖的第一个元素8. ‘’.join9. ‘’.format(num)
-html2pdf
-enumerate()
-docstring
-urlparse
-.format
-wkhtm
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/17/236/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://45.76.66.159/2017/03/10/232/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Eel">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="REMEMBER">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/10/232/" itemprop="url">修改Hosts实现科学上网</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-10T00:28:31+08:00">
-                2017-03-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article</span>
-                
-                <span title="Words count in article">
-                  663
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          &nbsp;
-好气啊，在手机上都写地差不多了，到了电脑上被同步成了未完成的状态，又得重写近些天原来十分稳定又快速的shadowsocks开始不在状态了，严重的时候什么都打不开，几分钟就要重启一下。
-想去官网提交个工单反馈一下都没办法。（百度是搜不到官网的）
-四处搜索的时候就不小心学会了另一个科学上网的方法：修改hosts文件。
-hosts
-hosts文件是一个用于储存计算机网络中各节点信息的计算机文件。这个文件负责将主机名称映射到相应的IP地址。hosts文件通常用于补充或替换网络中DNS的功能。和DNS不同的是，计算机的用户可以直接对hosts文件进行控制。
-
-简单的说hosts文件就是一个
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/10/232/#more" rel="contents">
+            <a class="btn" href="/2017/07/25/cjbohb7ad002xl7fuedi19rw2/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1781,7 +1788,7 @@ hosts文件是一个用于储存计算机网络中各节点信息的计算机文
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
