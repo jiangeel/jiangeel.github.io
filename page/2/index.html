@@ -298,7 +298,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/02/02/cjey4ob8r003yqblvn668bh2p/">
+    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/02/21/cjficuhc2000he3lv3sje5uwr/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eel">
@@ -317,7 +317,457 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/02/cjey4ob8r003yqblvn668bh2p/" itemprop="url">虚拟环境 Venv 的使用</a></h1>
+                <a class="post-title-link" href="/2018/02/21/cjficuhc2000he3lv3sje5uwr/" itemprop="url">LeetCode 数组与字符串笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-21T22:07:00+08:00">
+                2018-02-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article</span>
+                
+                <span title="Words count in article">
+                  500
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          Python 统计列表中出现数字次数coll = collections.Counter(nums1)
+矩阵旋转
+先求转置，再水平翻转，也可先按另一条对角线反转，再垂直翻转
+ 12345678910111213141516171819202122232425262728293031323334353637383940Python:class Solution:    def rotate(self, matrix):        &quot;&quot;&quot;        :type matrix: List[List[int]]        :rtype: void Do not
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/21/cjficuhc2000he3lv3sje5uwr/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/02/06/cjficuhed003ye3lvko9ns5jq/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eel">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="REMEMBER">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/06/cjficuhed003ye3lvko9ns5jq/" itemprop="url">半夜惊现 Apache 未关闭目录浏览功能</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-06T01:12:00+08:00">
+                2018-02-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article</span>
+                
+                <span title="Words count in article">
+                  138
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          问题深夜突然发现，自己的网站惊现了类似以下场景：
+
+根据常识这是没有关闭 Apache 的目录浏览功能，在非必要情况下是不安全的。
+遂做以下操作：
+步骤打开配置文件12345[root@vultr myblog]# cd /etc/httpd/conf/[root@vultr conf]# lshttpd.conf  magic[root@vultr conf]# vi httpd.conf[root@vultr conf]#
+修改配置文件123456&lt;Directory &gt;    # Options Indexes FollowSymLinks    Options Follow
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/06/cjficuhed003ye3lvko9ns5jq/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/02/05/cjficuhe3003be3lvhgl8qjdw/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eel">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="REMEMBER">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/05/cjficuhe3003be3lvhgl8qjdw/" itemprop="url">彻底搞清楚 Unicode 和 UTF-8</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-05T23:30:00+08:00">
+                2018-02-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article</span>
+                
+                <span title="Words count in article">
+                  477
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          
+概括Unicode： 统一长度，方便程序在内存中处理。UTF-8： 优化长度，方便网络传输，文件存储。
+encode(): Unicode转为 UTF-8的过程。decode(): UTF-8 转为 Unicode 的过程。
+例子已知：汉字“我”的编码为：
+
+
+
+编码类型
+编码值
+
+
+
+
+Unicode
+u’\u6211’
+
+
+UTF-8
+\xe6\x88\x91
+
+
+
+
+Python2Python2中的字符串有两种类型：
+
+str  windows 默认编码：GB2132 （待更新）  Unix 默认编码： UTF-8
+
+Unicode
+
+
+
+在 Python 终端测试： 在 Unix 中
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/05/cjficuhe3003be3lvhgl8qjdw/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/02/02/cjficuheg0043e3lvdvxgvvyf/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eel">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="REMEMBER">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/02/cjficuheg0043e3lvdvxgvvyf/" itemprop="url">虚拟环境 Venv 的使用</a></h1>
         
 
         <div class="post-meta">
@@ -399,7 +849,7 @@
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/02/cjey4ob8r003yqblvn668bh2p/#more" rel="contents">
+            <a class="btn" href="/2018/02/02/cjficuheg0043e3lvdvxgvvyf/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -445,7 +895,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/02/02/cjey4ob7a001oqblvycvd0uq3/">
+    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/02/02/cjficuhd1001he3lvxszn871q/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eel">
@@ -464,7 +914,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/02/cjey4ob7a001oqblvycvd0uq3/" itemprop="url">Selenium 的使用</a></h1>
+                <a class="post-title-link" href="/2018/02/02/cjficuhd1001he3lvxszn871q/" itemprop="url">Selenium 的使用</a></h1>
         
 
         <div class="post-meta">
@@ -545,7 +995,7 @@
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/02/cjey4ob7a001oqblvycvd0uq3/#more" rel="contents">
+            <a class="btn" href="/2018/02/02/cjficuhd1001he3lvxszn871q/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -591,7 +1041,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/02/01/cjey4ob7k0024qblvd5hrekfc/">
+    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/02/01/cjficuhdi0021e3lvvjns44iw/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eel">
@@ -610,7 +1060,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/01/cjey4ob7k0024qblvd5hrekfc/" itemprop="url">MySQL 授权远程连接</a></h1>
+                <a class="post-title-link" href="/2018/02/01/cjficuhdi0021e3lvvjns44iw/" itemprop="url">MySQL 授权远程连接</a></h1>
         
 
         <div class="post-meta">
@@ -687,7 +1137,7 @@
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/01/cjey4ob7k0024qblvd5hrekfc/#more" rel="contents">
+            <a class="btn" href="/2018/02/01/cjficuhdi0021e3lvvjns44iw/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -733,7 +1183,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/01/12/cjey4ob85002wqblvbbo19cwk/">
+    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/01/12/cjficuhe5003ee3lvrd89g438/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eel">
@@ -752,7 +1202,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/12/cjey4ob85002wqblvbbo19cwk/" itemprop="url">区块链技术学习指引</a></h1>
+                <a class="post-title-link" href="/2018/01/12/cjficuhe5003ee3lvrd89g438/" itemprop="url">区块链技术学习指引</a></h1>
         
 
         <div class="post-meta">
@@ -830,7 +1280,7 @@
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/01/12/cjey4ob85002wqblvbbo19cwk/#more" rel="contents">
+            <a class="btn" href="/2018/01/12/cjficuhe5003ee3lvrd89g438/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -876,7 +1326,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2017/12/27/cjey4ob6u0014qblvwjgze7c2/">
+    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2017/12/27/cjficuhcr000ze3lvrdzcwp7y/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eel">
@@ -895,7 +1345,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/27/cjey4ob6u0014qblvwjgze7c2/" itemprop="url">Python 学习之Self，cls，staticmethod，classmethod</a></h1>
+                <a class="post-title-link" href="/2017/12/27/cjficuhcr000ze3lvrdzcwp7y/" itemprop="url">Python 学习之Self，cls，staticmethod，classmethod</a></h1>
         
 
         <div class="post-meta">
@@ -939,7 +1389,7 @@
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  611
+                  702
                 </span>
               
 
@@ -980,7 +1430,7 @@
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/27/cjey4ob6u0014qblvwjgze7c2/#more" rel="contents">
+            <a class="btn" href="/2017/12/27/cjficuhcr000ze3lvrdzcwp7y/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1026,7 +1476,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2017/12/25/cjey4ob8i003kqblvviywtkkz/">
+    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2017/12/25/cjficuhe7003ke3lv4cwqtn2j/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eel">
@@ -1045,7 +1495,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/25/cjey4ob8i003kqblvviywtkkz/" itemprop="url">正则表达式</a></h1>
+                <a class="post-title-link" href="/2017/12/25/cjficuhe7003ke3lv4cwqtn2j/" itemprop="url">正则表达式</a></h1>
         
 
         <div class="post-meta">
@@ -1127,7 +1577,7 @@
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/25/cjey4ob8i003kqblvviywtkkz/#more" rel="contents">
+            <a class="btn" href="/2017/12/25/cjficuhe7003ke3lv4cwqtn2j/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1173,7 +1623,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2017/12/24/cjey4ob75001dqblvkrgq6otm/">
+    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2017/12/24/cjficuhcu0016e3lvm3et107h/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eel">
@@ -1192,7 +1642,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/24/cjey4ob75001dqblvkrgq6otm/" itemprop="url">Python 迭代器和生成器</a></h1>
+                <a class="post-title-link" href="/2017/12/24/cjficuhcu0016e3lvm3et107h/" itemprop="url">Python 迭代器和生成器</a></h1>
         
 
         <div class="post-meta">
@@ -1270,443 +1720,7 @@
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/24/cjey4ob75001dqblvkrgq6otm/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2017/12/15/cjey4ob77001iqblv7qyw2uus/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Eel">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="REMEMBER">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/15/cjey4ob77001iqblv7qyw2uus/" itemprop="url">Scrapy的第一次使用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-15T11:18:00+08:00">
-                2017-12-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article</span>
-                
-                <span title="Words count in article">
-                  27
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          新建Scrapy脚本使用Selector xpath() 选择器提取数据配置 Item 和 pipelinespymysql写入数据库
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/15/cjey4ob77001iqblv7qyw2uus/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2017/12/14/cjey4ob7r0026qblvp6uie3vf/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Eel">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="REMEMBER">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/14/cjey4ob7r0026qblvp6uie3vf/" itemprop="url">Python学习手册记录</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-14T11:35:00+08:00">
-                2017-12-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article</span>
-                
-                <span title="Words count in article">
-                  262
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          
-.pyc 字节码的保存 import就会生成
-dir(S)
-字典的排序输出 for I in sort(L)
-Floor 除法  x//y 保留整数
-repr() 取得对象原始内容
-浮点数 与 小数对象 0.1+0.1+0.1-0.3 
-使用切片或cop()拷贝对象而非引用
-print(i,end=’,’),默认end=换行7- 使用整数作为字典的键 稀疏数据结构
-c = sorted(c) 支持包括tulpe的排序
-标准库pickle模块 存储任何格式的对象
-无值分片和字典copy只能做顶层复制，深层嵌套拷贝需要import copy
-调用函数时:号将元组解包成序列,将字典解包成 k=v;
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/14/cjey4ob7r0026qblvp6uie3vf/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2017/12/13/cjey4ob6y0016qblvrhawri08/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Eel">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="REMEMBER">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/13/cjey4ob6y0016qblvrhawri08/" itemprop="url">Python对数据的典型操作</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-13T14:48:00+08:00">
-                2017-12-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article</span>
-                
-                <span title="Words count in article">
-                  504
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          涉及操作
-Excel文档读写(Workbook、load_workbook)
-字符串处理
-MySQL写入(pymysql)
-
-细节
-迭代器 I.next()
-字符串 strip 去空格 
-字符串 split 分割
-isinstance(data,str) 判断实例类型
-‘o’ in ‘boom’ 字符串中包含…
-
-代码：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/13/cjey4ob6y0016qblvrhawri08/#more" rel="contents">
+            <a class="btn" href="/2017/12/24/cjficuhcu0016e3lvm3et107h/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1793,7 +1807,7 @@ isinstance(data,str) 判断实例类型
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">52</span>
+                <span class="site-state-item-count">55</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1815,7 +1829,7 @@ isinstance(data,str) 判断实例类型
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">52</span>
+                <span class="site-state-item-count">53</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

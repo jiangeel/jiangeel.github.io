@@ -298,7 +298,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/03/19/cjey4ob6q0010qblva9cl05y7/">
+    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/04/02/cjficuhbi0003e3lvz8cs8ktg/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eel">
@@ -317,7 +317,436 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/19/cjey4ob6q0010qblva9cl05y7/" itemprop="url">Python 中的 '__Getitem__', '__Contains__' 以及 ‘In’</a></h1>
+                <a class="post-title-link" href="/2018/04/02/cjficuhbi0003e3lvz8cs8ktg/" itemprop="url">Python 的退一步调用(后备机制)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-02T22:52:00+08:00">
+                2018-04-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article</span>
+                
+                <span title="Words count in article">
+                  296
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          序列的增量运算+=背后的特殊方法是__iadd__(用于“就地加法”)。但是如果一个类没有实现这个方法的话, Python会退一步调用add。考虑下面这个简单的表达式:
+1&gt;&gt;&gt; a += b
+
+如果 a 实现了 __iadd__方法，就会调用这个方法：对list、bytearray 和 array.array 等可变序列来说，a 就会就地改动，就像调用了 a.extend(b)一样。
+
+但是如果 a 没有实现__iadd__的话，a += b 这个表达式的效果就变得跟 a = a + b一样了：首先计算 a + b,得到一个新的对象，然后赋值给 a。
+
+
+序列：虽然没有 _
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/02/cjficuhbi0003e3lvz8cs8ktg/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/03/22/cjficuhe20038e3lv5xavjiiv/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eel">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="REMEMBER">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/22/cjficuhe20038e3lv5xavjiiv/" itemprop="url">图解 HTTP 笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-22T13:30:00+08:00">
+                2018-03-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article</span>
+                
+                <span title="Words count in article">
+                  565
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          keep-alive管道化（pipelining），并行发送请求 如何实现？
+分块传输逐步显示页面
+获取部分内容的范围请求请求首部字段range，指定资源byte范围可以断点续传
+URI有斜杠和没有斜杠todo
+特殊的状态码：304: 附带条件请求后，服务器资源未变，可直接用客户端缓存（与3xx的重定向无关）
+
+307:与302相同，但遵照浏览器标准，不会从POST变为GET
+代理服务器：不改变内容，直接转发，会追加写入via信息透明代理：不加工报文（via信息）；缓存代理：除缓存外，还可针对特定网站的访问控制
+cache-control：响应指令中的no-cache： 必须向源服务器进行资源
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/22/cjficuhe20038e3lv5xavjiiv/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/03/21/cjficuhbs0008e3lvgnymlx53/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eel">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="REMEMBER">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/21/cjficuhbs0008e3lvgnymlx53/" itemprop="url">Ajax的无刷新文件下载</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-21T13:46:00+08:00">
+                2018-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article</span>
+                
+                <span title="Words count in article">
+                  303
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          1.使用ajax，ajax的返回值类型是json,text,html,xml类型，或者可以说ajax的发送，接受都只能是string字符串，不能流类型，所以无法实现文件下载，强用会出现response冲突。
+如果非要使用ajax的话，只能通过返回值得到生成的文件相关url。然后在回调函数里通过创建一个iframe，并设置其src值为文件url，或者一个对文件生成流的处理url，这样操作来实现文件下载且页面无刷新。
+2.不使用ajax，通过dom动态操作或创建iframe,form的方式来实现，在下载文件的同时实现页面不刷新，其中iframe的src可以是文件地址url来直接下载文件，也可以是流
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/21/cjficuhbs0008e3lvgnymlx53/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/03/19/cjficuhcw001de3lv6n3a8xpb/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eel">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="REMEMBER">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/19/cjficuhcw001de3lv6n3a8xpb/" itemprop="url">Python 中的 '__Getitem__', '__Contains__' 以及 ‘In’</a></h1>
         
 
         <div class="post-meta">
@@ -390,7 +819,7 @@
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/19/cjey4ob6q0010qblva9cl05y7/#more" rel="contents">
+            <a class="btn" href="/2018/03/19/cjficuhcw001de3lv6n3a8xpb/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -436,7 +865,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/03/18/cjey4ob8e003fqblvqtsirolm/">
+    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/03/18/cjficuhea003oe3lvl1hihspd/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eel">
@@ -455,7 +884,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/18/cjey4ob8e003fqblvqtsirolm/" itemprop="url">最简单理解 Python 中的深浅拷贝</a></h1>
+                <a class="post-title-link" href="/2018/03/18/cjficuhea003oe3lvl1hihspd/" itemprop="url">最简单理解 Python 中的深浅拷贝</a></h1>
         
 
         <div class="post-meta">
@@ -527,7 +956,7 @@
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/18/cjey4ob8e003fqblvqtsirolm/#more" rel="contents">
+            <a class="btn" href="/2018/03/18/cjficuhea003oe3lvl1hihspd/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -573,7 +1002,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/03/04/cjey4ob6d000gqblvoo37iqew/">
+    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/03/04/cjficuhby000ce3lvqhstmea6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eel">
@@ -592,7 +1021,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/04/cjey4ob6d000gqblvoo37iqew/" itemprop="url">Django 项目部署到全新的Ubuntu</a></h1>
+                <a class="post-title-link" href="/2018/03/04/cjficuhby000ce3lvqhstmea6/" itemprop="url">Django 项目部署到全新的Ubuntu</a></h1>
         
 
         <div class="post-meta">
@@ -671,7 +1100,7 @@
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/04/cjey4ob6d000gqblvoo37iqew/#more" rel="contents">
+            <a class="btn" href="/2018/03/04/cjficuhby000ce3lvqhstmea6/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -717,7 +1146,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/02/23/cjey4ob6f000iqblvs33rev49/">
+    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/02/23/cjficuhc5000ke3lv6indt10s/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eel">
@@ -736,7 +1165,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/23/cjey4ob6f000iqblvs33rev49/" itemprop="url">LeetCode 笔记</a></h1>
+                <a class="post-title-link" href="/2018/02/23/cjficuhc5000ke3lv6indt10s/" itemprop="url">LeetCode 笔记</a></h1>
         
 
         <div class="post-meta">
@@ -809,7 +1238,7 @@
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/23/cjey4ob6f000iqblvs33rev49/#more" rel="contents">
+            <a class="btn" href="/2018/02/23/cjficuhc5000ke3lv6indt10s/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -855,7 +1284,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/02/22/cjey4ob6o000xqblvehls2ps0/">
+    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/02/22/cjficuhbz000ee3lvjwkbmujl/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eel">
@@ -874,7 +1303,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/22/cjey4ob6o000xqblvehls2ps0/" itemprop="url">LeetCode 树 笔记</a></h1>
+                <a class="post-title-link" href="/2018/02/22/cjficuhbz000ee3lvjwkbmujl/" itemprop="url">LeetCode 树 笔记</a></h1>
         
 
         <div class="post-meta">
@@ -956,7 +1385,7 @@ Queue中始终只有该层的node，每次循环将全部poll，并offer下一�
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/22/cjey4ob6o000xqblvehls2ps0/#more" rel="contents">
+            <a class="btn" href="/2018/02/22/cjficuhbz000ee3lvjwkbmujl/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1002,7 +1431,7 @@ Queue中始终只有该层的node，每次循环将全部poll，并offer下一�
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/02/22/cjey4ob74001bqblvzih7x1tf/">
+    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/02/22/cjficuhc8000re3lvfpgr3w5s/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eel">
@@ -1021,7 +1450,7 @@ Queue中始终只有该层的node，每次循环将全部poll，并offer下一�
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/22/cjey4ob74001bqblvzih7x1tf/" itemprop="url">LeetCode 链表笔记</a></h1>
+                <a class="post-title-link" href="/2018/02/22/cjficuhc8000re3lvfpgr3w5s/" itemprop="url">LeetCode 链表笔记</a></h1>
         
 
         <div class="post-meta">
@@ -1065,7 +1494,7 @@ Queue中始终只有该层的node，每次循环将全部poll，并offer下一�
                   <span class="post-meta-item-text">Words count in article</span>
                 
                 <span title="Words count in article">
-                  571
+                  635
                 </span>
               
 
@@ -1089,18 +1518,14 @@ Queue中始终只有该层的node，每次循环将全部poll，并offer下一�
       
         
           
-          融合 2 个有序链表l1和l2完全并列而不是l2插入到l1的关系整体干净、工整且对称边界判断较少
-
-新建链表 dummy 
-判断 l1 或 l2 哪个 head 小
-小的 head 链接到dummy的end
-然后小的 head 往后推
-
-123456789101112131415161718192021222324252627282930313233/** * Definition for singly-linked list. * public class ListNode &#123; *     int val; *     ListNode next; *     ListNode(i
+          反转单向链表各种方法都需要三个指针，此方法比较简洁
+while循环中的4行代码各个变量收尾相连
+123456789class Solution:    def reverse(self, head):        curt = None        while head != None:            temp = head.next            head.next = curt            curt = head            head = temp        return curt
+融合 2 个有序链表l1和l2完全并列而不是l2插入到l1的关系
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/22/cjey4ob74001bqblvzih7x1tf/#more" rel="contents">
+            <a class="btn" href="/2018/02/22/cjficuhc8000re3lvfpgr3w5s/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1146,7 +1571,7 @@ Queue中始终只有该层的node，每次循环将全部poll，并offer下一�
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/02/21/cjey4ob7c001tqblv3rumv2s3/">
+    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/02/21/cjficuhd6001ke3lvgp4thpy4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eel">
@@ -1165,7 +1590,7 @@ Queue中始终只有该层的node，每次循环将全部poll，并offer下一�
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/21/cjey4ob7c001tqblv3rumv2s3/" itemprop="url">Scrapy 的一些配置</a></h1>
+                <a class="post-title-link" href="/2018/02/21/cjficuhd6001ke3lvgp4thpy4/" itemprop="url">Scrapy 的一些配置</a></h1>
         
 
         <div class="post-meta">
@@ -1238,457 +1663,7 @@ Queue中始终只有该层的node，每次循环将全部poll，并offer下一�
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/21/cjey4ob7c001tqblv3rumv2s3/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/02/21/cjey4ob6n000tqblv0d1jbgo4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Eel">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="REMEMBER">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/21/cjey4ob6n000tqblv0d1jbgo4/" itemprop="url">LeetCode 数组与字符串笔记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-21T22:07:00+08:00">
-                2018-02-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article</span>
-                
-                <span title="Words count in article">
-                  500
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          Python 统计列表中出现数字次数coll = collections.Counter(nums1)
-矩阵旋转
-先求转置，再水平翻转，也可先按另一条对角线反转，再垂直翻转
- 12345678910111213141516171819202122232425262728293031323334353637383940Python:class Solution:    def rotate(self, matrix):        &quot;&quot;&quot;        :type matrix: List[List[int]]        :rtype: void Do not
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/21/cjey4ob6n000tqblv0d1jbgo4/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/02/06/cjey4ob8n003wqblve0rrhfhw/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Eel">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="REMEMBER">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/06/cjey4ob8n003wqblve0rrhfhw/" itemprop="url">半夜惊现 Apache 未关闭目录浏览功能</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-06T01:12:00+08:00">
-                2018-02-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article</span>
-                
-                <span title="Words count in article">
-                  138
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          问题深夜突然发现，自己的网站惊现了类似以下场景：
-
-根据常识这是没有关闭 Apache 的目录浏览功能，在非必要情况下是不安全的。
-遂做以下操作：
-步骤打开配置文件12345[root@vultr myblog]# cd /etc/httpd/conf/[root@vultr conf]# lshttpd.conf  magic[root@vultr conf]# vi httpd.conf[root@vultr conf]#
-修改配置文件123456&lt;Directory &gt;    # Options Indexes FollowSymLinks    Options Follow
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/06/cjey4ob8n003wqblve0rrhfhw/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://144.202.115.88  /2018/02/05/cjey4ob8w0045qblvar13fi5h/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Eel">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="REMEMBER">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/05/cjey4ob8w0045qblvar13fi5h/" itemprop="url">彻底搞清楚 Unicode 和 UTF-8</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-05T23:30:00+08:00">
-                2018-02-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article</span>
-                
-                <span title="Words count in article">
-                  477
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          
-概括Unicode： 统一长度，方便程序在内存中处理。UTF-8： 优化长度，方便网络传输，文件存储。
-encode(): Unicode转为 UTF-8的过程。decode(): UTF-8 转为 Unicode 的过程。
-例子已知：汉字“我”的编码为：
-
-
-
-编码类型
-编码值
-
-
-
-
-Unicode
-u’\u6211’
-
-
-UTF-8
-\xe6\x88\x91
-
-
-
-
-Python2Python2中的字符串有两种类型：
-
-str  windows 默认编码：GB2132 （待更新）  Unix 默认编码： UTF-8
-
-Unicode
-
-
-
-在 Python 终端测试： 在 Unix 中
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/05/cjey4ob8w0045qblvar13fi5h/#more" rel="contents">
+            <a class="btn" href="/2018/02/21/cjficuhd6001ke3lvgp4thpy4/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1775,7 +1750,7 @@ Unicode
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">52</span>
+                <span class="site-state-item-count">55</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1797,7 +1772,7 @@ Unicode
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">52</span>
+                <span class="site-state-item-count">53</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
